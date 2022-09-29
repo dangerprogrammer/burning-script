@@ -1,1 +1,2 @@
-console.log('a!');
+const loadBurning = document.createElement('script');
+loadBurning.src = ''
