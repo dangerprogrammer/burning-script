@@ -20,6 +20,17 @@
             height: 100%;
             border-right: 2px solid #333;
         }
+
+        .skin-container {
+            flex-shrink: 0;
+            height: 5rem;
+            width: 5rem;
+            background: #252525;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         `
     });
 
