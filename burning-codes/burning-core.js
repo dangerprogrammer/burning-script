@@ -1,1 +1,1 @@
-console.log(query);
+linksContainer.remove();
