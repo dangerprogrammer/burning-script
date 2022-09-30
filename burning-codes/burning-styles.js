@@ -6,6 +6,6 @@
         }
         `
     });
-    
-    global.append(styling);
+
+    global.head.append(styling);
 })(window || this);
