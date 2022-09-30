@@ -9,7 +9,10 @@
             return creation;
         },
         removeElems: (...elems) => {
-            elems.forEach(elem => elem.remove());
+            elems.forEach(elem => elem && elem.remove());
+        },
+        resetFuncs: (...funcs) => {
+            funcs.forEach((func, ind) => func && (funcs[ind] = null));
         }
     };
 

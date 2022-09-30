@@ -1,1 +1,2 @@
-removeElems(linksContainer, smallAdContainer, ...menuContainer.children);
+removeElems(linksContainer, smallAdContainer, menuContainer);
+resetFuncs(updateAdPos);
