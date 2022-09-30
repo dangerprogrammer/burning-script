@@ -1,1 +1,1 @@
-linksContainer.remove();
+removeElems(linksContainer, smallAdContainer);

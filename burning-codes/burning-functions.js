@@ -7,6 +7,9 @@
             const creation = document.createElement(elem);
             if (atts) for (const att in atts) creation[att] = atts[att];
             return creation;
+        },
+        removeElems: (...elems) => {
+            elems.forEach(elem => elem.remove());
         }
     };
 
