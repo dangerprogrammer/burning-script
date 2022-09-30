@@ -6,5 +6,5 @@ const changeSkins = createElem('div', {className: 'change-skins'});
 const skinContainer0 = createElem('div', {className: 'skin-container'}),
     skinContainer1 = createElem('div', {className: 'skin-container'});
 
-changeSkins.append(skinContainer0);
+changeSkins.append(skinContainer0, skinContainer1);
 menuContainer.append(changeSkins);
