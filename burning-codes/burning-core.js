@@ -1,2 +1,1 @@
-removeElems(linksContainer, smallAdContainer);
-console.log('Opa!');
+removeElems(linksContainer, smallAdContainer, ...menuContainer.children);
