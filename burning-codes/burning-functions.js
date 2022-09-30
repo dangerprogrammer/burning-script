@@ -21,4 +21,3 @@
 
     for (const func in funcs) global[func] = funcs[func];
 })(window || this);
-//pog

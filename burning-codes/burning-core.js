@@ -1,3 +1,6 @@
 removeElems(linksContainer, smallAdContainer, ...menuContainer.children);
 resetFuncs(updateAdPos, youtuberList);
-//pog
+
+const changeSkins = createElem('div', {className: 'change-skins'});
+
+menuContainer.append(changeSkins);
