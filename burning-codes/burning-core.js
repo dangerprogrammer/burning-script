@@ -1,2 +1,2 @@
 removeElems(linksContainer, smallAdContainer, menuContainer);
-resetFuncs(updateAdPos);
+resetFuncs(updateAdPos, youtuberList);
