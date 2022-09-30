@@ -8,4 +8,4 @@
     });
 
     document.head.append(styling);
-})()
+})();
