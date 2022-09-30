@@ -2,7 +2,7 @@
     const styling = createElem('style', {
         innerHTML: `
         #darkener {
-            background: #000;
+            background: #222222;
         }
         `
     });
