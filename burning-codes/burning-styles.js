@@ -1,4 +1,4 @@
-(function (global) {
+(function () {
     const styling = createElem('style', {
         innerHTML: `
         #darkener {
@@ -7,5 +7,5 @@
         `
     });
 
-    global.head.append(styling);
-})(window || this);
+    document.head.append(styling);
+})();
