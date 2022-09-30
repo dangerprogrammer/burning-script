@@ -9,6 +9,7 @@
             top: 0;
             flex-direction: row;
             justify-content: space-between;
+            color: white;
         }
 
         .change-skins {
