@@ -4,7 +4,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&display=swap');
 
         #darkener {
-            background: #222;
+            background: #111;
         }
 
         #menuContainer {
@@ -64,6 +64,15 @@
             align-items: center;
             justify-content: center;
             background-size: cover;
+        }
+
+        .toggle-skins-container {
+            position: fixed;
+            bottom: 0;
+            translate: 0 -100%;
+            width: 100%;
+            background: #222;
+            z-index: 10;
         }
         `
     });
