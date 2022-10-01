@@ -1,6 +1,8 @@
 removeElems(linksContainer, smallAdContainer, ...menuContainer.children);
 resetFuncs(updateAdPos, youtuberList);
 
+document.title = 'Burning Script';
+
 const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
     changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
