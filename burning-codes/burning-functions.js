@@ -1,4 +1,4 @@
-(function (global) {
+(global => {
     const funcs = {
         query(elem, all = false) {
             return document[`querySelector${all ? 'All' : ''}`](elem);
