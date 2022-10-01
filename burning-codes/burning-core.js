@@ -27,6 +27,8 @@ while (skinsContainer.length < playerSkins + 1) {
     if (skinsContainer.length) skinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinsContainer.length - 1}.png')`;
     else skinContent.style.backgroundColor = '#ff6060';
 
+    skinContent.addEventListener('click', activeSkin);
+
     skinContainer.append(skinContent);
     skinsContainer.push(skinContainer);
 };

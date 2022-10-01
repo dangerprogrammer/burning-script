@@ -47,7 +47,7 @@
         .change-skins-container {
             overflow-y: auto;
             scroll-snap-type: y mandatory;
-            scroll-padding: 1em;
+            scroll-padding: 15px;
         }
 
         .change-skins-container::-webkit-scrollbar {
@@ -71,9 +71,24 @@
         }
 
         .skin-container {
+            position: relative;
             flex-shrink: 0;
             padding: 0 15px;
             scroll-snap-align: start;
+            display: grid;
+            align-items: center;
+        }
+
+        .skin-container::before {
+            content: '';
+            position: absolute;
+            transition: var(--transition-fast);
+            height: 40%;
+            width: 8px;
+            background: white;
+            translate: -50%;
+            border-radius: 4px;
+            scale: 1 0;
         }
 
         .skin-content {
@@ -85,6 +100,11 @@
             align-items: center;
             justify-content: center;
             background-size: cover;
+            cursor: pointer;
+        }
+
+        .skin-container:has(.skin-content:hover)::before {
+            scale: 1;
         }
 
         .toggle-skins-container {
