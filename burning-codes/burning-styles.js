@@ -18,6 +18,13 @@
         }
 
         .change-skins {
+            height: calc(100% - 60px);
+            max-height: 600px;
+            border: 2px solid #333;
+            border-radius: 15px;
+        }
+
+        .change-skins-container {
             position: relative;
             top: 50%;
             translate: 0 -50%;
@@ -25,22 +32,18 @@
             flex-direction: column;
             gap: 15px;
             padding: 15px;
-            height: calc(100% - 60px);
-            max-height: 600px;
-            border: 2px solid #333;
             overflow-y: auto;
-            border-radius: 15px;
         }
 
-        .change-skins::-webkit-scrollbar {
+        .change-skins-container::-webkit-scrollbar {
             width: 3px;
         }
 
-        .change-skins::-webkit-scrollbar-button {
+        .change-skins-container::-webkit-scrollbar-button {
             display: none;
         }
 
-        .change-skins::-webkit-scrollbar-thumb {
+        .change-skins-container::-webkit-scrollbar-thumb {
             background-color: #888a;
             border-radius: 3px;
         }
