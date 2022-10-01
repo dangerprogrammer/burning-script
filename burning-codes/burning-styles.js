@@ -161,6 +161,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            height: 80%;
         }
 
         .game-title {
@@ -170,9 +171,34 @@
         }
 
         .username-container {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: auto auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .username-content {
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid #333;
+            border-radius: 10px 0 0 10px;
+            color: #eee;
+            padding: 10px 25px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .play-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #333;
+            border-left: none;
+            padding: 5px 15px;
+            border-radius: 0 10px 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            flex-shrink: 0;
         }
         `
     });
