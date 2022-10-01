@@ -199,6 +199,12 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             flex-shrink: 0;
+            cursor: pointer;
+            transition: var(--transition-default);
+        }
+
+        .play-content:hover {
+            background: #161616a0;
         }
         `
     });
