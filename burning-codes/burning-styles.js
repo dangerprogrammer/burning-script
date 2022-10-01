@@ -9,9 +9,10 @@
 
         #menuContainer {
             top: 0;
-            flex-direction: row;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: auto 1fr;
             color: white;
+            padding: 15px;
             font-family: 'Poppins', sans-serif;
         }
 
@@ -21,7 +22,9 @@
             gap: 15px;
             padding: 15px;
             height: calc(100% - 30px);
+            max-height: 600px;
             border-right: 2px solid #333;
+            overflow-y: auto;
         }
 
         .skin-container {
