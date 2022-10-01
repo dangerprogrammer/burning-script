@@ -81,13 +81,26 @@
         }
 
         .toggle-skins-container {
-            background: #222a;
             cursor: pointer;
             transition: var(--transition-default);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-top: #333;
         }
 
         .toggle-skins-container:hover {
-            background: #333a;
+            background: #161616a0;
+        }
+
+        .toggle-skins-container ion-icon {
+            position: relative;
+            transition: var(--transition-default);
+        }
+
+        .change-skins.active .toggle-skins-container ion-icon {
+            rotate: 180deg;
         }
         `
     });
