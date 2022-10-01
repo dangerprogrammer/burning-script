@@ -6,7 +6,7 @@
         :root {
             --transition-default: .3s;
             --transition-fast: .2s;
-            --skin-size: 8rem;
+            --skin-size: 6rem;
             --skins-toshow: 4;
         }
 
