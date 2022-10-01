@@ -4,7 +4,11 @@ resetFuncs(updateAdPos, youtuberList);
 const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
     changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
-    toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container', innerHTML: 'Toggle'});
+    toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container'});
+
+const toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
+
+toggleSkinsContainer.append(toggleSkinsContainerIcon);
 
 const ionIcons = createElems(['script', {type: 'module', src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}], ['script', {nomodule: true, src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}]);
 

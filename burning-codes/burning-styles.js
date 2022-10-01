@@ -22,12 +22,16 @@
             top: 50%;
             translate: 0 -50%;
             height: calc(100% - 60px);
-            max-height: 600px;
+            max-height: 135px;
             border: 2px solid #333;
             border-radius: 15px;
             overflow: hidden;
             display: grid;
             grid-template-rows: 1fr auto;
+        }
+
+        .change-skins.active {
+            max-height: 600px;
         }
 
         .change-skins-container {
@@ -72,6 +76,7 @@
 
         .toggle-skins-container {
             background: #222a;
+            cursor: pointer;
         }
         `
     });
