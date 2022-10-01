@@ -4,7 +4,8 @@ resetFuncs(updateAdPos, youtuberList);
 const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
     changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
-    toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container'});
+    toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container'}),
+    titleSkinsContainer = createElem('div', {className: 'title-skins-container', ineerHTML: 'Skins'});
 
 const toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
 
@@ -48,5 +49,5 @@ activeSkin(firstSkinContent, changeSkinsContainer);
 
 changeSkinsContent.append(...skinsContainer);
 changeSkinsContainer.append(changeSkinsContent);
-changeSkins.append(changeSkinsContainer, toggleSkinsContainer);
+changeSkins.append(titleSkinsContainer, changeSkinsContainer, toggleSkinsContainer);
 menuContainer.append(changeSkins);
