@@ -10,6 +10,10 @@ const toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-out
 
 toggleSkinsContainer.append(toggleSkinsContainerIcon);
 
+toggleSkinsContainer.addEventListener('click', ev => {
+    changeSkins.classList.toggle('active');
+});
+
 const ionIcons = createElems(['script', {type: 'module', src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}], ['script', {nomodule: true, src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}]);
 
 document.body.append(...ionIcons);

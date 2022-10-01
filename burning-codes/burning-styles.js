@@ -3,6 +3,11 @@
         innerHTML: `
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&display=swap');
 
+        :root {
+            --transition-default: .3s;
+            --transition-fast: .2s;
+        }
+
         #darkener {
             background: #111;
         }
@@ -27,6 +32,7 @@
             border-radius: 15px;
             overflow: hidden;
             display: grid;
+            transition: var(--transition-default);
             grid-template-rows: 1fr auto;
         }
 
@@ -77,6 +83,11 @@
         .toggle-skins-container {
             background: #222a;
             cursor: pointer;
+            transition: var(--transition-default);
+        }
+
+        .toggle-skins-container:hover {
+            background: #333a;
         }
         `
     });
