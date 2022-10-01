@@ -87,7 +87,7 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            border-top: #333;
+            border-top: 2px solid #333;
         }
 
         .toggle-skins-container:hover {
