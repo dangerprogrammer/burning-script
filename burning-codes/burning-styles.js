@@ -8,6 +8,10 @@
             --transition-fast: .2s;
         }
 
+        ion-icon {
+            pointer-events: none;
+        }
+
         #darkener {
             background: #111;
         }
@@ -42,6 +46,8 @@
 
         .change-skins-container {
             overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-padding: 1em;
         }
 
         .change-skins-container::-webkit-scrollbar {
@@ -67,6 +73,7 @@
         .skin-container {
             flex-shrink: 0;
             padding: 0 15px;
+            scroll-snap-align: start;
         }
 
         .skin-content {
