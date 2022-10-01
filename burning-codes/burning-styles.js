@@ -115,7 +115,7 @@
         }
 
         .skin-container:has(.skin-content:hover:not(.active))::before {
-            scale: 1 .5;
+            scale: 1 .65;
         }
 
         .skin-container:has(.skin-content.active)::before {
