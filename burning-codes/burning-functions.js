@@ -8,14 +8,15 @@
             if (atts) for (const att in atts) creation[att] = atts[att];
             return creation;
         },
+        createElems(...elems) {
+            elems.forEach((elem, ind) => (elems[ind] = typeof elem == 'object' ? this.createElem(...elem) : this.createElem(elem)));
+            return elems;
+        },
         removeElems(...elems) {
             elems.forEach(elem => elem && elem.remove());
         },
         resetFuncs(...funcs) {
             funcs.forEach((func, ind) => func && (funcs[ind] = null));
-        },
-        appendsTo(reffers, ...elems) {
-            reffers.forEach(reffer => reffer && reffer.append(...elems));
         }
     };
 
