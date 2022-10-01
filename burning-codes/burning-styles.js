@@ -32,6 +32,7 @@
             flex-direction: column;
             gap: 15px;
             padding: 15px;
+            max-height: calc(100% - 30px);
             overflow-y: auto;
         }
 
