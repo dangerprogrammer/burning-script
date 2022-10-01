@@ -162,6 +162,18 @@
             align-items: center;
             justify-content: space-between;
         }
+
+        .game-title {
+            font-family: Varela Round;
+            font-size: 5em;
+            letter-spacing: .2em;
+        }
+
+        .username-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+        }
         `
     });
 
