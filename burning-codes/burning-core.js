@@ -31,6 +31,7 @@ while (skinsContainer.length < playerSkins + 1) {
     } else {
         skinContent.style.backgroundColor = '#ff6060';
         skinContent.dataset.skin = false;
+        skinContent.classList.add('active');
     };
 
     skinContent.addEventListener('click', ev => activeSkin(skinContent));

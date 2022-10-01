@@ -83,7 +83,7 @@
             content: '';
             position: absolute;
             transition: var(--transition-fast);
-            height: 40%;
+            height: 80%;
             width: 8px;
             background: white;
             translate: -50%;
@@ -103,7 +103,11 @@
             cursor: pointer;
         }
 
-        .skin-container:has(.skin-content:hover)::before {
+        .skin-container:has(.skin-content:hover:not(.active))::before {
+            scale: 1 .5;
+        }
+
+        .skin-container:has(.skin-content.active)::before {
             scale: 1;
         }
 
