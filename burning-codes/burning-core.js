@@ -14,6 +14,8 @@ toggleSkinsContainer.addEventListener('click', ev => {
     changeSkins.classList.toggle('active');
 });
 
+changeSkinsContainer.addEventListener('scroll', changeSkinsScroll);
+
 const ionIcons = createElems(['script', {type: 'module', src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}], ['script', {nomodule: true, src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}]);
 
 document.body.append(...ionIcons);
@@ -34,7 +36,7 @@ while (skinsContainer.length < playerSkins + 1) {
         skinContent.classList.add('active');
     };
 
-    skinContent.addEventListener('click', ev => activeSkin(skinContent));
+    skinContent.addEventListener('click', ev => activeSkin(skinContent, changeSkinsContainer));
 
     skinContainer.append(skinContent);
     skinsContainer.push(skinContainer);

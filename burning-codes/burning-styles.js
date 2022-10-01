@@ -46,8 +46,7 @@
 
         .change-skins-container {
             overflow-y: auto;
-            scroll-snap-type: y mandatory;
-            scroll-padding: 15px;
+            scroll-behavior: smooth;
         }
 
         .change-skins-container::-webkit-scrollbar {
@@ -74,7 +73,6 @@
             position: relative;
             flex-shrink: 0;
             padding: 0 15px;
-            scroll-snap-align: start;
             display: grid;
             align-items: center;
         }

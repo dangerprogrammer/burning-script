@@ -18,10 +18,16 @@
         resetFuncs(...funcs) {
             funcs.forEach((func, ind) => func && (funcs[ind] = null));
         },
-        activeSkin(skin) {
-            const otherSkins = this.query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true);
+        activeSkin(skin, changeSkinsContainer) {
+            const otherSkins = this.query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
+                  skinContainer = skin.parentElement;
             otherSkins.forEach(otherSkin => otherSkin.classList.remove('active'));
             skin.classList.add('active');
+            changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - changeSkinsContainer.offsetHeight / 2 + skinContainer.offsetHeight / 2);
+        },
+        changeSkinsScroll(ev) {
+            ev.preventDefault();
+            console.log(ev);
         }
     };
 
