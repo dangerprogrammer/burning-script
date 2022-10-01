@@ -32,7 +32,6 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            padding: 15px;
             max-height: calc(100% - 30px);
             overflow-y: auto;
         }
@@ -52,6 +51,10 @@
 
         .skin-container {
             flex-shrink: 0;
+            padding-left: 15px;
+        }
+
+        .skin-content {
             height: 5rem;
             width: 5rem;
             background: #252525;
@@ -59,6 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-size: cover;
         }
         `
     });
