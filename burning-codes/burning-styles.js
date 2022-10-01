@@ -27,6 +27,19 @@
             overflow-y: auto;
         }
 
+        .change-skins::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .change-skins::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        .change-skins::-webkit-scrollbar-thumb {
+            background-color: #888a;
+            border-radius: 3px;
+        }
+
         .skin-container {
             flex-shrink: 0;
             height: 5rem;
