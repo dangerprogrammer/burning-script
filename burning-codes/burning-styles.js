@@ -186,6 +186,7 @@
             padding: 10px 25px;
             width: 100%;
             flex-shrink: 0;
+            text-align: center;
         }
 
         .play-content {
