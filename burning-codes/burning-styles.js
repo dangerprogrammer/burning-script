@@ -137,7 +137,7 @@
         }
 
         .change-skins.active .toggle-skins-container ion-icon {
-            rotate: 180deg;
+            rotate: -180deg;
         }
         `
     });
