@@ -22,7 +22,7 @@
             flex-direction: column;
             gap: 15px;
             padding: 15px;
-            height: calc(100% - 30px);
+            height: calc(100% - 60px);
             max-height: 600px;
             border: 2px solid #333;
             overflow-y: auto;
