@@ -38,6 +38,17 @@
             grid-template-rows: auto 1fr auto;
         }
 
+        .title-skins-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #333;
+            text-transform: uppercase;
+            letter-spacing: .25em;
+            font-weight: 900;
+            padding: 0 15px;
+        }
+
         .change-skins-container {
             overflow-y: auto;
             scroll-behavior: smooth;
@@ -76,6 +87,7 @@
             padding: 0 15px;
             display: grid;
             align-items: center;
+            justify-content: center;
         }
 
         .skin-container::before {

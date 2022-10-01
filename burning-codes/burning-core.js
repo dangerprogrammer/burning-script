@@ -5,7 +5,7 @@ const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
     changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
     toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container'}),
-    titleSkinsContainer = createElem('div', {className: 'title-skins-container', innerHTML: 'Skins'});
+    titleSkinsContainer = createElem('div', {className: 'title-skins-container', innerHTML: 'Game Skins'});
 
 const toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
 
