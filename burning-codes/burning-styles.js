@@ -101,6 +101,13 @@
             justify-content: center;
             background-size: cover;
             cursor: pointer;
+            opacity: .5;
+            transition: var(--transition-fast);
+        }
+
+        .skin-content.active {
+            pointer-events: none;
+            opacity: 1;
         }
 
         .skin-container:has(.skin-content:hover:not(.active))::before {
