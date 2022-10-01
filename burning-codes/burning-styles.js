@@ -155,6 +155,13 @@
         .change-skins.active .toggle-skins-container ion-icon {
             rotate: -180deg;
         }
+
+        .user-settings-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
         `
     });
 
