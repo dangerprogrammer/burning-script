@@ -20,8 +20,8 @@
         },
         activeSkin(skin) {
             const otherSkins = this.query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true);
-            console.log(otherSkins);
-            if (!skin.classList.contains('active')) skin.classList.add('active');
+            otherSkins.forEach(otherSkin => otherSkin.classList.remove('active'));
+            skin.classList.add('active');
         }
     };
 
