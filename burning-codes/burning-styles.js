@@ -7,6 +7,7 @@
             --transition-default: .3s;
             --transition-fast: .2s;
             --skin-size: 8rem;
+            --skins-toshow: 4;
         }
 
         ion-icon {
@@ -42,7 +43,7 @@
         }
 
         .change-skins.active .change-skins-container {
-            max-height: 600px;
+            max-height: calc((var(--skin-size) + 15px) * var(--skins-toshow) + 15px);
         }
 
         .change-skins-container::-webkit-scrollbar {
