@@ -10,7 +10,11 @@ const toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-out
 
 toggleSkinsContainer.append(toggleSkinsContainerIcon);
 
-toggleSkinsContainer.addEventListener('click', ev => changeSkins.classList.toggle('active'));
+toggleSkinsContainer.addEventListener('click', ev => {
+    const skinContainer = activedSkin.parentElement;
+    changeSkins.classList.toggle('active');
+    setTimeout(() => changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - 15), 5e2);
+});
 
 changeSkinsContainer.addEventListener('mousewheel', changeSkinsScroll);
 
