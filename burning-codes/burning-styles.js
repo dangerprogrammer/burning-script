@@ -6,6 +6,7 @@
         :root {
             --transition-default: .3s;
             --transition-fast: .2s;
+            --skin-size: 8rem;
         }
 
         ion-icon {
@@ -37,7 +38,7 @@
             overflow-y: auto;
             scroll-behavior: smooth;
             transition: var(--transition-default);
-            max-height: calc(5rem + 30px);
+            max-height: calc(var(--skin-size) + 30px);
         }
 
         .change-skins.active .change-skins-container {
@@ -86,8 +87,8 @@
         }
 
         .skin-content {
-            height: 5rem;
-            width: 5rem;
+            height: var(--skin-size);
+            width: var(--skin-size);
             background: #252525;
             border-radius: 50%;
             display: flex;
