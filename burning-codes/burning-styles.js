@@ -105,6 +105,10 @@
             transition: var(--transition-fast);
         }
 
+        .skin-content:hover:not(.active) {
+            opacity: 1;
+        }
+
         .skin-content.active {
             pointer-events: none;
             opacity: 1;
