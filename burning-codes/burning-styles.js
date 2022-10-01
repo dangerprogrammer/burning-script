@@ -18,6 +18,9 @@
         }
 
         .change-skins {
+            position: relative;
+            top: 50%;
+            translate: 0 -50%;
             display: flex;
             flex-direction: column;
             gap: 15px;
