@@ -9,7 +9,7 @@
             return creation;
         },
         createElems(...elems) {
-            elems.forEach((elem, ind) => (elems[ind] = typeof elem == 'object' ? this.createElem(...elem) : this.createElem(elem)));
+            elems.forEach((elem, ind) => (elems[ind] = typeof elem == 'object' ? createElem(...elem) : createElem(elem)));
             return elems;
         },
         removeElems(...elems) {
@@ -19,15 +19,27 @@
             funcs.forEach((func, ind) => func && (funcs[ind] = null));
         },
         activeSkin(skin, changeSkinsContainer) {
-            const otherSkins = this.query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
+            const otherSkins = query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
+                  prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : playerSkins) - 1,
+                  nextSkinInd = +skin.dataset.skin + 1 < playerSkins ? +skin.dataset.skin + 1 : -1,
                   skinContainer = skin.parentElement;
             otherSkins.forEach(otherSkin => otherSkin.classList.remove('active'));
             skin.classList.add('active');
-            changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - changeSkinsContainer.offsetHeight / 2 + skinContainer.offsetHeight / 2);
+            changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - 15);
+            global.changeSkinsContainer = changeSkinsContainer;
+            global.activedSkin = skin;
+            setTimeout(() => {
+                const prevSkin = query(`.skin-content[data-skin="${prevSkinInd}"]`),
+                  nextSkin = query(`.skin-content[data-skin="${nextSkinInd}"]`);
+
+                global.prevSkin = prevSkin;
+                global.nextSkin = nextSkin;
+            }, 1);
         },
         changeSkinsScroll(ev) {
             ev.preventDefault();
-            console.log(ev);
+            if (ev.wheelDeltaY < 0) activeSkin(nextSkin, changeSkinsContainer);
+            else activeSkin(prevSkin, changeSkinsContainer);
         }
     };
 

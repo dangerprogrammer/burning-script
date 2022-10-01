@@ -20,33 +20,28 @@
             top: 0;
             display: grid;
             grid-template-columns: auto 1fr;
-            align-items: normal;
             color: white;
             padding: 15px;
             font-family: 'Poppins', sans-serif;
         }
 
         .change-skins {
-            position: relative;
-            top: 50%;
-            translate: 0 -50%;
-            height: calc(100% - 60px);
-            max-height: 135px;
             border: 2px solid #333;
             border-radius: 15px;
             overflow: hidden;
             display: grid;
-            transition: var(--transition-default);
             grid-template-rows: 1fr auto;
-        }
-
-        .change-skins.active {
-            max-height: 600px;
         }
 
         .change-skins-container {
             overflow-y: auto;
             scroll-behavior: smooth;
+            transition: var(--transition-default);
+            max-height: calc(5rem + 30px);
+        }
+
+        .change-skins.active .change-skins-container {
+            max-height: 600px;
         }
 
         .change-skins-container::-webkit-scrollbar {
@@ -63,6 +58,7 @@
         }
 
         .change-skins-content {
+            position: relative;
             display: flex;
             flex-direction: column;
             gap: 15px;
