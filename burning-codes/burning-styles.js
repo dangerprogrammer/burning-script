@@ -18,6 +18,9 @@
         }
 
         .change-skins {
+            position: relative;
+            top: 50%;
+            translate: 0 -50%;
             height: calc(100% - 60px);
             max-height: 600px;
             border: 2px solid #333;
@@ -25,9 +28,6 @@
         }
 
         .change-skins-container {
-            position: relative;
-            top: 50%;
-            translate: 0 -50%;
             display: flex;
             flex-direction: column;
             gap: 15px;
