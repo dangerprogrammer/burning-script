@@ -23,8 +23,9 @@
             padding: 15px;
             height: calc(100% - 30px);
             max-height: 600px;
-            border-right: 2px solid #333;
+            border: 2px solid #333;
             overflow-y: auto;
+            border-radius: 15px;
         }
 
         .change-skins::-webkit-scrollbar {
