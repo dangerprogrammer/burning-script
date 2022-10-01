@@ -51,6 +51,6 @@ changeSkinsContent.append(...skinsContainer);
 changeSkinsContainer.append(changeSkinsContent);
 changeSkins.append(titleSkinsContainer, changeSkinsContainer, toggleSkinsContainer);
 
-const usernameContainer = createElem('div', {className: 'username-container'});
+const userSettingsContainer = createElem('div', {className: 'user-settings-container'});
 
-menuContainer.append(changeSkins, usernameContainer);
+menuContainer.append(changeSkins, userSettingsContainer);
