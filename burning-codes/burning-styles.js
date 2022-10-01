@@ -35,7 +35,7 @@
             border-radius: 15px;
             overflow: hidden;
             display: grid;
-            grid-template-rows: 1fr auto;
+            grid-template-rows: auto 1fr auto;
         }
 
         .change-skins-container {
