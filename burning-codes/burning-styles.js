@@ -51,7 +51,7 @@
 
         .skin-container {
             flex-shrink: 0;
-            padding-left: 15px;
+            padding: 0 15px;
         }
 
         .skin-content {
