@@ -26,11 +26,12 @@
             border: 2px solid #333;
             border-radius: 15px;
             overflow: hidden;
+            display: grid;
+            grid-template-rows: 1fr auto;
         }
 
         .change-skins-container {
-            max-height: calc(100% - 30px);
-            overflow: hidden;
+            overflow-y: auto;
         }
 
         .change-skins-container::-webkit-scrollbar {
@@ -51,8 +52,6 @@
             flex-direction: column;
             gap: 15px;
             padding: 15px 0;
-            max-height: calc(100% - 30px);
-            overflow-y: auto;
         }
 
         .skin-container {
@@ -72,11 +71,7 @@
         }
 
         .toggle-skins-container {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             background: #222a;
-            z-index: 10;
         }
         `
     });
