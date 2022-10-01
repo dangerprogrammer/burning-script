@@ -24,10 +24,16 @@ while (skinsContainer.length < playerSkins + 1) {
     const skinContainer = createElem('div', {className: 'skin-container'}),
         skinContent = createElem('div', {className: 'skin-content'});
 
-    if (skinsContainer.length) skinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinsContainer.length - 1}.png')`;
-    else skinContent.style.backgroundColor = '#ff6060';
+    if (skinsContainer.length) {
+        const skinInd = skinsContainer.length - 1;
+        skinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinInd}.png')`;
+        skinContent.dataset.skin = skinInd;
+    } else {
+        skinContent.style.backgroundColor = '#ff6060';
+        skinContent.dataset.skin = false;
+    };
 
-    skinContent.addEventListener('click', activeSkin);
+    skinContent.addEventListener('click', ev => activeSkin(skinContent));
 
     skinContainer.append(skinContent);
     skinsContainer.push(skinContainer);

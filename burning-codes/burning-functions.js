@@ -17,6 +17,11 @@
         },
         resetFuncs(...funcs) {
             funcs.forEach((func, ind) => func && (funcs[ind] = null));
+        },
+        activeSkin(skin) {
+            const otherSkins = this.query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true);
+            console.log(otherSkins);
+            if (!skin.classList.contains('active')) skin.classList.add('active');
         }
     };
 
