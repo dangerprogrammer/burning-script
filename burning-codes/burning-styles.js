@@ -46,7 +46,7 @@
             text-transform: uppercase;
             letter-spacing: .25em;
             font-weight: 900;
-            padding: 0 15px;
+            padding: 5px 15px;
         }
 
         .change-skins-container {
