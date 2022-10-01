@@ -3,6 +3,7 @@ resetFuncs(updateAdPos, youtuberList);
 
 const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
+    changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
     toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container', innerHTML: 'Toggle'});
 
 const skinsContainer = [];
@@ -17,6 +18,7 @@ while (skinsContainer.length < playerSkins) {
     skinsContainer.push(skinContainer);
 };
 
-changeSkinsContainer.append(...skinsContainer);
+changeSkinsContent.append(...skinsContainer);
+changeSkinsContainer.append(changeSkinsContent);
 changeSkins.append(changeSkinsContainer, toggleSkinsContainer);
 menuContainer.append(changeSkins);

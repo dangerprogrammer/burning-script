@@ -29,12 +29,8 @@
         }
 
         .change-skins-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            padding: 15px 0;
             max-height: calc(100% - 30px);
-            overflow-y: auto;
+            overflow: hidden;
         }
 
         .change-skins-container::-webkit-scrollbar {
@@ -48,6 +44,15 @@
         .change-skins-container::-webkit-scrollbar-thumb {
             background-color: #888a;
             border-radius: 3px;
+        }
+
+        .change-skins-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px 0;
+            max-height: calc(100% - 30px);
+            overflow-y: auto;
         }
 
         .skin-container {
@@ -69,9 +74,8 @@
         .toggle-skins-container {
             position: fixed;
             bottom: 0;
-            translate: 0 -100%;
             width: 100%;
-            background: #222;
+            background: #222a;
             z-index: 10;
         }
         `
