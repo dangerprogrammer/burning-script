@@ -25,6 +25,7 @@
             max-height: 600px;
             border: 2px solid #333;
             border-radius: 15px;
+            overflow: hidden;
         }
 
         .change-skins-container {
