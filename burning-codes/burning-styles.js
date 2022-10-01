@@ -11,6 +11,7 @@
             top: 0;
             display: grid;
             grid-template-columns: auto 1fr;
+            align-items: normal;
             color: white;
             padding: 15px;
             font-family: 'Poppins', sans-serif;
