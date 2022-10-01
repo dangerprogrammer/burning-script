@@ -12,11 +12,12 @@ document.body.append(...ionIcons);
 
 const skinsContainer = [];
 
-while (skinsContainer.length < playerSkins) {
+while (skinsContainer.length < playerSkins + 1) {
     const skinContainer = createElem('div', {className: 'skin-container'}),
         skinContent = createElem('div', {className: 'skin-content'});
 
-    skinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinsContainer.length}.png')`;
+    if (skinsContainer.length) skinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinsContainer.length}.png')`;
+    else skinContent.style.backgroundColor = '#ff6060';
 
     skinContainer.append(skinContent);
     skinsContainer.push(skinContainer);
