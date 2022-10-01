@@ -106,7 +106,7 @@
         }
 
         .skin-content:hover:not(.active) {
-            opacity: 1;
+            opacity: .85;
         }
 
         .skin-content.active {
