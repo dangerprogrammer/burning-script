@@ -1,7 +1,7 @@
 removeElems(linksContainer, smallAdContainer, ...menuContainer.children);
 resetFuncs(updateAdPos, youtuberList);
 
-document.title = 'Burning Script';
+document.title = 'Burning Script - 1.0.0';
 
 const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
@@ -53,6 +53,11 @@ changeSkinsContent.append(...skinsContainer);
 changeSkinsContainer.append(changeSkinsContent);
 changeSkins.append(titleSkinsContainer, changeSkinsContainer, toggleSkinsContainer);
 
-const userSettingsContainer = createElem('div', {className: 'user-settings-container'});
+const userSettingsContainer = createElem('div', {className: 'user-settings-container'}),
+    gameTitle = createElem('h1', {className: 'game-title', innerHTML: 'Burning Script'}),
+    usernameContainer = createElem('div', {className: 'username-container'}),
+    creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'});
+
+userSettingsContainer.append(gameTitle, usernameContainer, creditsContainer);
 
 menuContainer.append(changeSkins, userSettingsContainer);
