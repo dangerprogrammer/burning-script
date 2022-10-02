@@ -27,7 +27,7 @@
             width: auto;
             display: grid;
             padding: 15px;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: auto 1fr auto;
             color: white;
             font-family: 'Poppins', sans-serif;
         }
