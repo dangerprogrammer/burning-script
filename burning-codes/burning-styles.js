@@ -32,9 +32,9 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .change-skins {
+        .change-skins, .change-special-skins {
             position: relative;
-            max-height: calc(100% - 30px);
+            max-height: 100%;
             border: 2px solid #333;
             border-radius: 15px;
             overflow: hidden;

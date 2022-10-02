@@ -63,4 +63,6 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
 usernameContainer.append(usernameContent, playContent);
 userSettingsContainer.append(gameTitle, usernameContainer, creditsContainer);
 
-menuContainer.append(changeSkins, userSettingsContainer);
+const changeSpecialSkins = createElem('div', {className: 'change-special-skins'});
+
+menuContainer.append(changeSkins, userSettingsContainer, changeSpecialSkins);
