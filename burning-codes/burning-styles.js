@@ -34,7 +34,6 @@
 
         .change-skins {
             position: relative;
-            translate: 0 -15px;
             max-height: calc(100% - 30px);
             border: 2px solid #333;
             border-radius: 15px;
