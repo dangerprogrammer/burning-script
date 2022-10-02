@@ -21,9 +21,9 @@
         #menuContainer {
             top: 0;
             bottom: 0;
+            height: auto;
             left: 0;
             right: 0;
-            height: auto;
             width: auto;
             display: grid;
             grid-template-columns: auto 1fr;
