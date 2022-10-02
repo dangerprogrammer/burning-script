@@ -157,8 +157,12 @@
             transition: var(--transition-default);
         }
 
-        .change-skins.active .toggle-skins-container ion-icon, .change-special-skins.active .toggle-special-skins-container ion-icon {
+        .change-skins.active .toggle-skins-container ion-icon {
             rotate: -180deg;
+        }
+
+        .change-special-skins.active .toggle-special-skins-container ion-icon {
+            rotate: 180deg;
         }
 
         .user-settings-container {
