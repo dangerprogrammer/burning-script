@@ -7,9 +7,8 @@ const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
     changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
     toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container'}),
-    titleSkinsContainer = createElem('div', {className: 'title-skins-container', innerHTML: 'Game Skins'});
-
-const toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
+    titleSkinsContainer = createElem('div', {className: 'title-skins-container', innerHTML: 'Game Skins'}),
+    toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
 
 toggleSkinsContainer.append(toggleSkinsContainerIcon);
 
@@ -67,7 +66,16 @@ const changeSpecialSkins = createElem('div', {className: 'change-special-skins'}
     changeSpecialSkinsContainer = createElem('div', {className: 'change-special-skins-container'}),
     changeSpecialSkinsContent = createElem('div', {className: 'change-special-skins-content'}),
     toggleSpecialSkinsContainer = createElem('div', {className: 'toggle-special-skins-container'}),
-    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Game Special Skins'});
+    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Game Special Skins'}),
+    toggleSpecialSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
+
+toggleSpecialSkinsContainer.append(toggleSpecialSkinsContainerIcon);
+
+toggleSpecialSkinsContainer.addEventListener('click', ev => {
+    const skinSpecialContainer = activedSpecialSkin.parentElement;
+    changeSpecialSkins.classList.toggle('active');
+    setTimeout(() => changeSpecialSkinsContainer.scrollTo(0, skinSpecialContainer.offsetTop - 15), 5e2);
+});
 
 changeSpecialSkins.append(titleSpecialSkinsContainer, changeSpecialSkinsContainer, toggleSpecialSkinsContainer);
 menuContainer.append(changeSkins, userSettingsContainer, changeSpecialSkins);
