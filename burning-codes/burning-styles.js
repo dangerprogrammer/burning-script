@@ -43,7 +43,7 @@
             grid-template-rows: auto 1fr auto;
         }
 
-        .title-skins-container {
+        .title-skins-container, .title-special-skins-container {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -54,31 +54,31 @@
             padding: 5px 15px;
         }
 
-        .change-skins-container {
+        .change-skins-container, .change-special-skins-container {
             overflow-y: auto;
             scroll-behavior: smooth;
             transition: var(--transition-default);
             max-height: calc(var(--skin-size) + 30px);
         }
 
-        .change-skins.active .change-skins-container {
+        .change-skins.active .change-skins-container, .change-special-skins.active .change-special-skins-container {
             max-height: calc((var(--skin-size) + 15px) * var(--skins-toshow) + 15px);
         }
 
-        .change-skins-container::-webkit-scrollbar {
+        .change-skins-container::-webkit-scrollbar, .change-special-skins-container::-webkit-scrollbar {
             width: 3px;
         }
 
-        .change-skins-container::-webkit-scrollbar-button {
+        .change-skins-container::-webkit-scrollbar-button, .change-special-skins-container::-webkit-scrollbar-button {
             display: none;
         }
 
-        .change-skins-container::-webkit-scrollbar-thumb {
+        .change-skins-container::-webkit-scrollbar-thumb, .change-special-skins-container::-webkit-scrollbar-thumb {
             background-color: #888a;
             border-radius: 3px;
         }
 
-        .change-skins-content {
+        .change-skins-content, .change-special-skins-content {
             position: relative;
             display: flex;
             flex-direction: column;
@@ -86,7 +86,7 @@
             padding: 15px 0;
         }
 
-        .skin-container {
+        .skin-container, .skin-special-container {
             position: relative;
             flex-shrink: 0;
             padding: 0 15px;
@@ -95,7 +95,7 @@
             justify-content: center;
         }
 
-        .skin-container::before {
+        .skin-container::before, .skin-special-container::before {
             content: '';
             position: absolute;
             transition: var(--transition-fast);
@@ -107,7 +107,7 @@
             scale: 1 0;
         }
 
-        .skin-content {
+        .skin-content, .skin-special-content {
             height: var(--skin-size);
             width: var(--skin-size);
             background: #252525;
@@ -121,24 +121,24 @@
             transition: var(--transition-fast);
         }
 
-        .skin-content:hover:not(.active) {
+        .skin-content:hover:not(.active), .skin-special-content:hover:not(.active) {
             opacity: .85;
         }
 
-        .skin-content.active {
+        .skin-content.active, .skin-special-content.active {
             pointer-events: none;
             opacity: 1;
         }
 
-        .skin-container:has(.skin-content:hover:not(.active))::before {
+        .skin-container:has(.skin-content:hover:not(.active))::before, .skin-special-container:has(.skin-special-content:hover:not(.active))::before {
             scale: 1 .65;
         }
 
-        .skin-container:has(.skin-content.active)::before {
+        .skin-container:has(.skin-content.active)::before, .skin-special-container:has(.skin-special-content.active)::before {
             scale: 1;
         }
 
-        .toggle-skins-container {
+        .toggle-skins-container, .toggle-special-skins-container {
             cursor: pointer;
             transition: var(--transition-default);
             display: flex;
@@ -148,16 +148,16 @@
             border-top: 2px solid #333;
         }
 
-        .toggle-skins-container:hover {
+        .toggle-skins-container:hover, .toggle-special-skins-container:hover {
             background: #161616a0;
         }
 
-        .toggle-skins-container ion-icon {
+        .toggle-skins-container ion-icon, .toggle-special-skins-container ion-icon {
             position: relative;
             transition: var(--transition-default);
         }
 
-        .change-skins.active .toggle-skins-container ion-icon {
+        .change-skins.active .toggle-skins-container ion-icon, .change-special-skins.active .toggle-special-skins-container ion-icon {
             rotate: -180deg;
         }
 
