@@ -40,6 +40,29 @@
             ev.preventDefault();
             if (ev.wheelDeltaY < 0) activeSkin(nextSkin, changeSkinsContainer);
             else activeSkin(prevSkin, changeSkinsContainer);
+        },
+        activeSpecialSkin(skin, changeSpecialSkinsContainer) {
+            const otherSpecialSkins = query(`.skin-special-content:not([data-skin="${skin.dataset.skin}"])`, true),
+                  prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : scriptSkins) - 1,
+                  nextSkinInd = +skin.dataset.skin + 1 < scriptSkins ? +skin.dataset.skin + 1 : -1,
+                  skinScriptContainer = skin.parentElement;
+                  otherSpecialSkins.forEach(otherSpecialSkin => otherSpecialSkin.classList.remove('active'));
+            skin.classList.add('active');
+            changeSpecialSkinsContainer.scrollTo(0, skinScriptContainer.offsetTop - 15);
+            global.changeSpecialSkinsContainer = changeSpecialSkinsContainer;
+            global.activedSpecialSkin = skin;
+            setTimeout(() => {
+                const prevSkin = query(`.skin-special-content[data-skin="${prevSkinInd}"]`),
+                  nextSkin = query(`.skin-special-content[data-skin="${nextSkinInd}"]`);
+
+                global.prevSpecialSkin = prevSkin;
+                global.nextSpecialSkin = nextSkin;
+            }, 1);
+        },
+        changeSpecialSkinsScroll(ev) {
+            ev.preventDefault();
+            if (ev.wheelDeltaY < 0) activeSpecialSkin(nextSpecialSkin, changeSpecialSkinsContainer);
+            else activeSpecialSkin(prevSpecialSkin, changeSpecialSkinsContainer);
         }
     };
 

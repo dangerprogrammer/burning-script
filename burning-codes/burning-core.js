@@ -77,5 +77,31 @@ toggleSpecialSkinsContainer.addEventListener('click', ev => {
     setTimeout(() => changeSpecialSkinsContainer.scrollTo(0, skinSpecialContainer.offsetTop - 15), 5e2);
 });
 
+const scriptSkins = 4,
+    skinsScriptContainer = [];
+window.scriptSkins = scriptSkins;
+let firstScriptSkinContent;
+while (skinsScriptContainer.length < scriptSkins + 1) {
+    const skinScriptContainer = createElem('div', {className: 'skin-special-container'}),
+        skinScriptContent = createElem('div', {className: 'skin-special-content'});
+
+    if (skinsScriptContainer.length) {
+        const skinInd = skinsScriptContainer.length - 1;
+        skinScriptContent.style.backgroundImage = `url('https://raw.githubusercontent.com/dangerprogrammer/burning-script/main/assets/skins/skin-${skinInd}.png')`;
+        skinScriptContent.dataset.skin = skinInd;
+    } else {
+        skinScriptContent.style.backgroundColor = '#ff6060';
+        skinScriptContent.dataset.skin = -1;
+        firstScriptSkinContent = skinScriptContent;
+    };
+
+    skinScriptContent.addEventListener('click', ev => activeSpecialSkin(skinScriptContent, changeSpecialSkinsContainer));
+
+    skinScriptContainer.append(skinScriptContent);
+    skinsScriptContainer.push(skinScriptContainer);
+};
+activeSpecialSkin(firstScriptSkinContent, changeSpecialSkinsContainer);
+
+
 changeSpecialSkins.append(titleSpecialSkinsContainer, changeSpecialSkinsContainer, toggleSpecialSkinsContainer);
 menuContainer.append(changeSkins, userSettingsContainer, changeSpecialSkins);
