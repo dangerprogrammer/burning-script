@@ -109,6 +109,7 @@
 
         .skin-special-container::before {
             right: 0;
+            translate: 50%;
         }
 
         .skin-content, .skin-special-content {
