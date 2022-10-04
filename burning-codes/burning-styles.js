@@ -191,6 +191,7 @@
         }
 
         .username-container {
+            position: relative;
             border: 2px solid #333;
             border-radius: 10px 0 0 10px;
             padding: 10px 25px;
@@ -202,8 +203,21 @@
             width: 25rem;
         }
 
+        .username-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #f002;
+            pointer-events: none;
+            z-index: -1;
+            border: 2px solid transparent;
+            border-bottom-color: red;
+        }
+
         .username-content {
-            position: relative;
             background: transparent;
             border: none;
             outline: none;
