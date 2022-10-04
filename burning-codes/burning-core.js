@@ -79,7 +79,7 @@ toggleSpecialSkinsContainer.addEventListener('click', ev => {
 
 changeSpecialSkinsContainer.addEventListener('mousewheel', changeSpecialSkinsScroll);
 
-const scriptSkins = 20,
+const scriptSkins = 30,
     skinsScriptContainer = [];
 window.scriptSkins = scriptSkins;
 let firstScriptSkinContent;
@@ -108,4 +108,3 @@ changeSpecialSkinsContent.append(...skinsScriptContainer);
 changeSpecialSkinsContainer.append(changeSpecialSkinsContent);
 changeSpecialSkins.append(titleSpecialSkinsContainer, changeSpecialSkinsContainer, toggleSpecialSkinsContainer);
 menuContainer.append(changeSkins, userSettingsContainer, changeSpecialSkins);
-// Opaaaaa
