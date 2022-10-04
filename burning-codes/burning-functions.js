@@ -15,6 +15,9 @@
         removeElems(...elems) {
             elems.forEach(elem => elem && elem.remove());
         },
+        hideElems(...elems) {
+            elems.forEach(elem => elem && (elem.hidden = true));
+        },
         resetFuncs(...funcs) {
             funcs.forEach((func, ind) => func && (funcs[ind] = null));
         },

@@ -1,4 +1,5 @@
-removeElems(linksContainer, smallAdContainer, ...menuContainer.children);
+removeElems(linksContainer, ...menuContainer.children);
+hideElems(smallAdContainer);
 resetFuncs(updateAdPos, youtuberList);
 
 document.title = 'Burning Script - 1.0.0';
