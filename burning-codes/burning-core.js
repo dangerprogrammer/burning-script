@@ -56,7 +56,7 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     gameTitle = createElem('h1', {className: 'game-title', innerHTML: 'Burning Script'}),
     usernameContainer = createElem('div', {className: 'username-container'}),
     creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
-    usernameContent = createElem('input', {placeholder: 'Digite seu nome!', className: 'username-content', maxlength: 14}),
+    usernameContent = createElem('input', {placeholder: 'Digite seu nome!', className: 'username-content', maxLength: 14}),
     playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game'});
 
 usernameContainer.append(usernameContent, playContent);
