@@ -1,5 +1,5 @@
 <h1>How to use the script?</h1>
-<h3>This script was created to improve the UX/UI from a .io game called bloble.io (http://bloble.io/)</h3>
+<h3>This script was created to improve the game experience from a .io game called bloble.io (http://bloble.io/)</h3>
 <p>To use this script is very simply, first you need to install the Tampermonkey (https://youtu.be/8tyjJD65zws) extension, and then copy & paste the code below. (Please, do not destroy the game, use wisely and enjoy the script! :D)</p>
 <p>
   <h2>Copy & Paste the Code in a new Tampermonkey script!</h2>
