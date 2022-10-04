@@ -62,7 +62,7 @@
         }
 
         .change-skins.active .change-skins-container, .change-special-skins.active .change-special-skins-container {
-            max-height: calc((var(--skin-size) + 15px) * var(--skins-toshow) + 15px);
+            max-height: calc((var(--skin-size) + 15px) * var(--skins-toshow) - var(--skin-size) / 2);
         }
 
         .change-skins-container::-webkit-scrollbar, .change-special-skins-container::-webkit-scrollbar {
