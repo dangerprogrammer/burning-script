@@ -199,8 +199,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition-fast);
             width: 25rem;
+            overflow: hidden;
         }
 
         .username-container::before {
@@ -210,11 +210,12 @@
             left: 0;
             height: 100%;
             width: 100%;
-            background: #f002;
             pointer-events: none;
             z-index: -1;
-            border: 2px solid transparent;
-            border-bottom-color: red;
+            border-bottom: 2px solid #eee;
+            box-sizing: border-box;
+            scale: 0 1;
+            transition: var(--transition-fast);
         }
 
         .username-content {
@@ -228,8 +229,8 @@
             font-size: 1.5rem;
         }
 
-        .username-container:has(.username-content:focus) {
-            border-bottom-color: #eee;
+        .username-container:has(.username-content:focus)::before {
+            scale: 1;
         }
 
         .play-content {
