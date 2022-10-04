@@ -57,13 +57,15 @@ changeSkins.append(titleSkinsContainer, changeSkinsContainer, toggleSkinsContain
 
 const userSettingsContainer = createElem('div', {className: 'user-settings-container'}),
     gameTitle = createElem('h1', {className: 'game-title', innerHTML: 'Burning Script'}),
-    usernameContainer = createElem('div', {className: 'username-container'}),
+    usernameplayContainer = createElem('div', {className: 'usernameplay-container'}),
     creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
+    usernameContainer = createElem('div', {className: 'username-container'}),
     usernameContent = createElem('input', {placeholder: 'Digite seu nome!', className: 'username-content', maxLength: 14}),
     playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game'});
 
-usernameContainer.append(usernameContent, playContent);
-userSettingsContainer.append(gameTitle, usernameContainer, creditsContainer);
+usernameContainer.append(usernameContent);
+usernameplayContainer.append(usernameContainer, playContent);
+userSettingsContainer.append(gameTitle, usernameplayContainer, creditsContainer);
 
 const changeSpecialSkins = createElem('div', {className: 'change-special-skins'}),
     changeSpecialSkinsContainer = createElem('div', {className: 'change-special-skins-container'}),

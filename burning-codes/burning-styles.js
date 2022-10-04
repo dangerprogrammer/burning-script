@@ -185,7 +185,18 @@
             letter-spacing: .2em;
         }
 
+        .usernameplay-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .username-container {
+            border: 2px solid #333;
+            border-radius: 10px 0 0 10px;
+            padding: 10px 25px;
+            flex-shrink: 0;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -195,13 +206,14 @@
             background: transparent;
             border: none;
             outline: none;
-            border: 2px solid #333;
-            border-radius: 10px 0 0 10px;
             color: #eee;
-            padding: 10px 25px;
             width: 100%;
-            flex-shrink: 0;
-            text-align: center;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition-fast);
+        }
+
+        .username-content:focus {
+            border-bottom: 2px solid #eee;
         }
 
         .play-content {
