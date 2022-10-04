@@ -242,10 +242,11 @@
             padding: 5px 15px;
             border-radius: 0 10px 10px 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: .2rem;
             flex-shrink: 0;
             cursor: pointer;
             transition: var(--transition-default);
+            font-weight: 900;
         }
 
         .play-content:hover {
