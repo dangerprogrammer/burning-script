@@ -195,11 +195,11 @@
             border-radius: 10px 0 0 10px;
             padding: 10px 25px;
             flex-shrink: 0;
-            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition-fast);
+            width: 25rem;
         }
 
         .username-content {
@@ -209,6 +209,7 @@
             outline: none;
             color: #eee;
             width: 100%;
+            text-align: center;
             border-bottom: 2px solid transparent;
             font-size: 1.5rem;
         }
