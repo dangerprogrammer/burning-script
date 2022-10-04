@@ -102,6 +102,7 @@ while (skinsScriptContainer.length < scriptSkins + 1) {
 };
 activeSpecialSkin(firstScriptSkinContent, changeSpecialSkinsContainer);
 
-
+changeSpecialSkinsContent.append(...skinsScriptContainer);
+changeSpecialSkinsContainer.append(changeSpecialSkinsContent);
 changeSpecialSkins.append(titleSpecialSkinsContainer, changeSpecialSkinsContainer, toggleSpecialSkinsContainer);
 menuContainer.append(changeSkins, userSettingsContainer, changeSpecialSkins);
