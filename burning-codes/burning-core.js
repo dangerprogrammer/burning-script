@@ -3,6 +3,9 @@ resetFuncs(updateAdPos, youtuberList);
 
 document.title = 'Burning Script - 1.0.0';
 
+cid = UTILS.getUniqueID();
+localStorage.setItem("cid", cid);
+
 const changeSkins = createElem('div', {className: 'change-skins'}),
     changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
     changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
