@@ -93,6 +93,7 @@
             display: grid;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .skin-container::before, .skin-special-container::before {
