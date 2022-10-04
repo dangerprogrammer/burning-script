@@ -77,6 +77,8 @@ toggleSpecialSkinsContainer.addEventListener('click', ev => {
     setTimeout(() => changeSpecialSkinsContainer.scrollTo(0, skinSpecialContainer.offsetTop - 15), 5e2);
 });
 
+changeSpecialSkinsContainer.addEventListener('mousewheel', changeSpecialSkinsScroll);
+
 const scriptSkins = 4,
     skinsScriptContainer = [];
 window.scriptSkins = scriptSkins;
