@@ -187,8 +187,7 @@
 
         .usernameplay-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: row;
         }
 
         .username-container {
@@ -200,20 +199,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: var(--transition-fast);
         }
 
         .username-content {
+            position: relative;
             background: transparent;
             border: none;
             outline: none;
             color: #eee;
             width: 100%;
             border-bottom: 2px solid transparent;
-            transition: var(--transition-fast);
+            font-size: 1.5rem;
         }
 
-        .username-content:focus {
-            border-bottom: 2px solid #eee;
+        .username-container:has(.username-content:focus) {
+            border-bottom-color: #eee;
         }
 
         .play-content {
