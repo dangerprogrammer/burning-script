@@ -65,6 +65,15 @@
             ev.preventDefault();
             if (ev.wheelDeltaY < 0) activeSpecialSkin(nextSpecialSkin, changeSpecialSkinsContainer);
             else activeSpecialSkin(prevSpecialSkin, changeSpecialSkinsContainer);
+        },
+        enterGame() {
+            socket && unitList && (showMainMenuText(randomLoadingTexts[UTILS.randInt(0, randomLoadingTexts.length - 1)]), hasStorage && localStorage.setItem("lstnmdbl", userNameInput.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
+                socket.emit("spawn", {
+                    name: userNameInput.value,
+                    skin: currentSkin
+                }, a)
+            }))
+            console.log('A!');
         }
     };
 
