@@ -107,6 +107,10 @@
             scale: 1 0;
         }
 
+        .skin-special-container::before {
+            right: 0;
+        }
+
         .skin-content, .skin-special-content {
             height: var(--skin-size);
             width: var(--skin-size);
