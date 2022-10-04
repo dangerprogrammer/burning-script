@@ -52,6 +52,7 @@
             changeSpecialSkinsContainer.scrollTo(0, skinScriptContainer.offsetTop - 15);
             global.changeSpecialSkinsContainer = changeSpecialSkinsContainer;
             global.activedSpecialSkin = skin;
+            global.currentSpecialSkin = +skin.dataset.skin + 1;
             setTimeout(() => {
                 const prevSkin = query(`.skin-special-content[data-skin="${prevSkinInd}"]`),
                   nextSkin = query(`.skin-special-content[data-skin="${nextSkinInd}"]`);
