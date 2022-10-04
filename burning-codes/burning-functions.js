@@ -28,6 +28,7 @@
             changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - 15);
             global.changeSkinsContainer = changeSkinsContainer;
             global.activedSkin = skin;
+            currentSkin = +skin.dataset.skin + 1;
             setTimeout(() => {
                 const prevSkin = query(`.skin-content[data-skin="${prevSkinInd}"]`),
                   nextSkin = query(`.skin-content[data-skin="${nextSkinInd}"]`);

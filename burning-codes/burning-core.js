@@ -67,6 +67,12 @@ usernameContainer.append(usernameContent);
 usernameplayContainer.append(usernameContainer, playContent);
 userSettingsContainer.append(gameTitle, usernameplayContainer, creditsContainer);
 
+usernameContent.addEventListener('keydown', ev => {
+    if (ev.code === 'Enter') enterGame();
+});
+
+playContent.addEventListener('click', enterGame);
+
 const changeSpecialSkins = createElem('div', {className: 'change-special-skins'}),
     changeSpecialSkinsContainer = createElem('div', {className: 'change-special-skins-container'}),
     changeSpecialSkinsContent = createElem('div', {className: 'change-special-skins-content'}),
