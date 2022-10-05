@@ -281,6 +281,7 @@
 
         .play-content:hover ion-icon {
             translate: 5px;
+            scale: 1.5;
         }
         `
     });
