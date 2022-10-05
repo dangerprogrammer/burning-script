@@ -308,6 +308,9 @@
 
         .toggle-type-skins {
             grid-area: toggle-type-skins;
+            border-bottom: 2px solid #333;
+            display: flex;
+            flex-direction: row;
         }
 
         .toggle-skins {
@@ -321,6 +324,12 @@
 
         .skins-list-container {
             grid-area: skins-list;
+        }
+
+        .game-skins, .script-skins {
+            flex-shrink: 0;
+            height: 100%;
+            width: 100%;
         }
         `
     });
