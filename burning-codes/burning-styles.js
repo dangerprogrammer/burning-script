@@ -348,7 +348,7 @@
             grid-area: skins-list;
         }
 
-        .game-skins-container, .script-skins-container {
+        .game-skins-title, .script-skins-title {
             flex-shrink: 0;
             width: 100%;
             text-transform: uppercase;
@@ -356,7 +356,7 @@
             font-weight: 800;
         }
 
-        .game-skins-container {
+        .game-skins-title {
             border-bottom: var(--border-default);
         }
         `
