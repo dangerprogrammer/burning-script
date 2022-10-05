@@ -320,6 +320,12 @@
             align-items: center;
             justify-content: center;
             padding: 8px;
+            cursor: pointer;
+            transition: var(--transition-default);
+        }
+
+        .toggle-skins:hover {
+            background: #161616a0;
         }
 
         .skins-list-container {
