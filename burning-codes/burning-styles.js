@@ -202,7 +202,7 @@
             overflow: hidden;
         }
 
-        .username-container::before {
+        .username-container::before, .guild-container::before {
             content: '';
             position: absolute;
             top: 0;
@@ -224,24 +224,41 @@
             color: #eee;
             width: 100%;
             text-align: center;
-            border-bottom: 2px solid transparent;
             font-size: 1.5rem;
         }
 
-        .username-container:has(.username-content:focus)::before {
+        .username-container:has(.username-content:focus)::before, .guild-container:has(.guild-content:focus)::before {
             scale: 1;
         }
 
-        .guild-container {
+        .guild-container, .play-content {
+            border: 2px solid #333;
+            border-left: none;
+        }
 
+        .guild-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guild-content {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #eee;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .play-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #333;
-            border-left: none;
             padding: 5px 15px;
             border-radius: 0 10px 10px 0;
             text-transform: uppercase;
