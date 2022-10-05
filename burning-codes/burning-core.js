@@ -81,6 +81,7 @@ skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
+window.toggleTypeSkins = toggleTypeSkins;
 toggleSkinsType(toggleTypeSkins);
 toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(toggleTypeSkins));
 
