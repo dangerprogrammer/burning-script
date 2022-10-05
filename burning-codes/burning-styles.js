@@ -273,6 +273,15 @@
         .play-content:hover {
             background: #161616a0;
         }
+
+        .play-content ion-icon {
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .play-content:hover ion-icon {
+            translate: 5px;
+        }
         `
     });
 
