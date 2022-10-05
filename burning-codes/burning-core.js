@@ -62,7 +62,7 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
     usernameContainer = createElem('div', {className: 'username-container'}),
     usernameContent = createElem('input', {className: 'username-content', placeholder: 'Type your nickname', maxLength: 14}),
-    playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game'}),
+    playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game <ion-icon name="arrow-forward-outline"></ion-icon>'}),
     guildContainer = createElem('div', {className: 'guild-container'}),
     guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5});
 
@@ -83,7 +83,7 @@ const changeSpecialSkins = createElem('div', {className: 'change-special-skins'}
     changeSpecialSkinsContainer = createElem('div', {className: 'change-special-skins-container'}),
     changeSpecialSkinsContent = createElem('div', {className: 'change-special-skins-content'}),
     toggleSpecialSkinsContainer = createElem('div', {className: 'toggle-special-skins-container'}),
-    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Script Skins <ion-icon name="arrow-forward-outline"></ion-icon>'}),
+    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Script Skins'}),
     toggleSpecialSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
 
 toggleSpecialSkinsContainer.append(toggleSpecialSkinsContainerIcon);
