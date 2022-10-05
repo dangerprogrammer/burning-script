@@ -81,7 +81,7 @@
             }));
             console.log('A!');
         },
-        toggleSkinsType() {
+        toggleSkinsType(toggleTypeSkins) {
             const dataType = skinsSettingsContainer.dataset.skinType;
             if (dataType) skinsSettingsContainer.dataset.skinType = dataType === 'game-skins' ? 'script-skins' : 'game-skins';
             else skinsSettingsContainer.dataset.skinType = 'game-skins';
