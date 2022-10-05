@@ -311,7 +311,7 @@
             grid-area: toggle-type-skins;
             border-bottom: 2px solid #333;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         }
 
         .toggle-skins {
@@ -335,7 +335,6 @@
 
         .game-skins-container, .script-skins-container {
             flex-shrink: 0;
-            height: 100%;
             width: 100%;
             cursor: pointer;
             transition: var(--transition-default);
