@@ -73,9 +73,9 @@
             else activeSpecialSkin(prevSpecialSkin, changeSpecialSkinsContainer);
         },
         enterGame() {
-            socket && unitList && (setClassOn('hidden'), hasStorage && localStorage.setItem("lstnmdbl", userNameInput.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
+            socket && unitList && (setClassOn('hidden'), hasStorage && localStorage.setItem("lstnmdbl", usernameContent.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
                 socket.emit("spawn", {
-                    name: userNameInput.value,
+                    name: usernameContent.value,
                     skin: currentSkin
                 }, a)
             }))

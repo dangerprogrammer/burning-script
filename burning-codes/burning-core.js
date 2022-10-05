@@ -71,6 +71,8 @@ usernameContainer.append(usernameContent);
 usernameplayContainer.append(usernameContainer, guildContainer, playContent);
 userSettingsContainer.append(gameTitle, usernameplayContainer, creditsContainer);
 
+hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = localStorage.getItem("lstnmdbl"));
+
 usernameContent.addEventListener('keydown', ev => {
     if (ev.code === 'Enter') enterGame();
 });
