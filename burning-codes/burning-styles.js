@@ -209,7 +209,6 @@
 
         .username-container {
             position: relative;
-            border-radius: 10px 0 0 10px;
             padding: 10px 25px;
             flex-shrink: 0;
             display: flex;
@@ -273,7 +272,6 @@
             justify-content: center;
             gap: 10px;
             padding: 5px 15px;
-            border-radius: 0 10px 10px 0;
             text-transform: uppercase;
             letter-spacing: .2rem;
             flex-shrink: 0;
