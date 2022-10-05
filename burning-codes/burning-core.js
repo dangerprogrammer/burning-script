@@ -68,8 +68,8 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5}),
     skinsSettingsContainer = createElem('div', {className: 'skins-settings-container'}),
     toggleTypeSkins = createElem('div', {className: 'toggle-type-skins'}),
-    gameSkinsContainer = createElem('div', {className: 'game-skins-container'}),
-    scriptSkinsContainer = createElem('div', {className: 'script-skins-container'}),
+    gameSkinsContainer = createElem('div', {className: 'game-skins-container', innerHTML: 'Game Skins'}),
+    scriptSkinsContainer = createElem('div', {className: 'script-skins-container', innerHTML: 'Script Skins'}),
     toggleSkins = createElem('div', {className: 'toggle-skins', innerHTML: '<ion-icon name="chevron-down-outline"></ion-icon>'}),
     skinsListContainer = createElem('div', {className: 'skins-list-container'});
 

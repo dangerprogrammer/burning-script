@@ -304,6 +304,7 @@
                 "skins-list toggle-skins";
             grid-template-columns: 1fr auto;
             font-size: 1.5em;
+            overflow: hidden;
         }
 
         .toggle-type-skins {
