@@ -298,6 +298,11 @@
         .skins-settings-container {
             border: 2px solid #333;
             border-radius: 10px;
+            display: grid;
+            grid-template-areas: 
+            "toggle-skins-type toggle-skins"
+            "skins toggle-skins";
+            grid-template-columns: 1fr auto;
         }
         `
     });
