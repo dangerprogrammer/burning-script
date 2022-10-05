@@ -78,7 +78,7 @@
                     name: usernameContent.value,
                     skin: currentSkin
                 }, a)
-            }))
+            }));
             console.log('A!');
         },
         toggleSkinsType(skinsSettingsContainer) {
