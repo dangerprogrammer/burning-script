@@ -83,7 +83,7 @@ const changeSpecialSkins = createElem('div', {className: 'change-special-skins'}
     changeSpecialSkinsContainer = createElem('div', {className: 'change-special-skins-container'}),
     changeSpecialSkinsContent = createElem('div', {className: 'change-special-skins-content'}),
     toggleSpecialSkinsContainer = createElem('div', {className: 'toggle-special-skins-container'}),
-    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Script Skins'}),
+    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Script Skins <ion-icon name="arrow-forward-outline"></ion-icon>'}),
     toggleSpecialSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
 
 toggleSpecialSkinsContainer.append(toggleSpecialSkinsContainerIcon);
