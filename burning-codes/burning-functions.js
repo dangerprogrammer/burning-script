@@ -86,8 +86,7 @@
             if (dataType) skinsSettingsContainer.dataset.skinType = dataType === 'game-skins' ? 'script-skins' : 'game-skins';
             else skinsSettingsContainer.dataset.skinType = 'game-skins';
 
-            toggleTypeSkins.scrollTo(0, (toggleTypeSkins.scrollHeight - toggleTypeSkins.clientHeight) * dataType === 'game-skins');
-            console.log('b');
+            toggleTypeSkins.scrollTo(0, (toggleTypeSkins.scrollHeight - toggleTypeSkins.clientHeight) * (dataType === 'game-skins'));
         }
     };
 
