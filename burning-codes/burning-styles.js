@@ -194,11 +194,21 @@
         .usernameplay-container {
             display: flex;
             flex-direction: row;
+            border: 2px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .usernameplay-container > * {
+            border-right: 2px solid #333;
+        }
+
+        .usernameplay-container > *:last-child {
+            border-right: none;
         }
 
         .username-container {
             position: relative;
-            border: 2px solid #333;
             border-radius: 10px 0 0 10px;
             padding: 10px 25px;
             flex-shrink: 0;
@@ -236,11 +246,6 @@
 
         .username-container:has(.username-content:focus)::before, .guild-container:has(.guild-content:focus)::before {
             scale: 1;
-        }
-
-        .guild-container, .play-content {
-            border: 2px solid #333;
-            border-left: none;
         }
 
         .guild-container {
@@ -290,6 +295,11 @@
         .play-content:hover ion-icon {
             translate: 0;
             scale: 1.5;
+        }
+
+        .skins-settings-container {
+            border: 2px solid #333;
+            border-radius: 10px;
         }
         `
     });
