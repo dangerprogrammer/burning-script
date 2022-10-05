@@ -344,6 +344,10 @@
             font-weight: 800;
         }
 
+        .game-skins-container {
+            border-bottom: var(--border-default);
+        }
+
         .game-skins-container:hover, .script-skins-container:hover {
             background: #161616a0;
         }
