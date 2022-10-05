@@ -66,11 +66,15 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game <ion-icon name="arrow-forward-outline"></ion-icon>'}),
     guildContainer = createElem('div', {className: 'guild-container'}),
     guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5}),
-    skinsSettingsContainer = createElem('div', {className: 'skins-settings-container'});
+    skinsSettingsContainer = createElem('div', {className: 'skins-settings-container'}),
+    toggleTypeSkins = createElem('div', {className: 'toggle-type-skins'}),
+    toggleSkins = createElem('div', {className: 'toggle-skins'}),
+    skinsListContainer = createElem('div', {className: 'skins-list-container'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
 usernameplayContainer.append(usernameContainer, guildContainer, playContent);
+skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 

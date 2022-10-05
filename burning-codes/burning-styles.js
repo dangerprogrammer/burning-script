@@ -299,9 +299,9 @@
             border: 2px solid #333;
             border-radius: 10px;
             display: grid;
-            grid-template-areas: 
-            "toggle-skins-type toggle-skins"
-            "skins toggle-skins";
+            grid-template-areas:
+                "toggle-type-skins toggle-skins"
+                "skins-list toggle-skins";
             grid-template-columns: 1fr auto;
         }
         `
