@@ -259,7 +259,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 10px;
             padding: 5px 15px;
             border-radius: 0 10px 10px 0;
             text-transform: uppercase;
@@ -276,11 +276,12 @@
 
         .play-content ion-icon {
             position: relative;
-            transition: var(--transition-fast);
+            translate: -5px;
+            transition: var(--transition-default);
         }
 
         .play-content:hover ion-icon {
-            translate: 5px;
+            translate: 0;
             scale: 1.5;
         }
         `
