@@ -24,7 +24,7 @@
         setClassOn(className, ...elems) {
             elems.forEach(elem => elem.classList.toggle(className));
         },
-        activeSkin(skin, changeSkinsContainer) {
+        activeSkin(skin) {
             const otherSkins = query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
                   prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : playerSkins) - 1,
                   nextSkinInd = +skin.dataset.skin + 1 < playerSkins ? +skin.dataset.skin + 1 : -1,
@@ -48,7 +48,7 @@
             if (ev.wheelDeltaY < 0) activeSkin(nextSkin, changeSkinsContainer);
             else activeSkin(prevSkin, changeSkinsContainer);
         },
-        activeSpecialSkin(skin, changeSpecialSkinsContainer) {
+        activeSpecialSkin(skin) {
             const otherSpecialSkins = query(`.skin-special-content:not([data-skin="${skin.dataset.skin}"])`, true),
                   prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : scriptSkins) - 1,
                   nextSkinInd = +skin.dataset.skin + 1 < scriptSkins ? +skin.dataset.skin + 1 : -1,
@@ -81,7 +81,7 @@
             }));
             console.log('A!');
         },
-        toggleSkinsType(skinsSettingsContainer) {
+        toggleSkinsType() {
             const dataType = skinsSettingsContainer.dataset.skinType;
             if (dataType) skinsSettingsContainer.dataset.skinType = dataType === 'game-skins' ? 'script-skins' : 'game-skins';
             else skinsSettingsContainer.dataset.skinType = 'game-skins';
