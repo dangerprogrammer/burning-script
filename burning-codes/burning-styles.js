@@ -25,7 +25,8 @@
             left: 0;
             right: 0;
             width: auto;
-            display: grid;
+            display: flex;
+            justify-content: center;
             padding: 15px;
             gap: 15px;
             color: white;
