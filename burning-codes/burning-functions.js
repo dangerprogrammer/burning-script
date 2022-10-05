@@ -73,13 +73,18 @@
             else activeSpecialSkin(prevSpecialSkin, changeSpecialSkinsContainer);
         },
         enterGame() {
-            socket && unitList && (setClassOn('hidden'), hasStorage && localStorage.setItem("lstnmdbl", usernameContent.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
+            socket && unitList && (setClassOn('hidden', userSettingsContainer), hasStorage && localStorage.setItem("lstnmdbl", usernameContent.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
                 socket.emit("spawn", {
                     name: usernameContent.value,
                     skin: currentSkin
                 }, a)
             }))
             console.log('A!');
+        },
+        toggleSkinsType(skinsSettingsContainer) {
+            const dataType = skinsSettingsContainer.dataset.skinType;
+            if (dataType) skinsSettingsContainer.dataset.skinType = dataType === 'game-skins' ? 'script-skins' : 'game-skins';
+            else skinsSettingsContainer.dataset.skinType = 'game-skins';
         }
     };
 
