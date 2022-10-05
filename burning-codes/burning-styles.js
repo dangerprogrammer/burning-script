@@ -337,6 +337,12 @@
             flex-shrink: 0;
             height: 100%;
             width: 100%;
+            cursor: pointer;
+            transition: var(--transition-default);
+        }
+
+        .game-skins-container:hover, .script-skins-container:hover {
+            background: #161616a0;
         }
         `
     });
