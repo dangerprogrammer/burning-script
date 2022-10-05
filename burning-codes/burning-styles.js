@@ -314,6 +314,7 @@
             display: flex;
             flex-direction: column;
             max-height: 35px;
+            cursor: pointer;
         }
 
         .toggle-skins {
@@ -338,7 +339,6 @@
         .game-skins-container, .script-skins-container {
             flex-shrink: 0;
             width: 100%;
-            cursor: pointer;
             transition: var(--transition-default);
             text-transform: uppercase;
             letter-spacing: .5rem;
