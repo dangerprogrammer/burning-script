@@ -316,6 +316,12 @@
             max-height: 35px;
             cursor: pointer;
             transition: var(--transition-default);
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .toggle-type-skins::-webkit-scrollbar {
+            width: 0;
         }
 
         .toggle-type-skins:hover {

@@ -82,6 +82,7 @@ mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
 window.toggleTypeSkins = toggleTypeSkins;
+toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
 toggleSkinsType(toggleTypeSkins);
 toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(toggleTypeSkins));
 
