@@ -315,6 +315,11 @@
             flex-direction: column;
             max-height: 35px;
             cursor: pointer;
+            transition: var(--transition-default);
+        }
+
+        .toggle-type-skins:hover {
+            background: #161616a0;
         }
 
         .toggle-skins {
@@ -339,7 +344,6 @@
         .game-skins-container, .script-skins-container {
             flex-shrink: 0;
             width: 100%;
-            transition: var(--transition-default);
             text-transform: uppercase;
             letter-spacing: .5rem;
             font-weight: 800;
@@ -347,10 +351,6 @@
 
         .game-skins-container {
             border-bottom: var(--border-default);
-        }
-
-        .game-skins-container:hover, .script-skins-container:hover {
-            background: #161616a0;
         }
         `
     });
