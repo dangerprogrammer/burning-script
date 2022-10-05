@@ -333,7 +333,7 @@
             grid-area: skins-list;
         }
 
-        .game-skins, .script-skins {
+        .game-skins-container, .script-skins-container {
             flex-shrink: 0;
             height: 100%;
             width: 100%;
