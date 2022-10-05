@@ -8,6 +8,7 @@
             --transition-fast: .2s;
             --skin-size: 6rem;
             --skins-toshow: 4;
+            --border-default: 2px solid #333;
         }
 
         ion-icon {
@@ -36,7 +37,7 @@
         .change-skins, .change-special-skins {
             position: relative;
             max-height: 100%;
-            border: 2px solid #333;
+            border: var(--border-default);
             border-radius: 15px;
             overflow: hidden;
             display: grid;
@@ -47,7 +48,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 2px solid #333;
+            border-bottom: var(--border-default);
             text-transform: uppercase;
             letter-spacing: .25em;
             font-weight: 900;
@@ -151,7 +152,7 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            border-top: 2px solid #333;
+            border-top: var(--border-default);
         }
 
         .toggle-skins-container:hover, .toggle-special-skins-container:hover {
@@ -194,13 +195,13 @@
         .usernameplay-container {
             display: flex;
             flex-direction: row;
-            border: 2px solid #333;
+            border: var(--border-default);
             border-radius: 10px;
             overflow: hidden;
         }
 
         .usernameplay-container > * {
-            border-right: 2px solid #333;
+            border-right: var(--border-default);
         }
 
         .usernameplay-container > *:last-child {
@@ -296,7 +297,7 @@
         }
 
         .skins-settings-container {
-            border: 2px solid #333;
+            border: var(--border-default);
             border-radius: 10px;
             display: grid;
             grid-template-areas:
@@ -309,14 +310,14 @@
 
         .toggle-type-skins {
             grid-area: toggle-type-skins;
-            border-bottom: 2px solid #333;
+            border-bottom: var(--border-default);
             display: flex;
             flex-direction: column;
         }
 
         .toggle-skins {
             grid-area: toggle-skins;
-            border-left: 2px solid #333;
+            border-left: var(--border-default);
             display: flex;
             align-items: center;
             justify-content: center;
