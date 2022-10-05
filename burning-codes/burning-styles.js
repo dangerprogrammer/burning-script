@@ -304,6 +304,18 @@
                 "skins-list toggle-skins";
             grid-template-columns: 1fr auto;
         }
+
+        .toggle-type-skins {
+            grid-area: toggle-type-skins;
+        }
+
+        .toggle-skins {
+            grid-area: toggle-skins;
+        }
+
+        .skins-list-container {
+            grid-area: skins-list;
+        }
         `
     });
 
