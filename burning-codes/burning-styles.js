@@ -313,6 +313,7 @@
             border-bottom: var(--border-default);
             display: flex;
             flex-direction: column;
+            max-height: 35px;
         }
 
         .toggle-skins {
