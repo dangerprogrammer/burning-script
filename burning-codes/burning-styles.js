@@ -303,6 +303,7 @@
                 "toggle-type-skins toggle-skins"
                 "skins-list toggle-skins";
             grid-template-columns: 1fr auto;
+            font-size: 1.5em;
         }
 
         .toggle-type-skins {
@@ -311,6 +312,11 @@
 
         .toggle-skins {
             grid-area: toggle-skins;
+            border-left: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
         }
 
         .skins-list-container {
