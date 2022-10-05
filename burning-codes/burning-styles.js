@@ -253,6 +253,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            max-width: 130px;
         }
 
         .guild-content {
