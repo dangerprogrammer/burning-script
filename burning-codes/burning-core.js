@@ -62,10 +62,11 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
     usernameContainer = createElem('div', {className: 'username-container'}),
     usernameContent = createElem('input', {placeholder: 'Digite seu nome!', className: 'username-content', maxLength: 14}),
-    playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game'});
+    playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game'}),
+    guildContent = createElem('div', {className: 'guild-content', innerHTML: 'Guild'});
 
 usernameContainer.append(usernameContent);
-usernameplayContainer.append(usernameContainer, playContent);
+usernameplayContainer.append(usernameContainer, guildContent, playContent);
 userSettingsContainer.append(gameTitle, usernameplayContainer, creditsContainer);
 
 usernameContent.addEventListener('keydown', ev => {

@@ -21,6 +21,9 @@
         resetFuncs(...funcs) {
             funcs.forEach((func, ind) => func && (funcs[ind] = null));
         },
+        setClassOn(className, ...elems) {
+            elems.forEach(elem => elem.classList.toggle(className));
+        },
         activeSkin(skin, changeSkinsContainer) {
             const otherSkins = query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
                   prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : playerSkins) - 1,
@@ -70,7 +73,7 @@
             else activeSpecialSkin(prevSpecialSkin, changeSpecialSkinsContainer);
         },
         enterGame() {
-            socket && unitList && (showMainMenuText(randomLoadingTexts[UTILS.randInt(0, randomLoadingTexts.length - 1)]), hasStorage && localStorage.setItem("lstnmdbl", userNameInput.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
+            socket && unitList && (changeSkins, hasStorage && localStorage.setItem("lstnmdbl", userNameInput.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
                 socket.emit("spawn", {
                     name: userNameInput.value,
                     skin: currentSkin
