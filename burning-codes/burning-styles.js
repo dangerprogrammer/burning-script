@@ -28,7 +28,6 @@
             display: grid;
             padding: 15px;
             gap: 15px;
-            grid-template-columns: auto 1fr auto;
             color: white;
             font-family: 'Poppins', sans-serif;
         }
@@ -176,7 +175,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            height: 80%;
+            min-height: 75%;
         }
 
         .game-title {
@@ -231,6 +230,10 @@
 
         .username-container:has(.username-content:focus)::before {
             scale: 1;
+        }
+
+        .guild-container {
+
         }
 
         .play-content {

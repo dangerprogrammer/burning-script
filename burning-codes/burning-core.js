@@ -61,12 +61,14 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     usernameplayContainer = createElem('div', {className: 'usernameplay-container'}),
     creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
     usernameContainer = createElem('div', {className: 'username-container'}),
-    usernameContent = createElem('input', {placeholder: 'Digite seu nome!', className: 'username-content', maxLength: 14}),
+    usernameContent = createElem('input', {className: 'username-content', placeholder: 'Digite seu nome!', maxLength: 14}),
     playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game'}),
-    guildContent = createElem('div', {className: 'guild-content', innerHTML: 'Guild'});
+    guildContainer = createElem('div', {className: 'guild-container'}),
+    guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5});
 
+guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
-usernameplayContainer.append(usernameContainer, guildContent, playContent);
+usernameplayContainer.append(usernameContainer, guildContainer, playContent);
 userSettingsContainer.append(gameTitle, usernameplayContainer, creditsContainer);
 
 usernameContent.addEventListener('keydown', ev => {
@@ -120,4 +122,4 @@ activeSpecialSkin(firstScriptSkinContent, changeSpecialSkinsContainer);
 changeSpecialSkinsContent.append(...skinsScriptContainer);
 changeSpecialSkinsContainer.append(changeSpecialSkinsContent);
 changeSpecialSkins.append(titleSpecialSkinsContainer, changeSpecialSkinsContainer, toggleSpecialSkinsContainer);
-menuContainer.append(changeSkins, userSettingsContainer, changeSpecialSkins);
+menuContainer.append(userSettingsContainer);
