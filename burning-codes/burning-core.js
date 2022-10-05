@@ -81,6 +81,7 @@ skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
+toggleSkinsType(skinsSettingsContainer);
 toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(skinsSettingsContainer));
 
 hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = localStorage.getItem("lstnmdbl"));
