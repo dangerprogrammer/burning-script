@@ -259,6 +259,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 5px;
             padding: 5px 15px;
             border-radius: 0 10px 10px 0;
             text-transform: uppercase;
