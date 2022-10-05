@@ -58,18 +58,21 @@ changeSkins.append(titleSkinsContainer, changeSkinsContainer, toggleSkinsContain
 
 const userSettingsContainer = createElem('div', {className: 'user-settings-container'}),
     gameTitle = createElem('h1', {className: 'game-title', innerHTML: 'Burning Script'}),
+    mainUserSettings = createElem('div', {className: 'main-user-settings'}),
     usernameplayContainer = createElem('div', {className: 'usernameplay-container'}),
     creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
     usernameContainer = createElem('div', {className: 'username-container'}),
     usernameContent = createElem('input', {className: 'username-content', placeholder: 'Type your nickname', maxLength: 14}),
     playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game <ion-icon name="arrow-forward-outline"></ion-icon>'}),
     guildContainer = createElem('div', {className: 'guild-container'}),
-    guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5});
+    guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5}),
+    skinsSettingsContainer = createElem('div', {className: 'skins-settings-container'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
 usernameplayContainer.append(usernameContainer, guildContainer, playContent);
-userSettingsContainer.append(gameTitle, usernameplayContainer, creditsContainer);
+mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
+userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
 hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = localStorage.getItem("lstnmdbl"));
 

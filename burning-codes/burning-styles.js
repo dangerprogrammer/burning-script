@@ -184,6 +184,12 @@
             letter-spacing: .2em;
         }
 
+        .main-user-settings {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
         .usernameplay-container {
             display: flex;
             flex-direction: row;
