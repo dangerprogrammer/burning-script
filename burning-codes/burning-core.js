@@ -45,12 +45,12 @@ while (skinsContainer.length < playerSkins + 1) {
         firstSkinContent = skinContent;
     };
 
-    skinContent.addEventListener('click', ev => activeSkin(skinContent, changeSkinsContainer));
+    skinContent.addEventListener('click', ev => activeSkin(skinContent));
 
     skinContainer.append(skinContent);
     skinsContainer.push(skinContainer);
 };
-activeSkin(firstSkinContent, changeSkinsContainer);
+activeSkin(firstSkinContent);
 
 changeSkinsContent.append(...skinsContainer);
 changeSkinsContainer.append(changeSkinsContent);
@@ -81,8 +81,8 @@ skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
-toggleSkinsType(skinsSettingsContainer);
-toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(skinsSettingsContainer));
+toggleSkinsType();
+toggleTypeSkins.addEventListener('click', toggleSkinsType);
 
 hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = localStorage.getItem("lstnmdbl"));
 
@@ -127,12 +127,12 @@ while (skinsScriptContainer.length < scriptSkins + 1) {
         firstScriptSkinContent = skinScriptContent;
     };
 
-    skinScriptContent.addEventListener('click', ev => activeSpecialSkin(skinScriptContent, changeSpecialSkinsContainer));
+    skinScriptContent.addEventListener('click', ev => activeSpecialSkin(skinScriptContent));
 
     skinScriptContainer.append(skinScriptContent);
     skinsScriptContainer.push(skinScriptContainer);
 };
-activeSpecialSkin(firstScriptSkinContent, changeSpecialSkinsContainer);
+activeSpecialSkin(firstScriptSkinContent);
 
 changeSpecialSkinsContent.append(...skinsScriptContainer);
 changeSpecialSkinsContainer.append(changeSpecialSkinsContent);
