@@ -339,6 +339,9 @@
             width: 100%;
             cursor: pointer;
             transition: var(--transition-default);
+            text-transform: uppercase;
+            letter-spacing: .5rem;
+            font-weight: 800;
         }
 
         .game-skins-container:hover, .script-skins-container:hover {
