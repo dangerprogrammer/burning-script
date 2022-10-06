@@ -72,8 +72,8 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     scriptSkinsTitle = createElem('div', {className: 'script-skins-title', innerHTML: 'Script Skins'}),
     toggleSkins = createElem('div', {className: 'toggle-skins', innerHTML: '<ion-icon name="chevron-down-outline"></ion-icon>'}),
     skinsListContainer = createElem('div', {className: 'skins-list-container'}),
-    gameSkinsContainer = createElem('div', {className: 'game-skins-container'}),
-    scriptSkinsContainer = createElem('div', {className: 'script-skins-container'});
+    gameSkinsContainer = createElem('div', {className: 'game-skins-container', innerHTML: 'Game Skins'}),
+    scriptSkinsContainer = createElem('div', {className: 'script-skins-container', innerHTML: 'Script Skins'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
