@@ -90,6 +90,7 @@
         },
         renderPlayer(a, d, c, b, g) {
             b.save();
+            b.globalAlpha = 0.5;
             if (a.skin && 0 < a.skin && a.skin <= playerSkins && !skinSprites[a.skin]) {
                 var e = new Image;
                 e.onload = function() {
@@ -100,7 +101,7 @@
                 e.src = ".././img/skins/skin_" + (a.skin - 1) + ".png";
                 skinSprites[a.skin] = e
             }
-            a.skin && skinSprites[a.skin] && skinSprites[a.skin].readyToDraw ? (b.globalAlpha = 0.5, e = a.size - b.lineWidth / 4, b.drawImage(skinSprites[a.skin], d - e, c - e, 2 * e, 2 * e), b.lineWidth /= 2, renderCircle(d, c, a.size, b, !1, !0)) : g || (b.fillStyle = playerColors[a.color], renderCircle(d,
+            a.skin && skinSprites[a.skin] && skinSprites[a.skin].readyToDraw ? (e = a.size - b.lineWidth / 4, b.drawImage(skinSprites[a.skin], d - e, c - e, 2 * e, 2 * e), b.lineWidth /= 2, renderCircle(d, c, a.size, b, !1, !0)) : g || (b.fillStyle = playerColors[a.color], renderCircle(d,
                 c, a.size, b));
             b.restore()
         }
