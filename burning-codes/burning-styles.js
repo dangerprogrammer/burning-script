@@ -384,6 +384,15 @@
         .game-skins-title, .game-skins-container {
             border-bottom: var(--border-default);
         }
+
+        .game-skins-container, .script-skins-container {
+            flex-shrink: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         `
     });
 
