@@ -321,7 +321,7 @@
             scroll-behavior: smooth;
         }
 
-        .toggle-type-skins::-webkit-scrollbar {
+        .toggle-type-skins::-webkit-scrollbar, .skins-list-container::-webkit-scrollbar {
             width: 0;
         }
 
@@ -346,6 +346,10 @@
 
         .skins-list-container {
             grid-area: skins-list;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            scroll-behavior: smooth;
         }
 
         .game-skins-title, .script-skins-title {
@@ -356,7 +360,7 @@
             font-weight: 800;
         }
 
-        .game-skins-title {
+        .game-skins-title, .game-skins-container {
             border-bottom: var(--border-default);
         }
         `
