@@ -84,6 +84,7 @@ skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
+toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
 toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
 toggleSkinsType(toggleTypeSkins);

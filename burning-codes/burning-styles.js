@@ -309,6 +309,11 @@
             overflow: hidden;
         }
 
+        .skins-settings-container.hidden {
+            grid-template-areas:
+                "toggle-type-skins toggle-skins";
+        }
+
         .toggle-type-skins {
             grid-area: toggle-type-skins;
             border-bottom: var(--border-default);
@@ -319,6 +324,10 @@
             transition: var(--transition-default);
             overflow-y: auto;
             scroll-behavior: smooth;
+        }
+
+        .skins-settings-container.hidden .toggle-type-skins {
+            border-bottom: none;
         }
 
         .toggle-type-skins::-webkit-scrollbar, .skins-list-container::-webkit-scrollbar {
@@ -335,7 +344,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
+            padding: 0 8px;
             cursor: pointer;
             transition: var(--transition-default);
         }
@@ -350,6 +359,10 @@
             flex-direction: column;
             overflow-y: auto;
             scroll-behavior: smooth;
+        }
+
+        .skins-settings-container.hidden .skins-list-container {
+            display: none;
         }
 
         .game-skins-title, .script-skins-title {
