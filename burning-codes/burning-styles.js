@@ -349,6 +349,14 @@
             transition: var(--transition-default);
         }
 
+        .toggle-skins ion-icon {
+            transition: var(--transition-default);
+        }
+
+        .skins-settings-container.hidden .toggle-skins ion-icon {
+            rotate: 180deg;
+        }
+
         .toggle-skins:hover {
             background: #161616a0;
         }
