@@ -394,8 +394,16 @@
             justify-content: center;
         }
 
-        .game-skins-container, .script-skins-container {
+        .game-skins-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
+        .show-notif-scroll {
+            position: fixed;
+            top: 5px;
+            right: 5px;
         }
         `
     });
