@@ -87,8 +87,8 @@ userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
 toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
-toggleSkinsType(toggleTypeSkins);
-toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(toggleTypeSkins));
+toggleSkinsType(toggleTypeSkins, skinsListContainer);
+toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(toggleTypeSkins, skinsListContainer));
 
 hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = localStorage.getItem("lstnmdbl"));
 

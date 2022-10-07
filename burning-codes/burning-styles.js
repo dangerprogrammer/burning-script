@@ -363,8 +363,8 @@
 
         .skins-list-container {
             grid-area: skins-list;
-            display: grid;
-            grid-template-rows: repeat(2, 1fr);
+            display: flex;
+            flex-direction: column;
             overflow-y: auto;
             scroll-behavior: smooth;
         }

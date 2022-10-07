@@ -82,11 +82,13 @@
             console.log('A!');
         },
         toggleSkinsType(toggleTypeSkins) {
-            const dataType = skinsSettingsContainer.dataset.skinType;
-            if (dataType) skinsSettingsContainer.dataset.skinType = dataType === 'game-skins' ? 'script-skins' : 'game-skins';
+            const dataType = skinsSettingsContainer.dataset.skinType,
+                typeSkins = dataType === 'game-skins';
+            if (dataType) skinsSettingsContainer.dataset.skinType = typeSkins ? 'script-skins' : 'game-skins';
             else skinsSettingsContainer.dataset.skinType = 'game-skins';
 
-            toggleTypeSkins.scrollTo(0, (toggleTypeSkins.scrollHeight - toggleTypeSkins.clientHeight) * (dataType === 'game-skins'));
+            toggleTypeSkins.scrollTo(0, (toggleTypeSkins.scrollHeight - toggleTypeSkins.clientHeight) * typeSkins);
+            skinsListContainer.scrollTo(0, (skinsListContainer.scrollHeight - skinsListContainer.clientHeight) * typeSkins);
         },
         renderPlayer(a, d, c, b, g) {
             b.save();
