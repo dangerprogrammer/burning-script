@@ -422,11 +422,17 @@
             transition: var(--transition-default);
         }
 
-        .game-skins-page {
+        .game-skins-pages {
             padding: 5px 10px;
             display: flex;
             flex-direction: row;
             gap: 5px;
+        }
+
+        .game-skins-page {
+            height: 8px;
+            width: 8px;
+            flex-grow: 1;
         }
         `
     });
