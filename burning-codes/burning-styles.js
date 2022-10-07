@@ -392,7 +392,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
         }
 
         .game-skins-content {
