@@ -59,11 +59,21 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     const gamePagesSkins = Math.min(playerSkins - pagesListLength * gameSkinsPagesList.length, pagesListLength);
 
     while (gamePagesSkin.length < gamePagesSkins) {
-        gamePagesSkin.push(`skin ${gamePagesSkin.length + pagesListLength * gameSkinsPagesList.length}`);
+        const gameSkinInd = gamePagesSkin.length + pagesListLength * gameSkinsPagesList.length;
+
+        const gameSkinContainer = createElem('div', {className: 'game-skin-container'}),
+            gameSkinContent = createElem('div', {className: 'game-skin-content'});
+
+        gameSkinContainer.append(gameSkinContent);
+        gamePagesSkin.push(gameSkinContainer);
     };
 
-    gameSkinsPagesList.push(gamePagesSkin);
+    const gameSkinsPage = createElem('div', {className: 'game-skins-page'});
+
+    gameSkinsPagesList.push(gameSkinsPage);
 };
+
+gameSkinsPages.append(...gameSkinsPagesList);
 
 console.log(gameSkinsPagesList);
 
