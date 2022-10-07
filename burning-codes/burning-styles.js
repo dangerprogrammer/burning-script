@@ -217,6 +217,7 @@
             justify-content: center;
             width: 25rem;
             overflow: hidden;
+            flex-grow: 1;
         }
 
         .username-container::before, .guild-container::before {
