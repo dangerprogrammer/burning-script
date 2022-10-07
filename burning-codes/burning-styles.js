@@ -421,6 +421,13 @@
             scroll-behavior: smooth;
             transition: var(--transition-default);
         }
+
+        .game-skins-page {
+            padding: 5px 10px;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
         `
     });
 
