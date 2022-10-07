@@ -52,7 +52,8 @@ const pagesListLength = 20,
 
 let gameSkinsPagesList = [],
     gameSkinsPageList = [],
-    gamePagesSkin = [];
+    gamePagesSkin = [],
+    lastGameSkin;
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gamePagesSkin = [];
@@ -64,7 +65,15 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
         const gameSkinInd = gamePagesSkin.length + pagesListLength * gameSkinsPagesList.length;
 
         const gameSkinContainer = createElem('div', {className: 'game-skin-container'}),
-            gameSkinContent = createElem('div', {className: 'game-skin-content', innerHTML: `Skin ${gameSkinInd}`});
+            gameSkinContent = createElem('div', {className: 'game-skin-content'}),
+            skinInd = gameSkinInd - 1;
+
+        gameSkinContent.dataset.skinInd = skinInd;
+        if (gameSkinInd) gameSkinContent.style.backgroundImage = `http://bloble.io/img/skins/skin_${skinInd}.png`;
+        else {
+            gameSkinContent.backgroundColor = '#ff6060';
+            lastGameSkin = gameSkinContent;
+        };
 
         gameSkinContainer.append(gameSkinContent);
         gamePagesSkin.push(gameSkinContainer);
@@ -79,6 +88,7 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gameSkinsPagesList.push(gameSkinsPage);
     gameSkinsPageList.push(gameSkinPage);
 };
+// activeSkin(lastGameSkin);
 
 gameSkins.append(...gameSkinsPageList);
 gameSkinsPages.append(...gameSkinsPagesList);
