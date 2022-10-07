@@ -189,6 +189,7 @@
         .main-user-settings {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
         }
 
@@ -217,7 +218,6 @@
             justify-content: center;
             width: 25rem;
             overflow: hidden;
-            flex-grow: 1;
         }
 
         .username-container::before, .guild-container::before {
