@@ -303,7 +303,7 @@
             display: grid;
             grid-template-areas:
                 "toggle-type-skins toggle-skins"
-                "skins-list toggle-skins";
+                "skins-list        toggle-skins";
             grid-template-columns: 1fr auto;
             font-size: 1.5em;
             overflow: hidden;
@@ -412,6 +412,14 @@
             justify-content: center;
             cursor: pointer;
             padding: 10px 20px;
+        }
+
+        .game-skins {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            transition: var(--transition-default);
         }
         `
     });
