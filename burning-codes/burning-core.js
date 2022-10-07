@@ -55,7 +55,7 @@ let gameSkinsPagesList = [],
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gamePagesSkin = [];
-    
+
     while (gamePagesSkin.length < playerSkins - pagesListLength * gameSkinsPagesList.length) {
         gamePagesSkin.push(`skin ${gamePagesSkin.length}`);
     };
