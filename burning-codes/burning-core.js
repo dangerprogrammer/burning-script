@@ -34,7 +34,7 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     gameSkins = createElem('div', {className: 'game-skins'}),
     leftGamePage = createElem('div', {className: 'game-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
     rightGamePage = createElem('div', {className: 'game-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
-    showNotifScroll = createElem('div', {className: 'show-notif-scroll', innerHTML: 'III'});
+    showNotifScroll = createElem('div', {className: 'show-notif-scroll', innerHTML: 'I'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
