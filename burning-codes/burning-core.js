@@ -54,8 +54,16 @@ let gameSkinsPagesList = [],
     gamePagesSkin = [];
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
-    gameSkinsPagesList.push(0);
+    gamePagesSkin = [];
+    
+    while (gamePagesSkin.length < playerSkins - pagesListLength * gameSkinsPagesList.length) {
+        gamePagesSkin.push(`skin ${gamePagesSkin.length}`);
+    };
+
+    gameSkinsPagesList.push(gamePagesSkin);
 };
+
+console.log(gameSkinsPagesList);
 
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
