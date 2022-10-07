@@ -69,13 +69,13 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
         gamePagesSkin.push(gameSkinContainer);
     };
 
-    gamePagesSkinList.push(gamePagesSkin);
+    gamePagesSkinList.push(...gamePagesSkin);
 
     const gameSkinsPage = createElem('div', {className: 'game-skins-page'});
 
     if (!gameSkinsPagesList.length) gameSkinsPage.classList.add('active');
 
-    gameSkinsPagesList.push(...gameSkinsPage);
+    gameSkinsPagesList.push(gameSkinsPage);
 };
 
 gameSkins.append(...gamePagesSkinList);
