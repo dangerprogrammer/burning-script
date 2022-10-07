@@ -317,8 +317,8 @@
         .toggle-type-skins {
             grid-area: toggle-type-skins;
             border-bottom: var(--border-default);
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
             max-height: 35px;
             cursor: pointer;
             transition: var(--transition-default);
@@ -363,8 +363,8 @@
 
         .skins-list-container {
             grid-area: skins-list;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
             overflow-y: auto;
             scroll-behavior: smooth;
         }
@@ -392,6 +392,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        .game-skins-container, .script-skins-container {
+
         }
         `
     });
