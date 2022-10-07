@@ -434,7 +434,13 @@
             height: 8px;
             width: 8px;
             flex-grow: 1;
-            background: #333;
+            background: #333a;
+            border-radius: 4px;
+            transition: var(--transition-default);
+        }
+
+        .game-skins-page.active {
+            background: #888;
         }
         `
     });
