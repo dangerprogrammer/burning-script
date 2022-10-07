@@ -467,6 +467,10 @@
             display: flex;
             flex-direction: row;
             border-right: var(--border-default);
+            max-width: 100%;
+            overflow-x: auto;
+            flex-shrink: 0;
+            gap: 10px;
         }
 
         .game-skin-page:last-child {
