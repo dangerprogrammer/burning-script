@@ -405,6 +405,14 @@
             position: fixed;
             margin: 5px 10px;
         }
+
+        .game-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
         `
     });
 
