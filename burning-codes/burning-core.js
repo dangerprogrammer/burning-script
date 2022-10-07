@@ -51,7 +51,8 @@ const pagesListLength = 20,
     gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength);
 
 let gameSkinsPagesList = [],
-    gamePagesSkin = [];
+    gamePagesSkin = [],
+    gamePagesSkinList = [];
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gamePagesSkin = [];
@@ -68,6 +69,8 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
         gamePagesSkin.push(gameSkinContainer);
     };
 
+    gamePagesSkinList.push(gamePagesSkin);
+
     const gameSkinsPage = createElem('div', {className: 'game-skins-page'});
 
     if (!gameSkinsPagesList.length) gameSkinsPage.classList.add('active');
@@ -75,9 +78,10 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gameSkinsPagesList.push(gameSkinsPage);
 };
 
+gameSkins.append(...gamePagesSkinList);
 gameSkinsPages.append(...gameSkinsPagesList);
 
-console.log(gameSkinsPagesList);
+console.log(gamePagesSkinList);
 
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
