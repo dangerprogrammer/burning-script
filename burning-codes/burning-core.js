@@ -51,34 +51,37 @@ const pagesListLength = 20,
     gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength);
 
 let gameSkinsPagesList = [],
+    gameSkinsPageList = [],
     gamePagesSkin = [],
     gamePagesSkinList = [];
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gamePagesSkin = [];
 
-    const gamePagesSkins = Math.min(playerSkins - pagesListLength * gameSkinsPagesList.length, pagesListLength);
+    const gamePagesSkins = Math.min(playerSkins - pagesListLength * gameSkinsPagesList.length, pagesListLength),
+        gameSkinPage = createElem('div', {className: 'game-skin-page'});
 
     while (gamePagesSkin.length < gamePagesSkins) {
         const gameSkinInd = gamePagesSkin.length + pagesListLength * gameSkinsPagesList.length;
 
         const gameSkinContainer = createElem('div', {className: 'game-skin-container'}),
-            gameSkinContent = createElem('div', {className: 'game-skin-content'});
+            gameSkinContent = createElem('div', {className: 'game-skin-content', innerHTML: `Skin ${gameSkinInd}`});
 
         gameSkinContainer.append(gameSkinContent);
         gamePagesSkin.push(gameSkinContainer);
     };
 
-    gamePagesSkinList.push(...gamePagesSkin);
+    gameSkinPage.append(...gamePagesSkin);
 
     const gameSkinsPage = createElem('div', {className: 'game-skins-page'});
 
     if (!gameSkinsPagesList.length) gameSkinsPage.classList.add('active');
 
     gameSkinsPagesList.push(gameSkinsPage);
+    gameSkinsPageList.push(gameSkinPage);
 };
 
-gameSkins.append(...gamePagesSkinList);
+gameSkins.append(...gameSkinsPageList);
 gameSkinsPages.append(...gameSkinsPagesList);
 
 console.log(gamePagesSkinList);
