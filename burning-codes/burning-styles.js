@@ -461,11 +461,12 @@
             position: absolute;
             width: 80%;
             height: 8px;
+            top: 0;
             translate: 0 -50%;
             transition: var(--transition-fast);
             background: white;
             border-radius: 4px;
-            scale: 1 0;
+            scale: 0 1;
         }
 
         .game-skin-content {
@@ -487,7 +488,7 @@
             opacity: .85;
         }
 
-        .game-skin-container:has(.game-skin-content:hover:not(.active)) {
+        .game-skin-container:has(.game-skin-content:hover:not(.active))::before {
             scale: .65 1;
         }
 
