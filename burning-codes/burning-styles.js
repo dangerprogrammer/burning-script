@@ -442,6 +442,21 @@
         .game-skins-page.active {
             background: #888;
         }
+
+        .game-skin-container {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-skin-content {
+            height: var(--skin-size);
+            width: var(--skin-size);
+            border-radius: 50%;
+            overflow: hidden;
+            background: #222a;
+        }
         `
     });
 
