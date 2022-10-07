@@ -7,54 +7,9 @@ document.title = 'Burning Script - 1.0.0';
 cid = UTILS.getUniqueID();
 localStorage.setItem("cid", cid);
 
-const changeSkins = createElem('div', {className: 'change-skins'}),
-    changeSkinsContainer = createElem('div', {className: 'change-skins-container'}),
-    changeSkinsContent = createElem('div', {className: 'change-skins-content'}),
-    toggleSkinsContainer = createElem('div', {className: 'toggle-skins-container'}),
-    titleSkinsContainer = createElem('div', {className: 'title-skins-container', innerHTML: 'Game Skins'}),
-    toggleSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
-
-toggleSkinsContainer.append(toggleSkinsContainerIcon);
-
-toggleSkinsContainer.addEventListener('click', ev => {
-    const skinContainer = activedSkin.parentElement;
-    changeSkins.classList.toggle('active');
-    setTimeout(() => changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - 15), 5e2);
-});
-
-changeSkinsContainer.addEventListener('mousewheel', changeSkinsScroll);
-
 const ionIcons = createElems(['script', {type: 'module', src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}], ['script', {nomodule: true, src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}]);
 
 document.body.append(...ionIcons);
-
-const skinsContainer = [];
-let firstSkinContent;
-
-while (skinsContainer.length < playerSkins + 1) {
-    const skinContainer = createElem('div', {className: 'skin-container'}),
-        skinContent = createElem('div', {className: 'skin-content'});
-
-    if (skinsContainer.length) {
-        const skinInd = skinsContainer.length - 1;
-        skinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinInd}.png')`;
-        skinContent.dataset.skin = skinInd;
-    } else {
-        skinContent.style.backgroundColor = '#ff6060';
-        skinContent.dataset.skin = -1;
-        firstSkinContent = skinContent;
-    };
-
-    skinContent.addEventListener('click', ev => activeSkin(skinContent));
-
-    skinContainer.append(skinContent);
-    skinsContainer.push(skinContainer);
-};
-activeSkin(firstSkinContent);
-
-changeSkinsContent.append(...skinsContainer);
-changeSkinsContainer.append(changeSkinsContent);
-changeSkins.append(titleSkinsContainer, changeSkinsContainer, toggleSkinsContainer);
 
 const userSettingsContainer = createElem('div', {className: 'user-settings-container'}),
     gameTitle = createElem('h1', {className: 'game-title', innerHTML: 'Burning Script'}),
@@ -76,12 +31,16 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
     scriptSkinsContainer = createElem('div', {className: 'script-skins-container', innerHTML: 'Script Skins'}),
     gameSkinsContent = createElem('div', {className: 'game-skins-content'}),
     gameSkinsPages = createElem('div', {className: 'game-skins-pages'}),
+    gameSkins = createElem('div', {className: 'game-skins'}),
+    leftGamePage = createElem('div', {className: 'left-game-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
+    rightGamePage = createElem('div', {className: 'right-game-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
     showNotifScroll = createElem('div', {className: 'show-notif-scroll', innerHTML: 'III'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
 usernameplayContainer.append(usernameContainer, guildContainer, playContent);
 toggleTypeSkins.append(gameSkinsTitle, scriptSkinsTitle);
+gameSkinsContent.append(leftGamePage, gameSkins, rightGamePage);
 gameSkinsContainer.append(gameSkinsContent, gameSkinsPages);
 skinsListContainer.append(gameSkinsContainer, scriptSkinsContainer, showNotifScroll);
 skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
@@ -102,23 +61,6 @@ usernameContent.addEventListener('keydown', ev => {
 });
 
 playContent.addEventListener('click', enterGame);
-
-const changeSpecialSkins = createElem('div', {className: 'change-special-skins'}),
-    changeSpecialSkinsContainer = createElem('div', {className: 'change-special-skins-container'}),
-    changeSpecialSkinsContent = createElem('div', {className: 'change-special-skins-content'}),
-    toggleSpecialSkinsContainer = createElem('div', {className: 'toggle-special-skins-container'}),
-    titleSpecialSkinsContainer = createElem('div', {className: 'title-special-skins-container', innerHTML: 'Script Skins'}),
-    toggleSpecialSkinsContainerIcon = createElem('ion-icon', {name: 'chevron-down-outline'});
-
-toggleSpecialSkinsContainer.append(toggleSpecialSkinsContainerIcon);
-
-toggleSpecialSkinsContainer.addEventListener('click', ev => {
-    const skinSpecialContainer = activedSpecialSkin.parentElement;
-    changeSpecialSkins.classList.toggle('active');
-    setTimeout(() => changeSpecialSkinsContainer.scrollTo(0, skinSpecialContainer.offsetTop - 15), 5e2);
-});
-
-changeSpecialSkinsContainer.addEventListener('mousewheel', changeSpecialSkinsScroll);
 
 const scriptSkins = 53,
     skinsScriptContainer = [];
