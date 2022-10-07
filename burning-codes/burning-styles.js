@@ -458,6 +458,16 @@
             overflow: hidden;
             background: #222a;
         }
+
+        .game-skin-page {
+            display: flex;
+            flex-direction: row;
+            border-right: var(--border-default);
+        }
+
+        .game-skin-page:last-child {
+            border-right: none;
+        }
         `
     });
 
