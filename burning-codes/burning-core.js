@@ -47,6 +47,16 @@ skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
+const pagesListLength = 20,
+    gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength),// 27
+    gamePagesSkin = [];
+
+let gameSkinsPagesList = [];
+
+while (gameSkinsPagesList.length < gameSkinsPagesLength) {
+    gameSkinsPagesList.push(0);
+};
+
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
 toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
