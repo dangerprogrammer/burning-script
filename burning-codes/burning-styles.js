@@ -432,6 +432,7 @@
             padding: 5px 10px;
             display: flex;
             flex-direction: row;
+            justify-content: center;
             gap: 5px;
         }
 
@@ -441,6 +442,7 @@
             flex-grow: 1;
             background: #333a;
             border-radius: 4px;
+            max-width: 10rem;
             transition: var(--transition-default);
         }
 
