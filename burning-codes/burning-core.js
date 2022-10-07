@@ -70,6 +70,8 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
 
     const gameSkinsPage = createElem('div', {className: 'game-skins-page'});
 
+    if (!gameSkinsPagesList.length) gameSkinsPage.classList.add('active');
+
     gameSkinsPagesList.push(gameSkinsPage);
 };
 

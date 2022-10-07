@@ -399,6 +399,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            flex-grow: 1;
         }
 
         .show-notif-scroll {
@@ -433,6 +434,7 @@
             height: 8px;
             width: 8px;
             flex-grow: 1;
+            background: #333;
         }
         `
     });
