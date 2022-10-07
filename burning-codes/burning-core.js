@@ -75,7 +75,7 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
 
     if (!gameSkinsPagesList.length) gameSkinsPage.classList.add('active');
 
-    gameSkinsPagesList.push(gameSkinsPage);
+    gameSkinsPagesList.push(...gameSkinsPage);
 };
 
 gameSkins.append(...gamePagesSkinList);
