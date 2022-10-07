@@ -52,8 +52,7 @@ const pagesListLength = 20,
 
 let gameSkinsPagesList = [],
     gameSkinsPageList = [],
-    gamePagesSkin = [],
-    gamePagesSkinList = [];
+    gamePagesSkin = [];
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gamePagesSkin = [];
@@ -84,7 +83,7 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
 gameSkins.append(...gameSkinsPageList);
 gameSkinsPages.append(...gameSkinsPagesList);
 
-console.log(gamePagesSkinList);
+// leftGamePage.addEventListener('click');
 
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;

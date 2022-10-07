@@ -449,10 +449,23 @@
         }
 
         .game-skin-container {
+            position: relative;
             padding: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .game-skin-container::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 8px;
+            translate: 0 -50%;
+            transition: var(--transition-fast);
+            background: white;
+            border-radius: 4px;
+            scale: 1 0;
         }
 
         .game-skin-content {
@@ -461,13 +474,28 @@
             border-radius: 50%;
             overflow: hidden;
             background: #222a;
+            background-size: cover;
+            cursor: pointer;
+            opacity: .5;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-skin-content:hover:not(.active) {
+            opacity: .85;
+        }
+
+        .game-skin-container:has(.game-skin-content:hover:not(.active)) {
+            scale: .65 1;
         }
 
         .game-skin-page {
             display: flex;
             flex-direction: row;
             border-right: var(--border-default);
-            max-width: 100%;
+            width: 100%;
             overflow-x: auto;
             flex-shrink: 0;
             gap: 10px;
