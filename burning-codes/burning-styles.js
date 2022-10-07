@@ -424,6 +424,10 @@
             transition: var(--transition-default);
         }
 
+        .game-skins::-webkit-scrollbar {
+            height: 0;
+        }
+
         .game-skins-pages {
             padding: 5px 10px;
             display: flex;
