@@ -48,10 +48,10 @@ mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
 const pagesListLength = 20,
-    gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength),// 27
-    gamePagesSkin = [];
+    gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength);
 
-let gameSkinsPagesList = [];
+let gameSkinsPagesList = [],
+    gamePagesSkin = [];
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gameSkinsPagesList.push(0);
