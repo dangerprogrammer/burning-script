@@ -367,6 +367,7 @@
             flex-direction: column;
             overflow-y: auto;
             scroll-behavior: smooth;
+            align-items: flex-end;
         }
 
         .skins-settings-container.hidden .skins-list-container {
@@ -402,8 +403,7 @@
 
         .show-notif-scroll {
             position: fixed;
-            top: 5px;
-            right: 5px;
+            margin: 5px 10px;
         }
         `
     });
