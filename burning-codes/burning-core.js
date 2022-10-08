@@ -100,6 +100,8 @@ leftGamePage.addEventListener('click', ev => {
     console.log('click!');
 });
 
+console.log(leftGamePage);
+
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
 toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
