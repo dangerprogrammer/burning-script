@@ -69,9 +69,9 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
             skinInd = gameSkinInd - 1;
 
         gameSkinContent.dataset.skin = skinInd;
-        if (gameSkinInd) gameSkinContent.style.backgroundImage = `http://bloble.io/img/skins/skin_${skinInd}.png`;
+        if (gameSkinInd) gameSkinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinInd}.png')`;
         else {
-            gameSkinContent.backgroundColor = '#ff6060';
+            gameSkinContent.style.backgroundColor = '#ff6060';
             lastGameSkin = gameSkinContent;
         };
 

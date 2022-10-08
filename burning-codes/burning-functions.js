@@ -32,8 +32,7 @@
                   gameSkinPage = skin.parentElement.parentElement;
             otherSkins.forEach(otherSkin => otherSkin.classList.remove('active'));
             skin.classList.add('active');
-            gameSkinPage.scrollTo(0, gameSkinContainer.offsetLeft);
-            global.changeSkinsContainer = changeSkinsContainer;
+            gameSkinPage.scrollTo(gameSkinContainer.offsetLeft, 0);
             global.activedSkin = skin;
             currentSkin = +skin.dataset.skin + 1;
             setTimeout(() => {

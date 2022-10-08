@@ -494,12 +494,23 @@
             scale: .65 1;
         }
 
+        .game-skin-content.active {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .game-skin-container:has(.game-skin-content.active)::before {
+            scale: 1;
+        }
+
         .game-skin-page {
+            position: relative;
             display: flex;
             flex-direction: row;
             border-right: var(--border-default);
             width: 100%;
             overflow-x: auto;
+            scroll-behavior: smooth;
             flex-shrink: 0;
             gap: 10px;
         }
