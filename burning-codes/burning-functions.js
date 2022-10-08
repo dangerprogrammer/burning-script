@@ -36,10 +36,10 @@
         },
         toggleGamePage(indPage, gameSkins) {
             const childrens = [...gameSkins.children],
-                haveChild = childrens.filter(child => child.classList.contains('active'));
+                haveChildActive = childrens.filter(child => child.classList.contains('active'));
             let filtredChildren;
             
-            if (haveChild) childrens.forEach((child, ind) => {
+            if (haveChildActive) childrens.forEach((child, ind) => {
                 if (child.classList.contains('active')) {
                     child.classList.remove('active');
                     filtredChildren = childrens[ind + indPage] || gameSkins[indPage > 0 ? 'firstChild' : 'lastChild'];
