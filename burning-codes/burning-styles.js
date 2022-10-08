@@ -417,6 +417,7 @@
         }
 
         .game-skins {
+            position: relative;
             display: flex;
             flex-direction: row;
             overflow-x: auto;

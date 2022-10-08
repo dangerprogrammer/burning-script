@@ -34,6 +34,19 @@
             global.activedSkin = skin;
             currentSkin = +gameSkinContainer.dataset.skin + 1;
         },
+        toggleGamePage(indPage, gameSkins) {
+            const childrens = [...gameSkins.children];
+            let filtredChildren;
+            
+            childrens.forEach((child, ind) => {
+                if (child.classList.contains('active')) {
+                    child.classList.remove('active');
+                    filtredChildren = childrens[ind + indPage] || gameSkins[indPage > 0 ? 'firstChild' : 'lastChild'];
+                    filtredChildren.classList.add('active');
+                    gameSkins.scrollTo(filtredChildren.offsetLeft, 0);
+                };
+            });
+        },
         changeSkinsScroll(ev) {
             ev.preventDefault();
             if (ev.wheelDeltaY < 0) activeSkin(nextSkin, changeSkinsContainer);

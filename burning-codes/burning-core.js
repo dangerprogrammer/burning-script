@@ -95,7 +95,7 @@ activeGameSkin(lastGameSkin);
 gameSkins.append(...gameSkinsPageList);
 gameSkinsPages.append(...gameSkinsPagesList);
 
-// leftGamePage.addEventListener('click');
+leftGamePage.addEventListener('click', ev => toggleGamePage(-1, gameSkins));
 
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
