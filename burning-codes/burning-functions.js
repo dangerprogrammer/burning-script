@@ -34,23 +34,32 @@
             global.activedSkin = skin;
             currentSkin = +gameSkinContainer.dataset.skin + 1;
         },
-        toggleGamePage(indPage, gameSkins) {
-            const childrens = [...gameSkins.children],
-                haveChildActive = childrens.filter(child => child.classList.contains('active'));
-            let filtredChildren;
-            
-            if (haveChildActive) childrens.forEach((child, ind) => {
-                if (child.classList.contains('active')) {
-                    child.classList.remove('active');
-                    filtredChildren = childrens[ind + indPage] || gameSkins[indPage > 0 ? 'firstChild' : 'lastChild'];
-                    filtredChildren.classList.add('active');
-                    gameSkins.scrollTo(filtredChildren.offsetLeft, 0);
-                };
-            });
-            else {
-                filtredChildren = childrens[0];
-                filtredChildren.classList.add('active');
+        toggleGamePage(indPage, gameSkins, gameSkinsPages) {
+            const gameSkinsChildrens = [...gameSkins.children],
+                  gameSkinsPageChildrens = [...gameSkinsPages.children],
+                  haveChildActive = gameSkinsChildrens.filter(child => child.classList.contains('active')).length;
+            let filtredChildren, filtredPage, hasFiltred;
+
+            if (haveChildActive) {
+                gameSkinsChildrens.forEach((child, ind) => {
+                    if (child.classList.contains('active') && !hasFiltred) {
+                        setClassOn('active', child, gameSkinsPageChildrens[ind]);
+                        const firstLast = indPage > 0 ? 'firstChild' : 'lastChild';
+                        filtredChildren = gameSkinsChildrens[ind + indPage] || gameSkins[firstLast];
+                        filtredPage = gameSkinsPageChildrens[ind + indPage] || gameSkinsPages[firstLast];
+                        setClassOn('active', filtredChildren, filtredPage);
+                        gameSkins.scrollTo(filtredChildren.offsetLeft, 0);
+                        gameSkinsPages.scrollTo(filtredPage.offsetLeft, 0);
+                        activeGameSkin(filtredChildren[firstLast]);
+                        hasFiltred = filtredChildren;
+                    };
+                });
+            } else {
+                filtredChildren = gameSkinsChildrens[0];
+                filtredPage = gameSkinsPageChildrens[0];
+                setClassOn('active', filtredChildren, filtredPage);
                 gameSkins.scrollTo(filtredChildren.offsetLeft, 0);
+                gameSkinsPages.scrollTo(filtredPage.offsetLeft, 0);
             };
         },
         changeSkinsScroll(ev) {
@@ -69,7 +78,7 @@
         },
         toggleSkinsType(toggleTypeSkins) {
             const dataType = skinsSettingsContainer.dataset.skinType,
-                typeSkins = dataType === 'game-skins';
+                  typeSkins = dataType === 'game-skins';
             if (dataType) skinsSettingsContainer.dataset.skinType = typeSkins ? 'script-skins' : 'game-skins';
             else skinsSettingsContainer.dataset.skinType = 'game-skins';
 
