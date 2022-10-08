@@ -24,7 +24,7 @@
         setClassOn(className, ...elems) {
             elems.forEach(elem => elem.classList.toggle(className));
         },
-        activeSkin(gameSkinContainer) {
+        activeGameSkin(gameSkinContainer) {
             const skin = gameSkinContainer.children[0],
                   otherSkins = query(`.game-skin-container:not([data-skin="${gameSkinContainer.dataset.skin}"])`, true),
                   gameSkinPage = gameSkinContainer.parentElement;
