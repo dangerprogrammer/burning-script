@@ -68,7 +68,7 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
             gameSkinContent = createElem('div', {className: 'game-skin-content'}),
             skinInd = gameSkinInd - 1;
 
-        gameSkinContent.dataset.skin = skinInd;
+        gameSkinContainer.dataset.skin = skinInd;
         if (gameSkinInd) gameSkinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinInd}.png')`;
         else {
             gameSkinContent.style.backgroundColor = '#ff6060';
