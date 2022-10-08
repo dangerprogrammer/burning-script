@@ -25,19 +25,20 @@
             elems.forEach(elem => elem.classList.toggle(className));
         },
         activeSkin(skin) {
-            const otherSkins = query(`.skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
+            const otherSkins = query(`.game-skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
                   prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : playerSkins) - 1,
                   nextSkinInd = +skin.dataset.skin + 1 < playerSkins ? +skin.dataset.skin + 1 : -1,
-                  skinContainer = skin.parentElement;
+                  gameSkinContainer = skin.parentElement,
+                  gameSkinPage = skin.parentElement.parentElement;
             otherSkins.forEach(otherSkin => otherSkin.classList.remove('active'));
             skin.classList.add('active');
-            changeSkinsContainer.scrollTo(0, skinContainer.offsetTop - 15);
+            gameSkinPage.scrollTo(0, gameSkinContainer.offsetLeft);
             global.changeSkinsContainer = changeSkinsContainer;
             global.activedSkin = skin;
             currentSkin = +skin.dataset.skin + 1;
             setTimeout(() => {
-                const prevSkin = query(`.skin-content[data-skin="${prevSkinInd}"]`),
-                  nextSkin = query(`.skin-content[data-skin="${nextSkinInd}"]`);
+                const prevSkin = query(`.game-skin-content[data-skin="${prevSkinInd}"]`),
+                  nextSkin = query(`.game-skin-content[data-skin="${nextSkinInd}"]`);
 
                 global.prevSkin = prevSkin;
                 global.nextSkin = nextSkin;
