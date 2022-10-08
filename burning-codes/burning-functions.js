@@ -27,24 +27,12 @@
         activeSkin(gameSkinContainer) {
             const skin = gameSkinContainer.children[0],
                   otherSkins = query(`.game-skin-container:not([data-skin="${gameSkinContainer.dataset.skin}"])`, true),
-                  prevSkinInd = (+gameSkinContainer.dataset.skin >= 0 ? +gameSkinContainer.dataset.skin : playerSkins) - 1,
-                  nextSkinInd = +gameSkinContainer.dataset.skin + 1 < playerSkins ? +gameSkinContainer.dataset.skin + 1 : -1,
                   gameSkinPage = gameSkinContainer.parentElement;
             otherSkins.forEach(otherSkin => otherSkin.children[0].classList.remove('active'));
             skin.classList.add('active');
-            if (gameSkinPage.scrollLeft > gameSkinContainer.offsetLeft + gameSkinContainer.offsetWidth) console.log('O item está à esquerda!');
-            else if (gameSkinPage.scrollLeft + gameSkinPage.offsetWidth < gameSkinContainer.offsetLeft) console.log('O item está à direita!');
-            else console.log('O item está na tela!');
             gameSkinPage.scrollTo(gameSkinContainer.offsetLeft + gameSkinContainer.offsetWidth / 2 - gameSkinPage.offsetWidth / 2, 0);
             global.activedSkin = skin;
             currentSkin = +gameSkinContainer.dataset.skin + 1;
-            setTimeout(() => {
-                const prevSkin = query(`.game-skin-container[data-skin="${prevSkinInd}"]`),
-                  nextSkin = query(`.game-skin-container[data-skin="${nextSkinInd}"]`);
-
-                global.prevSkin = prevSkin;
-                global.nextSkin = nextSkin;
-            }, 1);
         },
         changeSkinsScroll(ev) {
             ev.preventDefault();
