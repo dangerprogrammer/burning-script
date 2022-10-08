@@ -75,6 +75,8 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
             lastGameSkin = gameSkinContent;
         };
 
+        gameSkinContent.addEventListener('click', ev => activeSkin(gameSkinContent));
+
         gameSkinContainer.append(gameSkinContent);
         gamePagesSkin.push(gameSkinContainer);
     };
@@ -88,7 +90,7 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gameSkinsPagesList.push(gameSkinsPage);
     gameSkinsPageList.push(gameSkinPage);
 };
-// activeSkin(lastGameSkin);
+activeSkin(lastGameSkin);
 
 gameSkins.append(...gameSkinsPageList);
 gameSkinsPages.append(...gameSkinsPagesList);
