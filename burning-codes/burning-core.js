@@ -72,10 +72,10 @@ while (gameSkinsPagesList.length < gameSkinsPagesLength) {
         if (gameSkinInd) gameSkinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinInd}.png')`;
         else {
             gameSkinContent.style.backgroundColor = '#ff6060';
-            lastGameSkin = gameSkinContent;
+            lastGameSkin = gameSkinContainer;
         };
 
-        gameSkinContent.addEventListener('click', ev => activeSkin(gameSkinContent));
+        gameSkinContent.addEventListener('click', ev => activeSkin(gameSkinContainer));
 
         gameSkinContainer.append(gameSkinContent);
         gamePagesSkin.push(gameSkinContainer);

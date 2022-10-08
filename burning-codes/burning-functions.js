@@ -24,20 +24,23 @@
         setClassOn(className, ...elems) {
             elems.forEach(elem => elem.classList.toggle(className));
         },
-        activeSkin(skin) {
-            const otherSkins = query(`.game-skin-content:not([data-skin="${skin.dataset.skin}"])`, true),
-                  prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : playerSkins) - 1,
-                  nextSkinInd = +skin.dataset.skin + 1 < playerSkins ? +skin.dataset.skin + 1 : -1,
-                  gameSkinContainer = skin.parentElement,
-                  gameSkinPage = skin.parentElement.parentElement;
-            otherSkins.forEach(otherSkin => otherSkin.classList.remove('active'));
+        activeSkin(gameSkinContainer) {
+            const skin = gameSkinContainer.children[0],
+                  otherSkins = query(`.game-skin-container:not([data-skin="${gameSkinContainer.dataset.skin}"])`, true),
+                  prevSkinInd = (+gameSkinContainer.dataset.skin >= 0 ? +gameSkinContainer.dataset.skin : playerSkins) - 1,
+                  nextSkinInd = +gameSkinContainer.dataset.skin + 1 < playerSkins ? +gameSkinContainer.dataset.skin + 1 : -1,
+                  gameSkinPage = gameSkinContainer.parentElement;
+            otherSkins.forEach(otherSkin => otherSkin.children[0].classList.remove('active'));
             skin.classList.add('active');
-            gameSkinPage.scrollTo(gameSkinContainer.offsetLeft, 0);
+            if (gameSkinPage.scrollLeft > gameSkinContainer.offsetLeft + gameSkinContainer.offsetWidth) console.log('O item está à esquerda!');
+            else if (gameSkinPage.scrollLeft + gameSkinPage.offsetWidth < gameSkinContainer.offsetLeft) console.log('O item está à direita!');
+            else console.log('O item está na tela!');
+            gameSkinPage.scrollTo(gameSkinContainer.offsetLeft + gameSkinContainer.offsetWidth / 2 - gameSkinPage.offsetWidth / 2, 0);
             global.activedSkin = skin;
-            currentSkin = +skin.dataset.skin + 1;
+            currentSkin = +gameSkinContainer.dataset.skin + 1;
             setTimeout(() => {
-                const prevSkin = query(`.game-skin-content[data-skin="${prevSkinInd}"]`),
-                  nextSkin = query(`.game-skin-content[data-skin="${nextSkinInd}"]`);
+                const prevSkin = query(`.game-skin-container[data-skin="${prevSkinInd}"]`),
+                  nextSkin = query(`.game-skin-container[data-skin="${nextSkinInd}"]`);
 
                 global.prevSkin = prevSkin;
                 global.nextSkin = nextSkin;
@@ -47,30 +50,6 @@
             ev.preventDefault();
             if (ev.wheelDeltaY < 0) activeSkin(nextSkin, changeSkinsContainer);
             else activeSkin(prevSkin, changeSkinsContainer);
-        },
-        activeSpecialSkin(skin) {
-            const otherSpecialSkins = query(`.skin-special-content:not([data-skin="${skin.dataset.skin}"])`, true),
-                  prevSkinInd = (+skin.dataset.skin >= 0 ? +skin.dataset.skin : scriptSkins) - 1,
-                  nextSkinInd = +skin.dataset.skin + 1 < scriptSkins ? +skin.dataset.skin + 1 : -1,
-                  skinScriptContainer = skin.parentElement;
-                  otherSpecialSkins.forEach(otherSpecialSkin => otherSpecialSkin.classList.remove('active'));
-            skin.classList.add('active');
-            changeSpecialSkinsContainer.scrollTo(0, skinScriptContainer.offsetTop - 15);
-            global.changeSpecialSkinsContainer = changeSpecialSkinsContainer;
-            global.activedSpecialSkin = skin;
-            global.currentSpecialSkin = +skin.dataset.skin + 1;
-            setTimeout(() => {
-                const prevSkin = query(`.skin-special-content[data-skin="${prevSkinInd}"]`),
-                  nextSkin = query(`.skin-special-content[data-skin="${nextSkinInd}"]`);
-
-                global.prevSpecialSkin = prevSkin;
-                global.nextSpecialSkin = nextSkin;
-            }, 1);
-        },
-        changeSpecialSkinsScroll(ev) {
-            ev.preventDefault();
-            if (ev.wheelDeltaY < 0) activeSpecialSkin(nextSpecialSkin, changeSpecialSkinsContainer);
-            else activeSpecialSkin(prevSpecialSkin, changeSpecialSkinsContainer);
         },
         enterGame() {
             socket && unitList && (setClassOn('hidden', userSettingsContainer), hasStorage && localStorage.setItem("lstnmdbl", usernameContent.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {

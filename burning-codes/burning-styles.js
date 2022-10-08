@@ -424,7 +424,7 @@
             transition: var(--transition-default);
         }
 
-        .game-skins::-webkit-scrollbar {
+        .game-skins::-webkit-scrollbar, .game-skin-page::-webkit-scrollbar {
             height: 0;
         }
 
