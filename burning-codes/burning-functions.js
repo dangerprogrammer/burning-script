@@ -102,8 +102,12 @@
                 scriptSkinsPages.scrollTo(filtredPage.offsetLeft, 0);
             };
         },
+        setMenuMessage(msg) {
+            setClassOn('hidden', mainMenuMessage);
+            mainMenuMessage.innerHTML = msg;
+        },
         enterGame() {
-            socket && unitList && (setClassOn('hidden', userSettingsContainer), hasStorage && localStorage.setItem("lstnmdbl", usernameContent.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
+            socket && unitList && (setMenuMessage('Loading...'), hasStorage && localStorage.setItem("lstnmdbl", usernameContent.value), mainCanvas.focus(), grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE").then(function(a) {
                 socket.emit("spawn", {
                     name: usernameContent.value,
                     skin: currentSkin
