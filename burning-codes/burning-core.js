@@ -181,7 +181,7 @@ class socketBot {
         let botPlayer;
 
         botSocket.on('setUser', (attributes, isYou) => {
-            console.log(attributes);
+            console.log(attributes, isYou);
             const ind = getPlayerIndexById(attributes[0]), id = generateID(),
                 newPlayer = {
                     sid: attributes[0],
