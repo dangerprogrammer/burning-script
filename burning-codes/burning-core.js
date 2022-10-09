@@ -219,11 +219,9 @@ class socketBot {
         });
 
         botSocket.on('pt', score => {
-            const scoreBotContainer = createElem('div', {className: 'score-bot-container', innerHTML: score});
+            if (!window.powerBotList) window.powerBotList = [];
 
-            scoreBotContainer.style.color = playerColors[botPlayer.color];
-
-            scoreBotContainer.append(scoreBotContainer);
+            powerBotList.push({power: score, color: botPlayer.color});
         });
 
         this.botSocket = botSocket;
