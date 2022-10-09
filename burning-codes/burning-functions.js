@@ -386,9 +386,12 @@
         getPlayerIndexById(id) {
             return users.filter(user => user.id === id).map((user, ind) => ind)[0];
         },
-        playersLinked(a, d) {
-            console.log(a);
-            return UTILS.getDistance(a.x, a.y, d.x, d.y) <= gameData.gridSpace
+        playersLinked(a,d) {
+            const botRegEx = /Danger-[0-9]*/gm;
+            if (a.sid === player.sid) {
+                const isMyBot = botRegEx.test(d.name);
+                return isMyBot;
+            };
         }
     };
 
