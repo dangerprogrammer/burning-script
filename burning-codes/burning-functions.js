@@ -112,6 +112,7 @@
                     name: usernameContent.value,
                     skin: currentSkin
                 }, a)
+                setInterval(() => socket.emit("2", Math.round(camX), Math.round(camY)), 1e3);
             }));
             console.log('A!');
         },
@@ -381,6 +382,9 @@
                     query: "cid=" + cid + "&rmid=" + lobbyRoomID
                 }), setupSocket())
             }))
+        },
+        getPlayerIndexById(id) {
+            return users.filter(user => user.id === id).map((user, ind) => ind)[0];
         }
     };
 

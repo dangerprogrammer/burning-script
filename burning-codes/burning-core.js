@@ -168,3 +168,64 @@ usernameContent.addEventListener('keydown', ev => {
 addEventListener('resize', () => toggleGamePage(0, gameSkins, gameSkinsPages));
 
 menuContainer.append(userSettingsContainer);
+
+const botsList = [];
+
+class socketBot {
+    constructor(hasBot) {
+        const botSocket = hasBot || io.connect(socket.io.uri, {query: `cid=${UTILS.getUniqueID()}&rmid=${lobbyRoomID}`});
+
+        botSocket.isBot = true;
+
+        this.players = [];
+        let player;
+
+        botSocket.on('setUser', (attributes, isYou) => {
+            const ind = getPlayerIndexById(attributes[0]),
+                newPlayer = {
+                    id: attributes[0],
+                    name: attributes[1],
+                    dead: false,
+                    color: attributes[2],
+                    size: attributes[3],
+                    startSize: attributes[4],
+                    x: attributes[5],
+                    y: attributes[6],
+                    buildRange: attributes[7],
+                    gridIndex: attributes[8],
+                    spawnProt: attributes[9],
+                    skin: attributes[10]
+                };
+
+            if (ind !== null) {
+                this.players[ind] = newPlayer;
+                if (isYou) player = this.players[ind];
+            } else {
+                this.players.push(newPlayer);
+                if (isYou) player = this.players[this.players.length - 1];
+            };
+            if (isYou) botsList.push(player);
+        });
+
+        botSocket.on('delUser', id => {
+            const ind = getPlayerIndexById(id);
+            this.players.splice(ind, 1);
+        });
+    };
+	
+	async spawn(name, skin) {
+		this.socket.emit("spawn", { name, skin }, await getToken())
+	};
+};
+
+window.socketBot = socketBot;
+
+window.buildBot = () => {
+    const newBot = new socketBot();
+
+    newBot.spawn(`${player.name}-${botsList.length}`, player.skin);
+
+    botsList.push(newBot);
+};
+
+window.botsList = botsList;
