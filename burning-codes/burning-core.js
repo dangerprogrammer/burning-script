@@ -181,9 +181,10 @@ class socketBot {
         let botPlayer;
 
         botSocket.on('setUser', (attributes, isYou) => {
-            const ind = getPlayerIndexById(attributes[0]),
+            const ind = getPlayerIndexById(attributes[0]), id = generateID(),
                 newPlayer = {
-                    id: attributes[0],
+                    sid: attributes[0],
+                    id,
                     name: attributes[1],
                     dead: false,
                     color: attributes[2],
@@ -194,7 +195,8 @@ class socketBot {
                     buildRange: attributes[7],
                     gridIndex: attributes[8],
                     spawnProt: attributes[9],
-                    skin: attributes[10]
+                    skin: attributes[10],
+                    desc: `Bot ID: ${id}`
                 };
 
             if (ind !== null) {
@@ -225,7 +227,10 @@ class socketBot {
         botSocket.on('pt', score => {
             if (!window.powerBotList) window.powerBotList = [];
 
-            powerBotList.push({power: score, color: botPlayer.color});
+            const alreadyHas = powerBotList.filter(({sid}) => sid === botPlayer.sid);
+
+            if (!alreadyHas.length) powerBotList.push({power: score, color: botPlayer.color, sid: botPlayer.sid});
+            else powerBotList[+botPlayer.name.slice(`${player.name}-`.length)].power = score;
         });
 
         this.botSocket = botSocket;

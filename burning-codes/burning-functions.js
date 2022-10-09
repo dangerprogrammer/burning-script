@@ -293,7 +293,9 @@
                 null != c && (users[c].size = d)
             });
             socket.on("pt", score => {
-                scoreContainer.innerHTML = `Power <span style="color: ${playerColors[player.color]}">${score}</span> ${powerBotList.map(({power, color}) => `<span style="color: ${playerColors[color]}">${power}</span>`)}`;
+                scoreContainer.innerHTML = `Power <span style="color: ${playerColors[player.color]}">${score}</span>`;
+
+                if (window.powerBotList) scoreContainer.innerHTML = `Power <span style="color: ${playerColors[player.color]}">${score}</span> | ${powerBotList.map(({power, color}) => `<span style="color: ${playerColors[color]}">${power}</span>`).join(' | ')}`;
             });
             socket.on("l", function(a) {
                 for (var d = "", c = 1, b = 0; b < a.length;) d += "<div class='leaderboardItem'><div style='display:inline-block;float:left;' class='whiteText'>" + c + ".</div> <div class='" + (player && a[b] == player.sid ? "leaderYou" : "leader") + "'>" + a[b + 1] + "</div><div class='scoreText'>" + a[b + 2] + "</div></div>", c++, b += 3;
@@ -391,6 +393,10 @@
                 const isMyBot = botRegEx.test(d.name);
                 return isMyBot;
             };
+        },
+        generateID() {
+            const start = Date.now().toString(36), ending = Math.random().toString(36).substring(2);
+            return start + ending;
         }
     };
 
