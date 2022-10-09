@@ -103,7 +103,9 @@
             };
         },
         setMenuMessage(msg) {
-            mainMenuMessage.classList.add('hidden');
+            leaveGame();
+            kickReason || (kickReason = msg);
+            mainMenuMessage.classList.remove('hidden');
             mainMenuMessage.innerHTML = msg;
         },
         enterGame() {
