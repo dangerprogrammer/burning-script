@@ -2,6 +2,8 @@ removeElems(linksContainer, ...menuContainer.children);
 hideElems(smallAdContainer);
 resetFuncs(updateAdPos, youtuberList);
 
+const featuredSkins = 54;
+
 document.title = 'Burning Script - 1.0.0';
 
 cid = UTILS.getUniqueID();
@@ -28,12 +30,17 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
       toggleSkins = createElem('div', {className: 'toggle-skins', innerHTML: '<ion-icon name="chevron-down-outline"></ion-icon>'}),
       skinsListContainer = createElem('div', {className: 'skins-list-container'}),
       gameSkinsContainer = createElem('div', {className: 'game-skins-container'}),
-      scriptSkinsContainer = createElem('div', {className: 'script-skins-container', innerHTML: 'Script Skins'}),
+      scriptSkinsContainer = createElem('div', {className: 'script-skins-container'}),
       gameSkinsContent = createElem('div', {className: 'game-skins-content'}),
       gameSkinsPages = createElem('div', {className: 'game-skins-pages'}),
       gameSkins = createElem('div', {className: 'game-skins'}),
       leftGamePage = createElem('div', {className: 'game-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
       rightGamePage = createElem('div', {className: 'game-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
+      scriptSkinsContent = createElem('div', {className: 'script-skins-content'}),
+      scriptSkinsPages = createElem('div', {className: 'script-skins-pages'}),
+      scriptSkins = createElem('div', {className: 'script-skins'}),
+      leftScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
+      rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
       showNotifScroll = createElem('div', {className: 'show-notif-scroll', innerHTML: 'I'});
 
 guildContainer.append(guildContent);
@@ -41,19 +48,19 @@ usernameContainer.append(usernameContent);
 usernameplayContainer.append(usernameContainer, guildContainer, playContent);
 toggleTypeSkins.append(gameSkinsTitle, scriptSkinsTitle);
 gameSkinsContent.append(leftGamePage, gameSkins, rightGamePage);
+scriptSkinsContent.append(leftScriptPage, scriptSkins, rightScriptPage);
 gameSkinsContainer.append(gameSkinsContent, gameSkinsPages);
+scriptSkinsContainer.append(scriptSkinsContent, scriptSkinsPages);
 skinsListContainer.append(gameSkinsContainer, scriptSkinsContainer, showNotifScroll);
 skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
 const pagesListLength = 20,
-      gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength);
+      gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength),
+      scriptSkinsPagesLength = Math.ceil(featuredSkins / pagesListLength);
 
-let gameSkinsPagesList = [],
-    gameSkinsPageList = [],
-    gamePagesSkin = [],
-    lastGameSkin;
+let gameSkinsPagesList = [], gameSkinsPageList = [], gamePagesSkin = [], lastGameSkin;
 
 while (gameSkinsPagesList.length < gameSkinsPagesLength) {
     gamePagesSkin = [];
@@ -97,6 +104,50 @@ toggleGamePage(0, gameSkins, gameSkinsPages);
 leftGamePage.addEventListener('click', ev => toggleGamePage(-1, gameSkins, gameSkinsPages));
 rightGamePage.addEventListener('click', ev => toggleGamePage(1, gameSkins, gameSkinsPages));
 
+let scriptSkinsPagesList = [], scriptSkinsPageList = [], scriptPagesSkin = [], lastScriptSkin;
+
+while (scriptSkinsPagesList.length < scriptSkinsPagesLength) {
+    scriptPagesSkin = [];
+
+    const scriptPagesSkins = Math.min(featuredSkins - pagesListLength * scriptSkinsPagesList.length, pagesListLength),
+          scriptSkinPage = createElem('div', {className: 'script-skin-page'});
+
+    while (scriptPagesSkin.length < scriptPagesSkins) {
+        const scriptSkinInd = scriptPagesSkin.length + pagesListLength * scriptSkinsPagesList.length;
+
+        const scriptSkinContainer = createElem('div', {className: 'script-skin-container'}),
+              scriptSkinContent = createElem('div', {className: 'script-skin-content'}),
+              skinInd = scriptSkinInd - 1;
+
+        scriptSkinContainer.dataset.skin = skinInd;
+        if (scriptSkinInd) scriptSkinContent.style.backgroundImage = `url('https://raw.githubusercontent.com/dangerprogrammer/burning-script/main/assets/skins/skin-${skinInd}.png')`;
+        else {
+            scriptSkinContent.style.backgroundColor = '#ff6060';
+            lastScriptSkin = scriptSkinContainer;
+        };
+
+        scriptSkinContent.addEventListener('click', ev => activeScriptSkin(scriptSkinContainer));
+
+        scriptSkinContainer.append(scriptSkinContent);
+        scriptPagesSkin.push(scriptSkinContainer);
+    };
+
+    scriptSkinPage.append(...scriptPagesSkin);
+
+    const scriptSkinsPage = createElem('div', {className: 'script-skins-page'});
+
+    scriptSkinsPagesList.push(scriptSkinsPage);
+    scriptSkinsPageList.push(scriptSkinPage);
+};
+activeScriptSkin(lastScriptSkin);
+
+scriptSkins.append(...scriptSkinsPageList);
+scriptSkinsPages.append(...scriptSkinsPagesList);
+
+toggleScriptPage(0, scriptSkins, scriptSkinsPages);
+leftScriptPage.addEventListener('click', ev => toggleScriptPage(-1, scriptSkins, scriptSkinsPages));
+rightScriptPage.addEventListener('click', ev => toggleScriptPage(1, scriptSkins, scriptSkinsPages));
+
 toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
 window.toggleTypeSkins = toggleTypeSkins;
 toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
@@ -111,5 +162,7 @@ usernameContent.addEventListener('keydown', ev => {
 });
 
 playContent.addEventListener('click', enterGame);
+
+addEventListener('resize', () => toggleGamePage(0, gameSkins, gameSkinsPages));
 
 menuContainer.append(userSettingsContainer);

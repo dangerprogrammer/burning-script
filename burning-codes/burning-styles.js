@@ -369,6 +369,7 @@
             overflow-y: auto;
             scroll-behavior: smooth;
             align-items: flex-end;
+            max-height: 10rem;
         }
 
         .skins-settings-container.hidden .skins-list-container {
@@ -396,7 +397,7 @@
             justify-content: space-around;
         }
 
-        .game-skins-content {
+        .game-skins-content, .script-skins-content {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -408,7 +409,7 @@
             margin: 5px 10px;
         }
 
-        .game-page {
+        .game-page, .script-page {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -416,7 +417,7 @@
             padding: 10px 20px;
         }
 
-        .game-skins {
+        .game-skins, .script-skins {
             position: relative;
             display: flex;
             flex-direction: row;
@@ -425,11 +426,11 @@
             transition: var(--transition-default);
         }
 
-        .game-skins::-webkit-scrollbar, .game-skin-page::-webkit-scrollbar {
+        .game-skins::-webkit-scrollbar, .game-skin-page::-webkit-scrollbar, .script-skins::-webkit-scrollbar, .script-skin-page::-webkit-scrollbar {
             height: 0;
         }
 
-        .game-skins-pages {
+        .game-skins-pages, .script-skins-pages {
             padding: 5px 10px;
             display: flex;
             flex-direction: row;
@@ -437,7 +438,7 @@
             gap: 5px;
         }
 
-        .game-skins-page {
+        .game-skins-page, .script-skins-page {
             height: 8px;
             width: 8px;
             flex-grow: 1;
@@ -447,19 +448,19 @@
             transition: var(--transition-default);
         }
 
-        .game-skins-page.active {
+        .game-skins-page.active, .script-skins-page.active {
             background: #888;
         }
 
-        .game-skin-container {
+        .game-skin-container, .script-skin-container {
             position: relative;
-            padding: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-grow: 1;
         }
 
-        .game-skin-container::before {
+        .game-skin-container::before, .script-skin-container::before {
             content: '';
             position: absolute;
             width: 80%;
@@ -472,7 +473,7 @@
             scale: 0 1;
         }
 
-        .game-skin-content {
+        .game-skin-content, .script-skin-content {
             height: var(--skin-size);
             width: var(--skin-size);
             border-radius: 50%;
@@ -487,24 +488,24 @@
             justify-content: center;
         }
 
-        .game-skin-content:hover:not(.active) {
+        .game-skin-content:hover:not(.active), .script-skin-content:hover:not(.active) {
             opacity: .85;
         }
 
-        .game-skin-container:has(.game-skin-content:hover:not(.active))::before {
+        .game-skin-container:has(.game-skin-content:hover:not(.active))::before, .script-skin-container:has(.script-skin-content:hover:not(.active))::before {
             scale: .65 1;
         }
 
-        .game-skin-content.active {
+        .game-skin-content.active, .script-skin-content.active {
             opacity: 1;
             pointer-events: none;
         }
 
-        .game-skin-container:has(.game-skin-content.active)::before {
+        .game-skin-container:has(.game-skin-content.active)::before, .script-skin-container:has(.script-skin-content.active)::before {
             scale: 1;
         }
 
-        .game-skin-page {
+        .game-skin-page, .script-skin-page {
             position: relative;
             display: flex;
             flex-direction: row;
@@ -516,7 +517,7 @@
             gap: 10px;
         }
 
-        .game-skin-page:last-child {
+        .game-skin-page:last-child, .script-skin-page:last-child {
             border-right: none;
         }
         `
