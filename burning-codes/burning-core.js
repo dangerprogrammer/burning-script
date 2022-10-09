@@ -56,8 +56,8 @@ skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
-const pagesListLength = 15,
-      gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength),
+let pagesListLength = Math.ceil(window.innerWidth / activedSkin.offsetWidth / 1.6);
+const gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength),
       scriptSkinsPagesLength = Math.ceil(featuredSkins / pagesListLength);
 
 let gameSkinsPagesList = [], gameSkinsPageList = [], gamePagesSkin = [], lastGameSkin;
