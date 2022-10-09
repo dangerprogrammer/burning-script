@@ -4,10 +4,12 @@ resetFuncs(updateAdPos, youtuberList);
 
 const featuredSkins = 54;
 
-document.title = 'Burning Script - 1.0.0';
+document.title = 'Burning Script 1.0.0';
 
 cid = UTILS.getUniqueID();
 localStorage.setItem("cid", cid);
+
+backgroundColor = '#111';turretColor = '#333a';outerColor = '#222';darkColor = '#aaaa';indicatorColor = '#555a';redColor = '#f005';targetColor = '#fff6';
 
 const ionIcons = createElems(['script', {type: 'module', src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}], ['script', {nomodule: true, src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}]);
 
@@ -162,8 +164,6 @@ hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = local
 usernameContent.addEventListener('keydown', ev => {
     if (ev.code === 'Enter') enterGame();
 });
-
-playContent.addEventListener('click', enterGame);
 
 addEventListener('resize', () => toggleGamePage(0, gameSkins, gameSkinsPages));
 

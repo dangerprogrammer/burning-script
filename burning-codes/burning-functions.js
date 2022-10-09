@@ -313,7 +313,6 @@
                 l.translate(m.width / 2, m.height / 2);
                 l.lineWidth = outlineWidth * (k ? .9 : 1.2);
                 l.strokeStyle = darkColor;
-                l.globalAlpha = .5;
                 l.fillStyle = g;
                 4 == b.renderIndex ? l.fillStyle = turretColor : 5 == b.renderIndex && (l.fillStyle = turretColor,
                     renderRect(0, .76 * f, 1.3 * f, f / 2.4, l), l.fillStyle = g);
@@ -327,7 +326,7 @@
                 else if (6 == b.renderIndex) l.fillStyle = turretColor, l.rotate(MathPI / 2), renderRectCircle(0, 0, .7 * f, f / 4, 5, l), l.rotate(-MathPI / 2), renderAgon(0, 0, .4 * f, l, 6);
                 else if (7 == b.renderIndex)
                     for (g =
-                        0; 3 > g; ++g) l.fillStyle = g ? 1 == g ? "#93e865" : "#a2ff6f" : "#89d95f", renderStar(0, 0, f, .7 * f, l, 7), f *= .55;
+                        0; 3 > g; ++g) l.globalAlpha = .5, l.fillStyle = g ? 1 == g ? "#93e865" : "#a2ff6f" : "#89d95f", l.fillStyle = '#0f05', renderStar(0, 0, f, .7 * f, l, 7), f *= .55;
                 else 8 == b.renderIndex && (l.fillStyle = turretColor, renderRectCircle(0, 0, .75 * f, f / 2.85, 3, l), renderSquare(0, 0, .5 * f, l));
                 1 != b.type && b.turretIndex && renderTurret(0, 0, b.turretIndex, k ? iconSizeMult : 1, -(MathPI / 2), l);
                 unitSprites[h] = m
@@ -336,11 +335,52 @@
             e.save();
             e.translate(a, d);
             e.rotate(c + MathPI / 2);
-            e.globalAlpha = .5;
             e.drawImage(f, -(f.width / 2), -(f.height / 2), f.width, f.height);
             1 == b.type && b.turretIndex && renderTurret(0, 0, b.turretIndex, k ? iconSizeMult :
                 1, b.turRot - MathPI / 2 - c, e);
             e.restore()
+        },
+        renderText(a, d) {
+            var c = document.createElement("canvas"),
+                b = c.getContext("2d");
+            b.font = d + "px regularF";
+            var g = b.measureText(a);
+            c.width = g.width + 20;
+            c.height = 2 * d;
+            b.translate(c.width / 2, c.height / 2);
+            b.font = d + "px regularF";
+            b.fillStyle = "#000";
+            b.textBaseline = "middle";
+            b.textAlign = "center";
+            b.strokeStyle = darkColor;
+            b.lineWidth = outlineWidth;
+            b.strokeText(a, 0, 0);
+            b.fillText(a, 0, 0);
+            return c
+        },
+        initFinish() {
+            initC++;
+            2 == initC && (playContent.addEventListener('click', enterGame), usernameContent.addEventListener('keydown', ev => {
+                if (ev.code === 'Enter') enterGame();
+            }), mainCanvas.addEventListener("keypress", function(a) {
+                gameState && 13 === (a.which || a.keyCode) && (mainCanvas.blur(), chatInput.focus(), toggleChat(!0))
+            }), chatInput.addEventListener("keypress", function(a) {
+                gameState && socket && 13 === (a.which || a.keyCode) && ("" != chatInput.value && socket.emit("ch", chatInput.value), chatInput.value = "", mainCanvas.focus())
+            }),
+                           chatInput.onclick = function() {
+                toggleChat(!0)
+            }, sellButton.onclick = function() {
+                socket && selUnits.length && sellSelUnits();
+                mainCanvas.focus()
+            }, $.get("/getIP", {
+                sip: lobbyURLIP
+            }, function(a) {
+                port = a.port;
+                socket || (socket = io.connect("http://" + (a.ip || "127.0.0.1") + ":" + a.port, {
+                    reconnection: !0,
+                    query: "cid=" + cid + "&rmid=" + lobbyRoomID
+                }), setupSocket())
+            }))
         }
     };
 
