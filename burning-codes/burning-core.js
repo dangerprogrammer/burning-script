@@ -40,7 +40,8 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
       scriptSkinsPages = createElem('div', {className: 'script-skins-pages'}),
       scriptSkins = createElem('div', {className: 'script-skins'}),
       leftScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
-      rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'});
+      rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
+      mainMenuMessage = createElem('div', {className: 'main-menu-message', innerHTML: 'Opa'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
@@ -52,7 +53,7 @@ gameSkinsContainer.append(gameSkinsContent, gameSkinsPages);
 scriptSkinsContainer.append(scriptSkinsContent, scriptSkinsPages);
 skinsListContainer.append(gameSkinsContainer, scriptSkinsContainer);
 skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
-mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
+mainUserSettings.append(usernameplayContainer, skinsSettingsContainer, mainMenuMessage);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
 
 const pagesListLength = 15,

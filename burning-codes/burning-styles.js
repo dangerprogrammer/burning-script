@@ -190,6 +190,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 1rem;
         }
 
@@ -519,6 +520,10 @@
 
         .game-skin-page:last-child, .script-skin-page:last-child {
             border-right: none;
+        }
+
+        .main-menu-message {
+            position: absolute;
         }
         `
     });
