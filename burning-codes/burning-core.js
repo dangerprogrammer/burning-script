@@ -41,7 +41,7 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
       scriptSkins = createElem('div', {className: 'script-skins'}),
       leftScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
       rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
-      mainMenuMessage = createElem('div', {className: 'main-menu-message', innerHTML: 'Opa'});
+      mainMenuMessage = createElem('div', {className: 'main-menu-message hidden', innerHTML: 'Opa'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);

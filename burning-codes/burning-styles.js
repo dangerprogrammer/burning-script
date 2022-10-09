@@ -524,6 +524,17 @@
 
         .main-menu-message {
             position: absolute;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: .15rem;
+        }
+
+        .main-menu-message.hidden {
+            display: none;
+        }
+
+        .main-user-settings:has(.main-menu-message:not(.hidden)) *:not(.main-menu-message) {
+            display: none;
         }
         `
     });
