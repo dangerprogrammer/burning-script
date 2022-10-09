@@ -399,6 +399,7 @@
             return start + ending;
         },
         controlBaseFromBot(bot) {
+            if (!bot || !bot.botPlayer || !bot.botSocket) return;
             updateGameLoop = function(a) {
                 if (player && gameData) {
                     updateTarget();
