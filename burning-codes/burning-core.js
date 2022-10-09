@@ -211,10 +211,13 @@ class socketBot {
             const ind = getPlayerIndexById(id);
             this.players.splice(ind, 1);
         });
+        this.botSocket = botSocket;
+
+        return botSocket;
     };
 	
 	async spawn(name, skin) {
-		botSocket.emit("spawn", { name, skin }, await getToken())
+		this.botSocket.emit("spawn", { name, skin }, await getToken())
 	};
 };
 
