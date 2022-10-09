@@ -419,10 +419,10 @@
                         if (activeUnit) {
                             var k = player.x - d + targetDst * MathCOS(targetDir) + camX;
                             var f = player.y - c + targetDst * MathSIN(targetDir) + camY;
-                            var h = UTILS.getDirection(k, f, savedBase.x - d, savedBase.y - c);
+                            var h = UTILS.getDirection(k, f, bot.botPlayer.x - d, bot.botPlayer.y - c);
                             0 == activeUnit.type ? (b = UTILS.getDistance(k, f,
-                                    savedBase.x - d, savedBase.y - c), b - activeUnit.size < savedBase.startSize ? (k = savedBase.x - d + (activeUnit.size + savedBase.startSize) * MathCOS(h), f = savedBase.y - c + (activeUnit.size + savedBase.startSize) * MathSIN(h)) : b + activeUnit.size > savedBase.buildRange - .15 && (k = savedBase.x - d + (savedBase.buildRange - activeUnit.size - .15) * MathCOS(h), f = savedBase.y - c + (savedBase.buildRange - activeUnit.size - .15) * MathSIN(h))) : 1 == activeUnit.type || 2 == activeUnit.type ? (k = savedBase.x - d + (activeUnit.size + savedBase.buildRange) * MathCOS(h), f = savedBase.y - c + (activeUnit.size + savedBase.buildRange) * MathSIN(h)) :
-                                3 == activeUnit.type && (b = UTILS.getDistance(k, f, savedBase.x - d, savedBase.y - c), b - activeUnit.size < savedBase.startSize ? (k = savedBase.x - d + (activeUnit.size + savedBase.startSize) * MathCOS(h), f = savedBase.y - c + (activeUnit.size + savedBase.startSize) * MathSIN(h)) : b + activeUnit.size > savedBase.buildRange + 2 * activeUnit.size && (k = savedBase.x - d + (savedBase.buildRange + activeUnit.size) * MathCOS(h), f = savedBase.y - c + (savedBase.buildRange + activeUnit.size) * MathSIN(h)));
+                                    bot.botPlayer.x - d, bot.botPlayer.y - c), b - activeUnit.size < bot.botPlayer.startSize ? (k = bot.botPlayer.x - d + (activeUnit.size + bot.botPlayer.startSize) * MathCOS(h), f = bot.botPlayer.y - c + (activeUnit.size + bot.botPlayer.startSize) * MathSIN(h)) : b + activeUnit.size > bot.botPlayer.buildRange - .15 && (k = bot.botPlayer.x - d + (bot.botPlayer.buildRange - activeUnit.size - .15) * MathCOS(h), f = bot.botPlayer.y - c + (bot.botPlayer.buildRange - activeUnit.size - .15) * MathSIN(h))) : 1 == activeUnit.type || 2 == activeUnit.type ? (k = bot.botPlayer.x - d + (activeUnit.size + bot.botPlayer.buildRange) * MathCOS(h), f = bot.botPlayer.y - c + (activeUnit.size + bot.botPlayer.buildRange) * MathSIN(h)) :
+                                3 == activeUnit.type && (b = UTILS.getDistance(k, f, bot.botPlayer.x - d, bot.botPlayer.y - c), b - activeUnit.size < bot.botPlayer.startSize ? (k = bot.botPlayer.x - d + (activeUnit.size + bot.botPlayer.startSize) * MathCOS(h), f = bot.botPlayer.y - c + (activeUnit.size + bot.botPlayer.startSize) * MathSIN(h)) : b + activeUnit.size > bot.botPlayer.buildRange + 2 * activeUnit.size && (k = bot.botPlayer.x - d + (bot.botPlayer.buildRange + activeUnit.size) * MathCOS(h), f = bot.botPlayer.y - c + (bot.botPlayer.buildRange + activeUnit.size) * MathSIN(h)));
                             activeUnitDir = h;
                             activeUnitDst = UTILS.getDistance(k, f, player.x - d, player.y - c);
                             activeUnit.dontPlace = !1;
@@ -430,7 +430,7 @@
                                 outerColor;
                             if (0 == activeUnit.type || 2 == activeUnit.type || 3 == activeUnit.type)
                                 for (e = 0; e < units.length; ++e)
-                                    if (1 != units[e].type && units[e].owner == savedBase.sid && 0 <= activeUnit.size + units[e].size - UTILS.getDistance(k, f, units[e].x - d, units[e].y - c)) {
+                                    if (1 != units[e].type && units[e].owner == bot.botPlayer.sid && 0 <= activeUnit.size + units[e].size - UTILS.getDistance(k, f, units[e].x - d, units[e].y - c)) {
                                         mainContext.fillStyle = redColor;
                                         activeUnit.dontPlace = !0;
                                         break
@@ -439,7 +439,7 @@
                         } else if (selUnits.length)
                         for (e = 0; e < selUnits.length; ++e) mainContext.fillStyle = outerColor, 1 < selUnits.length ? renderCircle(selUnits[e].x -
                             d, selUnits[e].y - c, selUnits[e].size + 25, mainContext, !0) : renderCircle(selUnits[e].x - d, selUnits[e].y - c, selUnits[e].range ? selUnits[e].range : selUnits[e].size + 25, mainContext, !0);
-                    else activeBase && (mainContext.fillStyle = outerColor, renderCircle(savedBase.x - d, savedBase.y - c, savedBase.size + 50, mainContext, !0));
+                    else activeBase && (mainContext.fillStyle = outerColor, renderCircle(bot.botPlayer.x - d, bot.botPlayer.y - c, bot.botPlayer.size + 50, mainContext, !0));
                     if (selUnits.length)
                         for (mainContext.strokeStyle = targetColor, e = 0; e < selUnits.length; ++e) selUnits[e].gatherPoint && renderDottedCircle(selUnits[e].gatherPoint[0] - d, selUnits[e].gatherPoint[1] - c, 30, mainContext);
                     for (e = 0; e < users.length; ++e)
@@ -473,10 +473,10 @@
                     if (selUnits.length)
                         for (e = selUnits.length - 1; 0 <= e; --e) selUnits[e] &&
                             0 > units.indexOf(selUnits[e]) && disableSelUnit(e);
-                    activeUnit && renderUnit(k, f, h, activeUnit, playerColors[savedBase.color], mainContext);
+                    activeUnit && renderUnit(k, f, h, activeUnit, playerColors[bot.botPlayer.color], mainContext);
                     showSelector && (mainContext.fillStyle = "rgba(0, 0, 0, 0.1)", k = player.x - d + targetDst * MathCOS(targetDir) + camX, f = player.y - c + targetDst * MathSIN(targetDir) + camY, mainContext.fillRect(mouseStartX, mouseStartY, k - mouseStartX, f - mouseStartY));
                     playerBorderRot += a / 5600;
-                    hoverUnit ? toggleUnitInfo(hoverUnit) : activeBase ? toggleUnitInfo(activeBase, activeBase.sid == savedBase.sid) : activeUnit ? toggleUnitInfo(activeUnit) :
+                    hoverUnit ? toggleUnitInfo(hoverUnit) : activeBase ? toggleUnitInfo(activeBase, activeBase.sid == bot.botPlayer.sid) : activeUnit ? toggleUnitInfo(activeUnit) :
                         1 == selUnits.length ? toggleUnitInfo(selUnits[0].info, !0) : toggleUnitInfo()
                 }
             };
