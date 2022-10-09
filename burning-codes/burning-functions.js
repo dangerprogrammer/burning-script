@@ -292,9 +292,8 @@
                 var c = getUserBySID(a);
                 null != c && (users[c].size = d)
             });
-            socket.on("pt", function(a) {
-                scoreContainer.innerHTML = "Power <span class='greyMenuText'>" + a +
-                    "/6000</span>"
+            socket.on("pt", a => {
+                scoreContainer.innerHTML = `Power <span style="color: ${player.color}">${a}</span>`;
             });
             socket.on("l", function(a) {
                 for (var d = "", c = 1, b = 0; b < a.length;) d += "<div class='leaderboardItem'><div style='display:inline-block;float:left;' class='whiteText'>" + c + ".</div> <div class='" + (player && a[b] == player.sid ? "leaderYou" : "leader") + "'>" + a[b + 1] + "</div><div class='scoreText'>" + a[b + 2] + "</div></div>", c++, b += 3;

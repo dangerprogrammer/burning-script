@@ -178,7 +178,7 @@ class socketBot {
         botSocket.isBot = true;
 
         this.players = [];
-        let player;
+        let botPlayer;
 
         botSocket.on('setUser', (attributes, isYou) => {
             const ind = getPlayerIndexById(attributes[0]),
@@ -199,23 +199,27 @@ class socketBot {
 
             if (ind !== null) {
                 this.players[ind] = newPlayer;
-                if (isYou) player = this.players[ind];
+                if (isYou) botPlayer = this.players[ind];
             } else {
                 this.players.push(newPlayer);
-                if (isYou) player = this.players[this.players.length - 1];
+                if (isYou) botPlayer = this.players[this.players.length - 1];
             };
         });
 
         botSocket.on('delUser', id => {
             const ind = getPlayerIndexById(id);
-            if (player.sid === id) botsList.splice(botsList.indexOf(player), 1);
+            if (botPlayer.sid === id) botsList.splice(botsList.indexOf(botPlayer), 1);
             this.players.splice(ind, 1);
         });
 
         botSocket.on('disconnect', id => {
             const ind = getPlayerIndexById(id);
-            if (player.sid === id) botsList.splice(botsList.indexOf(player), 1);
+            if (botPlayer.sid === id) botsList.splice(botsList.indexOf(botPlayer), 1);
             this.players.splice(ind, 1);
+        });
+
+        botSocket.on('pt', score => {
+            const scoreBotContainer = createElem('div', {className: 'score-bot-container', innerHTML: score});
         });
 
         this.botSocket = botSocket;
