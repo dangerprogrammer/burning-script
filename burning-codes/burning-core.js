@@ -22,7 +22,7 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
       creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
       usernameContainer = createElem('div', {className: 'username-container'}),
       usernameContent = createElem('input', {className: 'username-content', placeholder: 'Type your nickname', maxLength: 14}),
-      playContent = createElem('div', {className: 'play-content', innerHTML: 'Start Game <ion-icon name="arrow-forward-outline"></ion-icon>'}),
+      playContent = createElem('div', {className: 'play-content no-click', innerHTML: 'Start Game <ion-icon name="arrow-forward-outline"></ion-icon>'}),
       guildContainer = createElem('div', {className: 'guild-container'}),
       guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5}),
       skinsSettingsContainer = createElem('div', {className: 'skins-settings-container'}),
@@ -233,7 +233,9 @@ window.buildBot = () => {
 
     newBot.spawn(`${player.name}-${botsList.length}`, player.skin);
 
-    botsList.push(newBot);
+    const botSocket = newBot.botSocket;
+
+    botsList.push(botSocket);
 };
 
 window.botsList = botsList;

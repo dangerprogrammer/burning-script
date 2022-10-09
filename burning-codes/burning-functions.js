@@ -361,7 +361,7 @@
         },
         initFinish() {
             initC++;
-            2 == initC && (playContent.addEventListener('click', enterGame), usernameContent.addEventListener('keydown', ev => {
+            2 == initC && (playContent.classList.remove('no-click'), playContent.addEventListener('click', enterGame), usernameContent.addEventListener('keydown', ev => {
                 if (ev.code === 'Enter') enterGame();
             }), mainCanvas.addEventListener("keypress", function(a) {
                 gameState && 13 === (a.which || a.keyCode) && (mainCanvas.blur(), chatInput.focus(), toggleChat(!0))
