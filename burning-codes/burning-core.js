@@ -200,7 +200,7 @@ class socketBot {
                     desc: `Bot ID: ${id}`
                 };
 
-            if (ind !== null) {
+            if (ind !== null && ind !== undefined) {
                 this.players[ind] = newPlayer;
                 if (isYou) botPlayer = this.players[ind];
             } else {
