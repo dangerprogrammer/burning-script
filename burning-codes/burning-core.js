@@ -220,6 +220,8 @@ class socketBot {
 
         botSocket.on('pt', score => {
             const scoreBotContainer = createElem('div', {className: 'score-bot-container', innerHTML: score});
+
+            scoreBotContainer.append(scoreBotContainer);
         });
 
         this.botSocket = botSocket;
