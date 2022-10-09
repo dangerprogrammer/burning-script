@@ -233,6 +233,8 @@ class socketBot {
             else powerBotList[+botPlayer.name.slice(`${player.name}-`.length)].power = score;
         });
 
+        this.botPlayer = botPlayer;
+
         this.botSocket = botSocket;
     };
 
@@ -248,9 +250,7 @@ window.buildBot = () => {
 
     newBot.spawn(`${player.name}-${botsList.length}`, player.skin);
 
-    const botSocket = newBot.botSocket;
-
-    botsList.push(botSocket);
+    botsList.push(newBot);
 };
 
 window.botsList = botsList;
