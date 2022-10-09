@@ -204,7 +204,6 @@ class socketBot {
                 this.players.push(newPlayer);
                 if (isYou) player = this.players[this.players.length - 1];
             };
-            if (isYou) botsList.push(player);
         });
 
         botSocket.on('delUser', id => {
@@ -232,6 +231,8 @@ window.buildBot = () => {
     const newBot = new socketBot();
 
     newBot.spawn(`${player.name}-${botsList.length}`, player.skin);
+
+    botsList.push(newBot);
 };
 
 window.botsList = botsList;
