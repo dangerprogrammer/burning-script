@@ -221,6 +221,8 @@ class socketBot {
         botSocket.on('pt', score => {
             const scoreBotContainer = createElem('div', {className: 'score-bot-container', innerHTML: score});
 
+            scoreBotContainer.style.color = playerColors[botPlayer.color];
+
             scoreBotContainer.append(scoreBotContainer);
         });
 
