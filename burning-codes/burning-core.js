@@ -40,8 +40,7 @@ const userSettingsContainer = createElem('div', {className: 'user-settings-conta
       scriptSkinsPages = createElem('div', {className: 'script-skins-pages'}),
       scriptSkins = createElem('div', {className: 'script-skins'}),
       leftScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
-      rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
-      showNotifScroll = createElem('div', {className: 'show-notif-scroll', innerHTML: 'I'});
+      rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'});
 
 guildContainer.append(guildContent);
 usernameContainer.append(usernameContent);
@@ -51,7 +50,7 @@ gameSkinsContent.append(leftGamePage, gameSkins, rightGamePage);
 scriptSkinsContent.append(leftScriptPage, scriptSkins, rightScriptPage);
 gameSkinsContainer.append(gameSkinsContent, gameSkinsPages);
 scriptSkinsContainer.append(scriptSkinsContent, scriptSkinsPages);
-skinsListContainer.append(gameSkinsContainer, scriptSkinsContainer, showNotifScroll);
+skinsListContainer.append(gameSkinsContainer, scriptSkinsContainer);
 skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
 mainUserSettings.append(usernameplayContainer, skinsSettingsContainer);
 userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
