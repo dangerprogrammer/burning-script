@@ -212,12 +212,10 @@ class socketBot {
             this.players.splice(ind, 1);
         });
         this.botSocket = botSocket;
-
-        return botSocket;
     };
 	
 	async spawn(name, skin) {
-		this.botSocket.emit("spawn", { name, skin }, await getToken())
+		this.botSocket.emit("spawn", { name, skin }, await grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE"));
 	};
 };
 
