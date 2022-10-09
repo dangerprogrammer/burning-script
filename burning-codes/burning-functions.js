@@ -103,7 +103,7 @@
             };
         },
         setMenuMessage(msg) {
-            setClassOn('hidden', mainMenuMessage);
+            mainMenuMessage.classList.add('hidden');
             mainMenuMessage.innerHTML = msg;
         },
         enterGame() {
