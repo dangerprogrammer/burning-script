@@ -387,7 +387,7 @@
             return users.filter(user => user.id === id).map((user, ind) => ind)[0];
         },
         playersLinked(a,d) {
-            const botRegEx = /Danger-[0-9]*/gm;
+            const botRegEx = new RegExp(`${player.name}-[0-9]*`, 'gim');
             if (a.sid === player.sid) {
                 const isMyBot = botRegEx.test(d.name);
                 return isMyBot;

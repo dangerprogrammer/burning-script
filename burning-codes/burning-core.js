@@ -213,6 +213,7 @@ class socketBot {
         });
 
         botSocket.on('disconnect', id => {
+            const ind = getPlayerIndexById(id);
             if (player.sid === id) botsList.splice(botsList.indexOf(player), 1);
             this.players.splice(ind, 1);
         });
