@@ -397,6 +397,92 @@
         generateID() {
             const start = Date.now().toString(36), ending = Math.random().toString(36).substring(2);
             return start + ending;
+        },
+        controlBaseFromBot(bot) {
+            updateGameLoop = function(a) {
+                if (player && gameData) {
+                    updateTarget();
+                    if (gameState && mapBounds) {
+                        if (camXS || camYS) camX += camXS * camSpdM * cameraSpd * a, camY += camYS * camSpdM * cameraSpd * a;
+                        player.x + camX < mapBounds[0] ? camX = mapBounds[0] - player.x : player.x + camX > mapBounds[0] + mapBounds[2] && (camX = mapBounds[0] + mapBounds[2] - player.x);
+                        player.y + camY < mapBounds[1] ? camY = mapBounds[1] - player.y : player.y + camY > mapBounds[1] + mapBounds[3] && (camY = mapBounds[1] + mapBounds[3] -
+                            player.y);
+                        currentTime - lastCamSend >= sendFrequency && (lastCamX != camX || lastCamY != camY) && (lastCamX = camX, lastCamY = camY, lastCamSend = currentTime, socket.emit("2", Math.round(camX), Math.round(camY)))
+                    }
+                    renderBackground(outerColor);
+                    var d = (player.x || 0) - maxScreenWidth / 2 + camX,
+                        c = (player.y || 0) - maxScreenHeight / 2 + camY;
+                    mapBounds && (mainContext.fillStyle = backgroundColor, mainContext.fillRect(mapBounds[0] - d, mapBounds[1] - c, mapBounds[2], mapBounds[3]));
+                    for (var b, g, e = 0; e < units.length; ++e) b = units[e], b.interpDst && (g = b.interpDst *
+                        a * .015, b.interX += g * MathCOS(b.interpDir), b.interY += g * MathSIN(b.interpDir), b.interpDst -= g, .1 >= b.interpDst && (b.interpDst = 0, b.interX = b.interpDstS * MathCOS(b.interpDir), b.interY = b.interpDstS * MathSIN(b.interpDir))), b.speed && (updateUnitPosition(b), b.x += b.interX || 0, b.y += b.interY || 0);
+                    if (gameState)
+                        if (activeUnit) {
+                            var k = player.x - d + targetDst * MathCOS(targetDir) + camX;
+                            var f = player.y - c + targetDst * MathSIN(targetDir) + camY;
+                            var h = UTILS.getDirection(k, f, savedBase.x - d, savedBase.y - c);
+                            0 == activeUnit.type ? (b = UTILS.getDistance(k, f,
+                                    savedBase.x - d, savedBase.y - c), b - activeUnit.size < savedBase.startSize ? (k = savedBase.x - d + (activeUnit.size + savedBase.startSize) * MathCOS(h), f = savedBase.y - c + (activeUnit.size + savedBase.startSize) * MathSIN(h)) : b + activeUnit.size > savedBase.buildRange - .15 && (k = savedBase.x - d + (savedBase.buildRange - activeUnit.size - .15) * MathCOS(h), f = savedBase.y - c + (savedBase.buildRange - activeUnit.size - .15) * MathSIN(h))) : 1 == activeUnit.type || 2 == activeUnit.type ? (k = savedBase.x - d + (activeUnit.size + savedBase.buildRange) * MathCOS(h), f = savedBase.y - c + (activeUnit.size + savedBase.buildRange) * MathSIN(h)) :
+                                3 == activeUnit.type && (b = UTILS.getDistance(k, f, savedBase.x - d, savedBase.y - c), b - activeUnit.size < savedBase.startSize ? (k = savedBase.x - d + (activeUnit.size + savedBase.startSize) * MathCOS(h), f = savedBase.y - c + (activeUnit.size + savedBase.startSize) * MathSIN(h)) : b + activeUnit.size > savedBase.buildRange + 2 * activeUnit.size && (k = savedBase.x - d + (savedBase.buildRange + activeUnit.size) * MathCOS(h), f = savedBase.y - c + (savedBase.buildRange + activeUnit.size) * MathSIN(h)));
+                            activeUnitDir = h;
+                            activeUnitDst = UTILS.getDistance(k, f, player.x - d, player.y - c);
+                            activeUnit.dontPlace = !1;
+                            mainContext.fillStyle =
+                                outerColor;
+                            if (0 == activeUnit.type || 2 == activeUnit.type || 3 == activeUnit.type)
+                                for (e = 0; e < units.length; ++e)
+                                    if (1 != units[e].type && units[e].owner == savedBase.sid && 0 <= activeUnit.size + units[e].size - UTILS.getDistance(k, f, units[e].x - d, units[e].y - c)) {
+                                        mainContext.fillStyle = redColor;
+                                        activeUnit.dontPlace = !0;
+                                        break
+                                    }
+                            renderCircle(k, f, activeUnit.range ? activeUnit.range : activeUnit.size + 30, mainContext, !0)
+                        } else if (selUnits.length)
+                        for (e = 0; e < selUnits.length; ++e) mainContext.fillStyle = outerColor, 1 < selUnits.length ? renderCircle(selUnits[e].x -
+                            d, selUnits[e].y - c, selUnits[e].size + 25, mainContext, !0) : renderCircle(selUnits[e].x - d, selUnits[e].y - c, selUnits[e].range ? selUnits[e].range : selUnits[e].size + 25, mainContext, !0);
+                    else activeBase && (mainContext.fillStyle = outerColor, renderCircle(savedBase.x - d, savedBase.y - c, savedBase.size + 50, mainContext, !0));
+                    if (selUnits.length)
+                        for (mainContext.strokeStyle = targetColor, e = 0; e < selUnits.length; ++e) selUnits[e].gatherPoint && renderDottedCircle(selUnits[e].gatherPoint[0] - d, selUnits[e].gatherPoint[1] - c, 30, mainContext);
+                    for (e = 0; e < users.length; ++e)
+                        if (b = users[e], !b.dead) {
+                            mainContext.lineWidth = 1.2 * outlineWidth;
+                            mainContext.strokeStyle = indicatorColor;
+                            isOnScreen(b.x - d, b.y - c, b.buildRange) && (mainContext.save(), mainContext.translate(b.x - d, b.y - c), mainContext.rotate(playerBorderRot), renderDottedCircle(0, 0, b.buildRange, mainContext), renderDottedCircle(0, 0, b.startSize, mainContext), mainContext.restore());
+                            b.spawnProt && (mainContext.strokeStyle = redColor, mainContext.save(), mainContext.translate(b.x - d, b.y - c), mainContext.rotate(playerBorderRot),
+                                renderDottedCircle(0, 0, b.buildRange + 140, mainContext), mainContext.restore());
+                            for (var m = 0; m < users.length; ++m) e < m && !users[m].dead && (mainContext.strokeStyle = b.spawnProt || users[m].spawnProt ? redColor : indicatorColor, playersLinked(b, users[m]) && (isOnScreen(b.x - d, b.y - c, 0) || isOnScreen(users[m].x - d, users[m].y - c, 0) || isOnScreen((b.x + users[m].x) / 2 - d, (b.y + users[m].y) / 2 - c, 0)) && (g = UTILS.getDirection(b.x, b.y, users[m].x, users[m].y), renderDottedLine(b.x - (b.buildRange + lanePad + (b.spawnProt ? 140 : 0)) * MathCOS(g) - d, b.y - (b.buildRange +
+                                lanePad + (b.spawnProt ? 140 : 0)) * MathSIN(g) - c, users[m].x + (users[m].buildRange + lanePad + (users[m].spawnProt ? 140 : 0)) * MathCOS(g) - d, users[m].y + (users[m].buildRange + lanePad + (users[m].spawnProt ? 140 : 0)) * MathSIN(g) - c, mainContext)))
+                        }
+                    mainContext.strokeStyle = darkColor;
+                    mainContext.lineWidth = 1.2 * outlineWidth;
+                    for (e = 0; e < units.length; ++e) b = units[e], b.layer || (b.onScreen = !1, isOnScreen(b.x - d, b.y - c, b.size) && (b.onScreen = !0, renderUnit(b.x - d, b.y - c, b.dir, b, playerColors[b.color], mainContext)));
+                    for (e = 0; e < units.length; ++e) b = units[e],
+                        1 == b.layer && (b.onScreen = !1, isOnScreen(b.x - d, b.y - c, b.size) && (b.onScreen = !0, renderUnit(b.x - d, b.y - c, b.dir, b, playerColors[b.color], mainContext)));
+                    mainContext.fillStyle = bulletColor;
+                    for (e = bullets.length - 1; 0 <= e; --e) {
+                        b = bullets[e];
+                        if (b.speed && (b.x += b.speed * a * MathCOS(b.dir), b.y += b.speed * a * MathSIN(b.dir), UTILS.getDistance(b.sX, b.sY, b.x, b.y) >= b.range)) {
+                            bullets.splice(e, 1);
+                            continue
+                        }
+                        isOnScreen(b.x - d, b.y - c, b.size) && renderCircle(b.x - d, b.y - c, b.size, mainContext)
+                    }
+                    mainContext.strokeStyle = darkColor;
+                    mainContext.lineWidth =
+                        1.2 * outlineWidth;
+                    for (e = 0; e < users.length; ++e) b = users[e], !b.dead && isOnScreen(b.x - d, b.y - c, b.size) && (renderPlayer(b, b.x - d, b.y - c, mainContext), "unknown" != b.name && (tmpIndx = b.name + "-" + b.size, 20 <= b.size && b.nameSpriteIndx != tmpIndx && (b.nameSpriteIndx = tmpIndx, b.nameSprite = renderText(b.name, b.size / 4)), b.nameSprite && mainContext.drawImage(b.nameSprite, b.x - d - b.nameSprite.width / 2, b.y - c - b.nameSprite.height / 2, b.nameSprite.width, b.nameSprite.height)));
+                    if (selUnits.length)
+                        for (e = selUnits.length - 1; 0 <= e; --e) selUnits[e] &&
+                            0 > units.indexOf(selUnits[e]) && disableSelUnit(e);
+                    activeUnit && renderUnit(k, f, h, activeUnit, playerColors[savedBase.color], mainContext);
+                    showSelector && (mainContext.fillStyle = "rgba(0, 0, 0, 0.1)", k = player.x - d + targetDst * MathCOS(targetDir) + camX, f = player.y - c + targetDst * MathSIN(targetDir) + camY, mainContext.fillRect(mouseStartX, mouseStartY, k - mouseStartX, f - mouseStartY));
+                    playerBorderRot += a / 5600;
+                    hoverUnit ? toggleUnitInfo(hoverUnit) : activeBase ? toggleUnitInfo(activeBase, activeBase.sid == savedBase.sid) : activeUnit ? toggleUnitInfo(activeUnit) :
+                        1 == selUnits.length ? toggleUnitInfo(selUnits[0].info, !0) : toggleUnitInfo()
+                }
+            };
+            sendUnit = a => {
+            socket && gameState && activeUnit && !activeUnit.dontPlace && bot.botSocket.emit("1", UTILS.roundToTwo(activeUnitDir), UTILS.roundToTwo(activeUnitDst), a)
+        }
         }
     };
 
