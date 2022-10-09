@@ -385,6 +385,10 @@
         },
         getPlayerIndexById(id) {
             return users.filter(user => user.id === id).map((user, ind) => ind)[0];
+        },
+        playersLinked(a, d) {
+            console.log(d);
+            return UTILS.getDistance(a.x, a.y, d.x, d.y) <= gameData.gridSpace
         }
     };
 

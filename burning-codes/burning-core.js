@@ -209,14 +209,21 @@ class socketBot {
 
         botSocket.on('delUser', id => {
             const ind = getPlayerIndexById(id);
+            if (player.sid === id) botsList.splice(botsList.indexOf(player), 1);
             this.players.splice(ind, 1);
         });
+
+        botSocket.on('disconnect', id => {
+            if (player.sid === id) botsList.splice(botsList.indexOf(player), 1);
+            this.players.splice(ind, 1);
+        });
+
         this.botSocket = botSocket;
     };
-	
-	async spawn(name, skin) {
+
+    async spawn(name, skin) {
 		this.botSocket.emit("spawn", { name, skin }, await grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE"));
-	};
+    };
 };
 
 window.socketBot = socketBot;
@@ -225,8 +232,6 @@ window.buildBot = () => {
     const newBot = new socketBot();
 
     newBot.spawn(`${player.name}-${botsList.length}`, player.skin);
-
-    botsList.push(newBot);
 };
 
 window.botsList = botsList;
