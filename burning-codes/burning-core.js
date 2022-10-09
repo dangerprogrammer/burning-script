@@ -218,6 +218,10 @@ class socketBot {
             this.players.splice(ind, 1);
         });
 
+        botSocket.on('spawn', () => {
+            setInterval(() => botSocket.emit("2", Math.round(camX), Math.round(camY)), 1e3);
+        });
+
         botSocket.on('pt', score => {
             if (!window.powerBotList) window.powerBotList = [];
 
