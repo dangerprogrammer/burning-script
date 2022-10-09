@@ -214,7 +214,7 @@ class socketBot {
     };
 	
 	async spawn(name, skin) {
-		this.socket.emit("spawn", { name, skin }, await getToken())
+		botSocket.emit("spawn", { name, skin }, await getToken())
 	};
 };
 
