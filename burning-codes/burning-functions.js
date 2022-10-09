@@ -143,16 +143,16 @@
         },
         setupSocket() {
             socket.on("connect_error", function() {
-                lobbyURLIP ? kickPlayer("Connection failed. Please check your lobby ID") : kickPlayer("Connection failed. Check your internet and firewall settings")
+                lobbyURLIP ? setMenuMessage("Connection failed. Please check your lobby ID") : setMenuMessage("Connection failed. Check your internet and firewall settings")
             });
             socket.on("disconnect", function(a) {
-                kickPlayer("Disconnected.")
+                setMenuMessage("Disconnected.")
             });
             socket.on("error", function(a) {
-                kickPlayer("Disconnected. The server may have updated.")
+                setMenuMessage("Disconnected. The server may have updated.")
             });
             socket.on("kick", function(a) {
-                kickPlayer(a)
+                setMenuMessage(a)
             });
             socket.on("lk", function(a) {
                 partyKey = a
@@ -299,6 +299,48 @@
                 for (var d = "", c = 1, b = 0; b < a.length;) d += "<div class='leaderboardItem'><div style='display:inline-block;float:left;' class='whiteText'>" + c + ".</div> <div class='" + (player && a[b] == player.sid ? "leaderYou" : "leader") + "'>" + a[b + 1] + "</div><div class='scoreText'>" + a[b + 2] + "</div></div>", c++, b += 3;
                 leaderboardList.innerHTML = d
             })
+        },
+        renderUnit(a, d, c, b, g, e, k) {
+            var f = b.size * (k ? iconSizeMult : 1),
+                h = f + ":" + b.cloak + ":" + b.renderIndex + ":" + b.iSize + ":" + b.turretIndex + ":" + b.shape + ":" + g;
+            if (!unitSprites[h]) {
+                var m = document.createElement("canvas"),
+                    l = m.getContext("2d");
+                m.width = 2 * f + 30;
+                m.height = m.width;
+                m.style.width = m.width + "px";
+                m.style.height = m.height + "px";
+                l.translate(m.width / 2, m.height / 2);
+                l.lineWidth = outlineWidth * (k ? .9 : 1.2);
+                l.strokeStyle = darkColor;
+                l.globalAlpha = .5;
+                l.fillStyle = g;
+                4 == b.renderIndex ? l.fillStyle = turretColor : 5 == b.renderIndex && (l.fillStyle = turretColor,
+                    renderRect(0, .76 * f, 1.3 * f, f / 2.4, l), l.fillStyle = g);
+                b.cloak && (l.fillStyle = backgroundColor);
+                "circle" == b.shape ? (renderCircle(0, 0, f, l), b.iSize && (l.fillStyle = turretColor, renderCircle(0, 0, f * b.iSize, l))) : "triangle" == b.shape ? (renderTriangle(0, 0, f, l), b.iSize && (l.fillStyle = turretColor, renderTriangle(0, 2, f * b.iSize, l))) : "hexagon" == b.shape ? (renderAgon(0, 0, f, l, 6), b.iSize && (l.fillStyle = turretColor, renderAgon(0, 0, f * b.iSize, l, 6))) : "octagon" == b.shape ? (l.rotate(MathPI / 8), renderAgon(0, 0, .96 * f, l, 8), b.iSize && (l.fillStyle =
+                    turretColor, renderAgon(0, 0, .96 * f * b.iSize, l, 8))) : "pentagon" == b.shape ? (l.rotate(-MathPI / 2), renderAgon(0, 0, 1.065 * f, l, 5), b.iSize && (l.fillStyle = turretColor, renderAgon(0, 0, 1.065 * f * b.iSize, l, 5))) : "square" == b.shape ? (renderSquare(0, 0, f, l), b.iSize && (l.fillStyle = turretColor, renderSquare(0, 0, f * b.iSize, l))) : "spike" == b.shape ? renderStar(0, 0, f, .7 * f, l, 8) : "star" == b.shape && (f *= 1.2, renderStar(0, 0, f, .7 * f, l, 6));
+                if (1 == b.renderIndex) l.fillStyle = turretColor, renderRect(f / 2.8, 0, f / 4, f / 1, l), renderRect(-f / 2.8, 0, f / 4, f / 1, l);
+                else if (2 ==
+                    b.renderIndex) l.fillStyle = turretColor, renderRect(f / 2.5, f / 2.5, f / 2.5, f / 2.5, l), renderRect(-f / 2.5, f / 2.5, f / 2.5, f / 2.5, l), renderRect(f / 2.5, -f / 2.5, f / 2.5, f / 2.5, l), renderRect(-f / 2.5, -f / 2.5, f / 2.5, f / 2.5, l);
+                else if (3 == b.renderIndex) l.fillStyle = turretColor, l.rotate(MathPI / 2), renderRectCircle(0, 0, .75 * f, f / 2.85, 3, l), renderCircle(0, 0, .5 * f, l), l.fillStyle = g;
+                else if (6 == b.renderIndex) l.fillStyle = turretColor, l.rotate(MathPI / 2), renderRectCircle(0, 0, .7 * f, f / 4, 5, l), l.rotate(-MathPI / 2), renderAgon(0, 0, .4 * f, l, 6);
+                else if (7 == b.renderIndex)
+                    for (g =
+                        0; 3 > g; ++g) l.fillStyle = g ? 1 == g ? "#93e865" : "#a2ff6f" : "#89d95f", renderStar(0, 0, f, .7 * f, l, 7), f *= .55;
+                else 8 == b.renderIndex && (l.fillStyle = turretColor, renderRectCircle(0, 0, .75 * f, f / 2.85, 3, l), renderSquare(0, 0, .5 * f, l));
+                1 != b.type && b.turretIndex && renderTurret(0, 0, b.turretIndex, k ? iconSizeMult : 1, -(MathPI / 2), l);
+                unitSprites[h] = m
+            }
+            f = unitSprites[h];
+            e.save();
+            e.translate(a, d);
+            e.rotate(c + MathPI / 2);
+            e.globalAlpha = .5;
+            e.drawImage(f, -(f.width / 2), -(f.height / 2), f.width, f.height);
+            1 == b.type && b.turretIndex && renderTurret(0, 0, b.turretIndex, k ? iconSizeMult :
+                1, b.turRot - MathPI / 2 - c, e);
+            e.restore()
         }
     };
 
