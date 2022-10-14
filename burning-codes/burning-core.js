@@ -1,1 +1,288 @@
-const _0x4c27c1=_0x39c1;(function(_0x1d1ba2,_0x40d6a7){const _0x498369=_0x39c1,_0x238220=_0x1d1ba2();while(!![]){try{const _0x1b32f1=-parseInt(_0x498369(0x16e))/0x1*(-parseInt(_0x498369(0x16f))/0x2)+-parseInt(_0x498369(0x16d))/0x3+parseInt(_0x498369(0x1ac))/0x4+parseInt(_0x498369(0x144))/0x5*(-parseInt(_0x498369(0x1a2))/0x6)+-parseInt(_0x498369(0x19f))/0x7+parseInt(_0x498369(0x1ad))/0x8*(parseInt(_0x498369(0x18d))/0x9)+-parseInt(_0x498369(0x151))/0xa*(-parseInt(_0x498369(0x188))/0xb);if(_0x1b32f1===_0x40d6a7)break;else _0x238220['push'](_0x238220['shift']());}catch(_0x2fa121){_0x238220['push'](_0x238220['shift']());}}}(_0x4bb4,0x5ecfe),removeElems(linksContainer,...menuContainer[_0x4c27c1(0x174)]),hideElems(smallAdContainer),resetFuncs(updateAdPos,youtuberList));const featuredSkins=0x36;document[_0x4c27c1(0x14f)]='Burning\x20Script\x201.0.0',cid=UTILS[_0x4c27c1(0x173)](),localStorage[_0x4c27c1(0x155)](_0x4c27c1(0x1a9),cid),backgroundColor='#111',turretColor='#333a',outerColor=_0x4c27c1(0x154),darkColor=_0x4c27c1(0x148),indicatorColor=_0x4c27c1(0x190),redColor=_0x4c27c1(0x175),targetColor=_0x4c27c1(0x17d);const oldColors=[...playerColors],newColorsAlpha=0.5;playerColors[_0x4c27c1(0x192)]((_0x3ee98e,_0x4fa823)=>playerColors[_0x4fa823]=_0x3ee98e+Math['round'](newColorsAlpha*0x100)['toString'](0x10)),window[_0x4c27c1(0x184)]=oldColors;const ionIcons=createElems(['script',{'type':_0x4c27c1(0x17c),'src':'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}],['script',{'nomodule':!![],'src':_0x4c27c1(0x152)}]);document[_0x4c27c1(0x191)][_0x4c27c1(0x145)](...ionIcons);const userSettingsContainer=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x18f)}),gameTitle=createElem('h1',{'className':_0x4c27c1(0x180),'innerHTML':_0x4c27c1(0x14c)}),mainUserSettings=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x162)}),usernameplayContainer=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x186)}),creditsContainer=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x19a),'innerHTML':_0x4c27c1(0x1a3)}),usernameContainer=createElem(_0x4c27c1(0x198),{'className':'username-container'}),usernameContent=createElem(_0x4c27c1(0x149),{'className':_0x4c27c1(0x194),'placeholder':'Type\x20your\x20nickname','maxLength':0xe}),playContent=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x193),'innerHTML':_0x4c27c1(0x14d)}),guildContainer=createElem(_0x4c27c1(0x198),{'className':'guild-container'}),guildContent=createElem(_0x4c27c1(0x149),{'className':_0x4c27c1(0x156),'placeholder':'Guild','maxLength':0x5}),skinsSettingsContainer=createElem(_0x4c27c1(0x198),{'className':'skins-settings-container'}),toggleTypeSkins=createElem(_0x4c27c1(0x198),{'className':'toggle-type-skins'}),gameSkinsTitle=createElem('div',{'className':_0x4c27c1(0x165),'innerHTML':_0x4c27c1(0x160)}),scriptSkinsTitle=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x1ae),'innerHTML':_0x4c27c1(0x1aa)}),toggleSkins=createElem('div',{'className':_0x4c27c1(0x14a),'innerHTML':_0x4c27c1(0x197)}),skinsListContainer=createElem('div',{'className':'skins-list-container'}),gameSkinsContainer=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x15c)}),scriptSkinsContainer=createElem(_0x4c27c1(0x198),{'className':'script-skins-container'}),gameSkinsContent=createElem(_0x4c27c1(0x198),{'className':'game-skins-content'}),gameSkinsPages=createElem(_0x4c27c1(0x198),{'className':'game-skins-pages'}),gameSkins=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x163)}),leftGamePage=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x1a8),'innerHTML':_0x4c27c1(0x17e)}),rightGamePage=createElem(_0x4c27c1(0x198),{'className':'game-page','innerHTML':'<ion-icon\x20name=\x22arrow-forward-outline\x22></ion-icon>'}),scriptSkinsContent=createElem('div',{'className':_0x4c27c1(0x166)}),scriptSkinsPages=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x1b1)}),scriptSkins=createElem('div',{'className':'script-skins'}),leftScriptPage=createElem('div',{'className':_0x4c27c1(0x15e),'innerHTML':'<ion-icon\x20name=\x22arrow-back-outline\x22></ion-icon>'}),rightScriptPage=createElem('div',{'className':'script-page','innerHTML':'<ion-icon\x20name=\x22arrow-forward-outline\x22></ion-icon>'}),mainMenuMessage=createElem('div',{'className':_0x4c27c1(0x1a1),'innerHTML':_0x4c27c1(0x1a5)});guildContainer[_0x4c27c1(0x145)](guildContent),usernameContainer[_0x4c27c1(0x145)](usernameContent),usernameplayContainer[_0x4c27c1(0x145)](usernameContainer,guildContainer,playContent),toggleTypeSkins[_0x4c27c1(0x145)](gameSkinsTitle,scriptSkinsTitle),gameSkinsContent[_0x4c27c1(0x145)](leftGamePage,gameSkins,rightGamePage),scriptSkinsContent[_0x4c27c1(0x145)](leftScriptPage,scriptSkins,rightScriptPage),gameSkinsContainer[_0x4c27c1(0x145)](gameSkinsContent,gameSkinsPages),scriptSkinsContainer[_0x4c27c1(0x145)](scriptSkinsContent,scriptSkinsPages),skinsListContainer[_0x4c27c1(0x145)](gameSkinsContainer,scriptSkinsContainer),skinsSettingsContainer[_0x4c27c1(0x145)](toggleTypeSkins,toggleSkins,skinsListContainer),mainUserSettings[_0x4c27c1(0x145)](usernameplayContainer,skinsSettingsContainer,mainMenuMessage),userSettingsContainer[_0x4c27c1(0x145)](gameTitle,mainUserSettings,creditsContainer),window[_0x4c27c1(0x170)]=mainMenuMessage;const pagesListLength=0xf,gameSkinsPagesLength=Math[_0x4c27c1(0x158)](playerSkins/pagesListLength),scriptSkinsPagesLength=Math[_0x4c27c1(0x158)](featuredSkins/pagesListLength);let gameSkinsPagesList=[],gameSkinsPageList=[],gamePagesSkin=[],lastGameSkin;while(gameSkinsPagesList[_0x4c27c1(0x172)]<gameSkinsPagesLength){gamePagesSkin=[];const gamePagesSkins=Math['min'](playerSkins-pagesListLength*gameSkinsPagesList[_0x4c27c1(0x172)],pagesListLength),gameSkinPage=createElem('div',{'className':'game-skin-page'});while(gamePagesSkin[_0x4c27c1(0x172)]<gamePagesSkins){const gameSkinInd=gamePagesSkin[_0x4c27c1(0x172)]+pagesListLength*gameSkinsPagesList['length'],gameSkinContainer=createElem('div',{'className':'game-skin-container'}),gameSkinContent=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x176)}),skinInd=gameSkinInd-0x1;gameSkinContainer['dataset']['skin']=skinInd;if(gameSkinInd)gameSkinContent[_0x4c27c1(0x14b)][_0x4c27c1(0x16c)]=_0x4c27c1(0x187)+skinInd+_0x4c27c1(0x18c);else gameSkinContent[_0x4c27c1(0x14b)]['backgroundColor']=_0x4c27c1(0x153),lastGameSkin=gameSkinContainer;;gameSkinContent[_0x4c27c1(0x1a0)]('click',_0x5a8418=>activeGameSkin(gameSkinContainer)),gameSkinContainer[_0x4c27c1(0x145)](gameSkinContent),gamePagesSkin[_0x4c27c1(0x1a4)](gameSkinContainer);};gameSkinPage[_0x4c27c1(0x145)](...gamePagesSkin);const gameSkinsPage=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x142)});gameSkinsPagesList[_0x4c27c1(0x1a4)](gameSkinsPage),gameSkinsPageList['push'](gameSkinPage);};function _0x39c1(_0x13caa5,_0x148643){const _0x4bb4d7=_0x4bb4();return _0x39c1=function(_0x39c184,_0x3866a3){_0x39c184=_0x39c184-0x142;let _0x581a72=_0x4bb4d7[_0x39c184];return _0x581a72;},_0x39c1(_0x13caa5,_0x148643);}activeGameSkin(lastGameSkin),gameSkins['append'](...gameSkinsPageList),gameSkinsPages[_0x4c27c1(0x145)](...gameSkinsPagesList),toggleGamePage(0x0,gameSkins,gameSkinsPages),leftGamePage[_0x4c27c1(0x1a0)](_0x4c27c1(0x1ab),_0x1b6542=>toggleGamePage(-0x1,gameSkins,gameSkinsPages)),rightGamePage[_0x4c27c1(0x1a0)]('click',_0x241274=>toggleGamePage(0x1,gameSkins,gameSkinsPages));let scriptSkinsPagesList=[],scriptSkinsPageList=[],scriptPagesSkin=[],lastScriptSkin;while(scriptSkinsPagesList['length']<scriptSkinsPagesLength){scriptPagesSkin=[];const scriptPagesSkins=Math[_0x4c27c1(0x15b)](featuredSkins-pagesListLength*scriptSkinsPagesList[_0x4c27c1(0x172)],pagesListLength),scriptSkinPage=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x1a6)});while(scriptPagesSkin[_0x4c27c1(0x172)]<scriptPagesSkins){const scriptSkinInd=scriptPagesSkin[_0x4c27c1(0x172)]+pagesListLength*scriptSkinsPagesList[_0x4c27c1(0x172)],scriptSkinContainer=createElem(_0x4c27c1(0x198),{'className':_0x4c27c1(0x19d)}),scriptSkinContent=createElem('div',{'className':_0x4c27c1(0x168)}),skinInd=scriptSkinInd-0x1;scriptSkinContainer[_0x4c27c1(0x16a)][_0x4c27c1(0x159)]=skinInd;if(scriptSkinInd)scriptSkinContent['style'][_0x4c27c1(0x16c)]='url(\x27https://raw.githubusercontent.com/dangerprogrammer/burning-script/main/assets/skins/skin-'+skinInd+_0x4c27c1(0x18c);else scriptSkinContent['style'][_0x4c27c1(0x199)]=_0x4c27c1(0x153),lastScriptSkin=scriptSkinContainer;;scriptSkinContent[_0x4c27c1(0x1a0)](_0x4c27c1(0x1ab),_0x1661b4=>activeScriptSkin(scriptSkinContainer)),scriptSkinContainer['append'](scriptSkinContent),scriptPagesSkin[_0x4c27c1(0x1a4)](scriptSkinContainer);};scriptSkinPage[_0x4c27c1(0x145)](...scriptPagesSkin);const scriptSkinsPage=createElem(_0x4c27c1(0x198),{'className':'script-skins-page'});scriptSkinsPagesList[_0x4c27c1(0x1a4)](scriptSkinsPage),scriptSkinsPageList[_0x4c27c1(0x1a4)](scriptSkinPage);};activeScriptSkin(lastScriptSkin),scriptSkins['append'](...scriptSkinsPageList),scriptSkinsPages[_0x4c27c1(0x145)](...scriptSkinsPagesList),toggleScriptPage(0x0,scriptSkins,scriptSkinsPages),leftScriptPage['addEventListener'](_0x4c27c1(0x1ab),_0x7b3319=>toggleScriptPage(-0x1,scriptSkins,scriptSkinsPages)),rightScriptPage[_0x4c27c1(0x1a0)](_0x4c27c1(0x1ab),_0x18e481=>toggleScriptPage(0x1,scriptSkins,scriptSkinsPages)),toggleSkins[_0x4c27c1(0x1a0)](_0x4c27c1(0x1ab),_0x38c3d4=>skinsSettingsContainer['classList']['toggle']('hidden')),window[_0x4c27c1(0x19c)]=toggleTypeSkins,toggleTypeSkins[_0x4c27c1(0x1a0)]('mousewheel',_0x4a45de=>_0x4a45de[_0x4c27c1(0x181)]()),skinsListContainer['addEventListener']('mousewheel',_0x3a26dc=>_0x3a26dc[_0x4c27c1(0x181)]()),toggleSkinsType(toggleTypeSkins,skinsListContainer),toggleTypeSkins[_0x4c27c1(0x1a0)](_0x4c27c1(0x1ab),_0xfe7df1=>toggleSkinsType(toggleTypeSkins,skinsListContainer)),hasStorage&&localStorage[_0x4c27c1(0x1b2)](_0x4c27c1(0x195))&&(usernameContent[_0x4c27c1(0x15f)]=localStorage[_0x4c27c1(0x1b2)](_0x4c27c1(0x195))),usernameContent['addEventListener'](_0x4c27c1(0x171),_0xcc17f8=>{const _0x3f8c91=_0x4c27c1;if(_0xcc17f8[_0x3f8c91(0x14e)]===_0x3f8c91(0x19b))enterGame();}),addEventListener(_0x4c27c1(0x157),()=>toggleGamePage(0x0,gameSkins,gameSkinsPages)),menuContainer[_0x4c27c1(0x145)](userSettingsContainer);const botsList=[];window[_0x4c27c1(0x1af)]=0x0;class socketBot{constructor(_0x4ae16b){const _0x1d96ac=_0x4c27c1,_0x5efde2=_0x4ae16b||io[_0x1d96ac(0x1b0)](socket['io'][_0x1d96ac(0x143)],{'query':_0x1d96ac(0x189)+UTILS['getUniqueID']()+_0x1d96ac(0x179)+lobbyRoomID});_0x5efde2[_0x1d96ac(0x196)]=!![],this[_0x1d96ac(0x161)]=[],this[_0x1d96ac(0x19e)]=![],_0x5efde2['on'](_0x1d96ac(0x178),(_0x107556,_0x3e43c4)=>{const _0x5158b7=_0x1d96ac,_0xfdc50d=getPlayerIndexById(_0x107556[0x0]),_0x55c6e5=generateID(),_0x114f02={'sid':_0x107556[0x0],'name':_0x107556[0x1],'dead':![],'color':_0x107556[0x2],'size':_0x107556[0x3],'startSize':_0x107556[0x4],'x':_0x107556[0x5],'y':_0x107556[0x6],'buildRange':_0x107556[0x7],'gridIndex':_0x107556[0x8],'spawnProt':_0x107556[0x9],'skin':_0x107556[0xa],'desc':_0x5158b7(0x169)+_0x55c6e5};if(_0xfdc50d!==null&&_0xfdc50d!==undefined)this[_0x5158b7(0x161)][_0xfdc50d]=_0x114f02;else this[_0x5158b7(0x161)][_0x5158b7(0x1a4)](_0x114f02);if(_0x3e43c4)this[_0x5158b7(0x19e)]=_0x114f02;}),_0x5efde2['on'](_0x1d96ac(0x17b),_0x4c555b=>{const _0x55290d=_0x1d96ac,_0x31291c=getPlayerIndexById(_0x4c555b),_0x23bf7e=botsList[_0x55290d(0x177)](_0x316f57=>_0x316f57[_0x55290d(0x19e)][_0x55290d(0x1a7)]===_0x4c555b)[_0x55290d(0x147)]((_0x1e5c63,_0x507f8d)=>_0x507f8d);if(_0x23bf7e[_0x55290d(0x172)])botsList[_0x23bf7e[0x0]][_0x55290d(0x146)]();this['players'][_0x55290d(0x15d)](_0x31291c,0x1);}),_0x5efde2['on'](_0x1d96ac(0x150),_0x4aa4b8=>{const _0x1aaace=_0x1d96ac,_0x1dcdea=getPlayerIndexById(_0x4aa4b8),_0x3ae3c0=botsList[_0x1aaace(0x177)](_0x22b7f3=>_0x22b7f3[_0x1aaace(0x19e)][_0x1aaace(0x1a7)]===_0x4aa4b8)[_0x1aaace(0x147)]((_0x19ca4e,_0x206c77)=>_0x206c77);if(_0x3ae3c0[_0x1aaace(0x172)])botsList[_0x3ae3c0[0x0]][_0x1aaace(0x146)]();this[_0x1aaace(0x161)][_0x1aaace(0x15d)](_0x1dcdea,0x1);}),_0x5efde2['on'](_0x1d96ac(0x17f),()=>{const _0x81dd81=_0x1d96ac;botsList[_0x81dd81(0x1a4)](this),setInterval(()=>_0x5efde2[_0x81dd81(0x185)]('2',Math[_0x81dd81(0x167)](camX),Math[_0x81dd81(0x167)](camY)),0x3e8);}),_0x5efde2['on']('pt',_0x475c1a=>{const _0x304283=_0x1d96ac;this[_0x304283(0x19e)][_0x304283(0x164)]=_0x475c1a;}),this[_0x1d96ac(0x16b)]=_0x5efde2;}async[_0x4c27c1(0x17f)](_0x4c6022,_0x14cc17){const _0x4bb1f3=_0x4c27c1;this['botSocket'][_0x4bb1f3(0x185)](_0x4bb1f3(0x17f),{'name':_0x4c6022,'skin':_0x14cc17},await grecaptcha[_0x4bb1f3(0x18a)](_0x4bb1f3(0x18b)));}[_0x4c27c1(0x146)](){const _0xfa74e=_0x4c27c1;botsList[_0xfa74e(0x15d)](botsList['indexOf'](this),0x1);if(controlledUser==this[_0xfa74e(0x16b)])controlPlayer();this['botSocket'][_0xfa74e(0x183)]();}};function _0x4bb4(){const _0x5c41a5=['script-skin-container','botPlayer','5048911qeUqbr','addEventListener','main-menu-message\x20hidden','3936jzmDXH','Created\x20by\x20Danger','push','Opa','script-skin-page','sid','game-page','cid','Script\x20Skins','click','2419844ohuRvQ','892648UgkkgU','script-skins-title','controlledUser','connect','script-skins-pages','getItem','game-skins-page','uri','5125ruBTSV','append','delete','map','#aaaa','input','toggle-skins','style','Burning\x20Script','Start\x20Game\x20<ion-icon\x20name=\x22arrow-forward-outline\x22></ion-icon>','code','title','disconnect','10hWlTdI','https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js','#ff6060','#222','setItem','guild-content','resize','ceil','skin','buildBot','min','game-skins-container','splice','script-page','value','Game\x20Skins','players','main-user-settings','game-skins','power','game-skins-title','script-skins-content','round','script-skin-content','Bot\x20ID:\x20','dataset','botSocket','backgroundImage','1231524nljkNv','102565QvDFms','4OrKuxy','mainMenuMessage','keydown','length','getUniqueID','children','#f005','game-skin-content','filter','setUser','&rmid=','name','delUser','module','#fff6','<ion-icon\x20name=\x22arrow-back-outline\x22></ion-icon>','spawn','game-title','preventDefault','specialSkinStr','close','oldColors','emit','usernameplay-container','url(\x27http://bloble.io/img/skins/skin_','13979449GCgXyQ','cid=','execute','6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE','.png\x27)','9gMqaIF','botsList','user-settings-container','#555a','body','forEach','play-content\x20no-click','username-content','lstnmdbl','isBot','<ion-icon\x20name=\x22chevron-down-outline\x22></ion-icon>','div','backgroundColor','credits-container','Enter','toggleTypeSkins'];_0x4bb4=function(){return _0x5c41a5;};return _0x4bb4();}window[_0x4c27c1(0x15a)]=()=>{const _0x38099c=_0x4c27c1,_0x35eada=new socketBot(),_0x936fde=(player['specialSkin']?'!'+player[_0x38099c(0x182)]:'')+player[_0x38099c(0x17a)],_0x59e23f=botsList[_0x38099c(0x147)](_0x531216=>+_0x531216['botPlayer'][_0x38099c(0x17a)]['slice']((_0x936fde+'-')[_0x38099c(0x172)])),_0x3a542e={},_0x1316fb=getCadencyInd(0x0,_0x59e23f,_0x3a542e),_0x1d4bc9=0xa;if(botsList[_0x38099c(0x172)]<_0x1d4bc9)_0x35eada[_0x38099c(0x17f)](_0x936fde+'-'+_0x1316fb,player[_0x38099c(0x159)]);},window[_0x4c27c1(0x18e)]=botsList;
+removeElems(linksContainer, ...menuContainer.children);
+hideElems(smallAdContainer);
+resetFuncs(updateAdPos, youtuberList);
+
+const featuredSkins = 54;
+
+document.title = 'Burning Script 1.0.0';
+
+cid = UTILS.getUniqueID();
+localStorage.setItem("cid", cid);
+
+backgroundColor = '#111';turretColor = '#333a';outerColor = '#222';darkColor = '#aaaa';indicatorColor = '#555a';redColor = '#f005';targetColor = '#fff6';
+
+const oldColors = [...playerColors], newColorsAlpha = .5;
+playerColors.forEach((playerColor, ind) => playerColors[ind] = playerColor + Math.round(newColorsAlpha * 256).toString(16));
+window.oldColors = oldColors;
+
+const gameBases = {scriptBases: {
+    'Generators': [{"dir":1.5707963267948966,"dst":132,"uPath":[3,0]},{"dir":2.060602137898269,"dst":132.0000015151515,"uPath":[3,0]},{"dir":2.5613014392829516,"dst":131.99760982684498,"uPath":[3,0]},{"dir":3.0510905178126464,"dst":132.00021401497804,"uPath":[3,0]},{"dir":-2.738083552016774,"dst":132.00117007057173,"uPath":[3,0]},{"dir":-2.1639887225899512,"dst":132.00100984462202,"uPath":[3,0]},{"dir":1.080990515691524,"dst":132.0000015151515,"uPath":[3,0]},{"dir":0.5802912143068416,"dst":131.99760982684498,"uPath":[3,0]},{"dir":0.09050213577714679,"dst":132.00021401497804,"uPath":[3,0]},{"dir":-0.4035091015730189,"dst":132.00117007057173,"uPath":[3,0]},{"dir":-0.9776039309998418,"dst":132.00100984462202,"uPath":[3,0]},{"dir":-1.5707963267948966,"dst":212.01,"uPath":[3,0]},{"dir":-1.2150994043221024,"dst":184.2962018056802,"uPath":[3,0]},{"dir":-0.8760119324303033,"dst":194.33949804401576,"uPath":[3,0]},{"dir":-0.5038935476659494,"dst":193.95706999230526,"uPath":[3,0]},{"dir":-0.16509512272194807,"dst":184.18440569168718,"uPath":[3,0]},{"dir":0.32661369630416776,"dst":184.67287456472863,"uPath":[3,0]},{"dir":0.6615927777620818,"dst":194.68586029807096,"uPath":[3,0]},{"dir":1.0445973657274905,"dst":195.73912153680467,"uPath":[3,0]},{"dir":1.3982716706696492,"dst":189.89914797070577,"uPath":[3,0]},{"dir":-1.926493249267691,"dst":184.2962018056802,"uPath":[3,0]},{"dir":-2.2669932034158022,"dst":193.99528499424926,"uPath":[3,0]},{"dir":-2.637699105923844,"dst":193.95706999230526,"uPath":[3,0]},{"dir":-2.976497530867845,"dst":184.18440569168718,"uPath":[3,0]},{"dir":2.8149789572856254,"dst":184.67287456472863,"uPath":[3,0]},{"dir":2.4799998758277115,"dst":194.68586029807096,"uPath":[3,0]},{"dir":2.0969952878623026,"dst":195.73912153680467,"uPath":[3,0]},{"dir":1.7433209829201441,"dst":189.89914797070577,"uPath":[3,0]},{"dir":1.5707963267948966,"dst":243.85,"uPath":[3,0]},{"dir":1.9034921306653085,"dst":243.8515121954342,"uPath":[3,0]},{"dir":2.2915128109153544,"dst":243.84657163880732,"uPath":[3,0]},{"dir":2.668408424034472,"dst":243.8543017869482,"uPath":[3,0]},{"dir":2.9316908086774025,"dst":243.8522218475772,"uPath":[3,0]},{"dir":-3.0882142495349427,"dst":243.84730898658694,"uPath":[3,0]},{"dir":-2.822318978699968,"dst":243.8534652204065,"uPath":[3,0]},{"dir":-2.453081653157561,"dst":243.85096596076875,"uPath":[3,0]},{"dir":-2.078914523651356,"dst":243.8472702328242,"uPath":[3,0]},{"dir":-1.8155959602644267,"dst":243.8501720319262,"uPath":[3,0]},{"dir":1.2381005229244848,"dst":243.8515121954342,"uPath":[3,0]},{"dir":0.8500798426744389,"dst":243.84657163880732,"uPath":[3,0]},{"dir":0.4731842295553213,"dst":243.8543017869482,"uPath":[3,0]},{"dir":0.20990184491239056,"dst":243.8522218475772,"uPath":[3,0]},{"dir":-0.053378404054850524,"dst":243.84730898658694,"uPath":[3,0]},{"dir":-0.31927367488982544,"dst":243.8534652204065,"uPath":[3,0]},{"dir":-0.6885110004322322,"dst":243.85096596076875,"uPath":[3,0]},{"dir":-1.0626781299384371,"dst":243.8472702328242,"uPath":[3,0]},{"dir":-1.3259966933253666,"dst":243.8501720319262,"uPath":[3,0]},{"dir":-1.5707963267948966,"dst":140,"uPath":[7]}],
+    'Defense Base': [{"dir":-1.5707963267948966,"dst":132,"uPath":[3,0]},{"dir":-1.0472151517981065,"dst":132.0040241810832,"uPath":[3,0]},{"dir":-0.5235811749967904,"dst":132.00402418108317,"uPath":[3,0]},{"dir":0,"dst":132,"uPath":[3,0]},{"dir":0.5235811749967904,"dst":132.00402418108317,"uPath":[3,0]},{"dir":1.0472151517981065,"dst":132.0040241810832,"uPath":[3,0]},{"dir":1.5707963267948966,"dst":132,"uPath":[3,0]},{"dir":2.094377501791687,"dst":132.0040241810832,"uPath":[3,0]},{"dir":2.6180114785930026,"dst":132.00402418108317,"uPath":[3,0]},{"dir":3.141592653589793,"dst":132,"uPath":[3,0]},{"dir":-2.6180114785930026,"dst":132.00402418108317,"uPath":[3,0]},{"dir":-2.094377501791687,"dst":132.0040241810832,"uPath":[3,0]},{"dir":-1.5707963267948966,"dst":243.85,"uPath":[3,0]},{"dir":-1.2217310139003925,"dst":243.84564708027906,"uPath":[3,0]},{"dir":-0.8726765985349083,"dst":243.84763193437004,"uPath":[3,0]},{"dir":-0.523581622357118,"dst":243.84724480707183,"uPath":[3,0]},{"dir":-0.17451303786010752,"dst":243.85384577652255,"uPath":[3,0]},{"dir":0.17451303786010752,"dst":243.85384577652255,"uPath":[3,0]},{"dir":0.523581622357118,"dst":243.84724480707183,"uPath":[3,0]},{"dir":0.8726765985349083,"dst":243.84763193437004,"uPath":[3,0]},{"dir":1.2217310139003925,"dst":243.84564708027906,"uPath":[3,0]},{"dir":1.5707963267948966,"dst":243.85,"uPath":[3,0]},{"dir":1.9198616396894008,"dst":243.84564708027906,"uPath":[3,0]},{"dir":2.268916055054885,"dst":243.84763193437004,"uPath":[3,0]},{"dir":2.617975516530683,"dst":243.8522448123043,"uPath":[3,0]},{"dir":2.9670796157296855,"dst":243.85384577652243,"uPath":[3,0]},{"dir":-2.9670796157296855,"dst":243.85384577652243,"uPath":[3,0]},{"dir":-2.618011031232675,"dst":243.84724480707175,"uPath":[3,0]},{"dir":-2.268916055054885,"dst":243.84763193437004,"uPath":[3,0]},{"dir":-1.9198616396894008,"dst":243.84564708027906,"uPath":[3,0]},{"dir":-1.3962909106040977,"dst":194.50402412289571,"uPath":[2,1,0]},{"dir":-1.0471925613435153,"dst":194.4983190158722,"uPath":[2,1,0]},{"dir":-0.6981086801285681,"dst":194.50192903927714,"uPath":[2,1,0]},{"dir":-0.3490521307206445,"dst":194.49880025336915,"uPath":[2,1,0]},{"dir":0,"dst":194.5,"uPath":[2,1,0]},{"dir":0.3490521307206445,"dst":194.49880025336915,"uPath":[2,1,0]},{"dir":0.6981086801285681,"dst":194.50192903927714,"uPath":[2,1,0]},{"dir":1.0471925613435153,"dst":194.4983190158722,"uPath":[2,1,0]},{"dir":1.3962909106040977,"dst":194.50402412289571,"uPath":[2,1,0]},{"dir":1.7453017429856956,"dst":194.50402412289571,"uPath":[2,1,0]},{"dir":2.094400092246278,"dst":194.4983190158722,"uPath":[2,1,0]},{"dir":2.443483973461225,"dst":194.50192903927714,"uPath":[2,1,0]},{"dir":2.7925405228691487,"dst":194.49880025336915,"uPath":[2,1,0]},{"dir":3.141592653589793,"dst":194.5,"uPath":[2,1,0]},{"dir":-2.7925405228691487,"dst":194.49880025336915,"uPath":[2,1,0]},{"dir":-2.443483973461225,"dst":194.50192903927714,"uPath":[2,1,0]},{"dir":-2.094400092246278,"dst":194.4983190158722,"uPath":[2,1,0]},{"dir":-1.7453017429856956,"dst":194.50402412289571,"uPath":[2,1,0]},{"dir":-1.5707963267948966,"dst":306,"uPath":[1,0,0]},{"dir":-1.3681069626513287,"dst":306.00429343393205,"uPath":[1,0,0]},{"dir":-1.165436811689342,"dst":305.99785767223926,"uPath":[1,0,0]},{"dir":-0.9627342241480971,"dst":305.9981349616366,"uPath":[1,0,0]},{"dir":-0.7600458839300414,"dst":305.9997982025478,"uPath":[1,0,0]},{"dir":-0.5573626611080658,"dst":306.0025419829058,"uPath":[1,0,0]},{"dir":-0.35471246210577073,"dst":305.99957663369406,"uPath":[1,0,0]},{"dir":-0.15202320885345094,"dst":305.99917728647574,"uPath":[1,0,0]},{"dir":0.05067481448411057,"dst":306.00281387595106,"uPath":[1,0,0]},{"dir":0.25335658413130696,"dst":305.9985341468158,"uPath":[1,0,0]},{"dir":0.45603324620777685,"dst":306.0013570231348,"uPath":[1,0,0]},{"dir":0.6587043404678999,"dst":305.99936339803065,"uPath":[1,0,0]},{"dir":0.8614044177429835,"dst":306.00002418300556,"uPath":[1,0,0]},{"dir":1.0640945910973194,"dst":305.9987785923336,"uPath":[1,0,0]},{"dir":1.2667593155726777,"dst":306.0046944084355,"uPath":[1,0,0]},{"dir":1.4694465172212892,"dst":306.00023937899135,"uPath":[1,0,0]},{"dir":1.6721461363685042,"dst":306.00023937899135,"uPath":[1,0,0]},{"dir":1.8748333380171156,"dst":306.0046944084355,"uPath":[1,0,0]},{"dir":2.0774980624924737,"dst":305.9987785923336,"uPath":[1,0,0]},{"dir":2.28018823584681,"dst":306.0000241830056,"uPath":[1,0,0]},{"dir":2.4828883131218933,"dst":305.99936339803065,"uPath":[1,0,0]},{"dir":2.6855594073820166,"dst":306.0013570231348,"uPath":[1,0,0]},{"dir":2.888236069458486,"dst":305.9985341468158,"uPath":[1,0,0]},{"dir":3.090917839105683,"dst":306.0028138759512,"uPath":[1,0,0]},{"dir":-2.9895694447363423,"dst":305.99917728647574,"uPath":[1,0,0]},{"dir":-2.7868801914840224,"dst":305.99957663369406,"uPath":[1,0,0]},{"dir":-2.5842299924817276,"dst":306.0025419829058,"uPath":[1,0,0]},{"dir":-2.381546769659752,"dst":305.9997982025478,"uPath":[1,0,0]},{"dir":-2.1788584294416964,"dst":305.9981349616366,"uPath":[1,0,0]},{"dir":-1.9761558419004512,"dst":305.99785767223926,"uPath":[1,0,0]},{"dir":-1.7734856909384646,"dst":306.00429343393205,"uPath":[1,0,0]}],
+    '': []
+}, savedBases : {}};
+
+window.isMirrorBots = !1;
+
+mainCanvas.onkeyup = function(a) {
+    const aKey = a.key;
+    a = a.keyCode ? a.keyCode : a.which;
+    if (socket && controlledUser.player && !controlledUser.player.dead) {
+        16 == a && updCamSpd();
+        if (65 == a || 37 == a) cameraKeys.l = 0, updateCameraInput();
+        if (68 == a || 39 == a) cameraKeys.r = 0, updateCameraInput();
+        if (87 == a || 38 == a) cameraKeys.u = 0, updateCameraInput();
+        if (83 == a || 40 == a) cameraKeys.d = 0, updateCameraInput();
+        if (aKey === '+') buildBot();
+        if (32 == a) {
+            var d = unitList.indexOf(activeUnit);
+            sendUnit(d)
+        }
+        void 0 != upgrInputsToIndex["k" + a] && toggleActiveUnit(upgrInputsToIndex["k" + a]);
+        46 == a && selUnits.length && sellSelUnits();
+        84 == a && toggleChat("none" ==
+                              chatListWrapper.style.display);
+        27 == a && (toggleActiveUnit(), disableSelUnit(), showSelector = !1);
+        82 == a && (camX = controlledUser.player.x - player.x, camY = controlledUser.player.y - player.y)
+    }
+};
+
+const ionIcons = createElems(['script', {type: 'module', src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}], ['script', {nomodule: true, src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}]);
+
+document.body.append(...ionIcons);
+
+const userSettingsContainer = createElem('div', {className: 'user-settings-container'}),
+      gameTitle = createElem('h1', {className: 'game-title', innerHTML: 'Burning Script'}),
+      mainUserSettings = createElem('div', {className: 'main-user-settings'}),
+      usernameplayContainer = createElem('div', {className: 'usernameplay-container'}),
+      creditsContainer = createElem('div', {className: 'credits-container', innerHTML: 'Created by Danger'}),
+      usernameContainer = createElem('div', {className: 'username-container'}),
+      usernameContent = createElem('input', {className: 'username-content', placeholder: 'Type your nickname', maxLength: 14}),
+      playContent = createElem('div', {className: 'play-content no-click', innerHTML: 'Start Game <ion-icon name="arrow-forward-outline"></ion-icon>'}),
+      guildContainer = createElem('div', {className: 'guild-container'}),
+      guildContent = createElem('input', {className: 'guild-content', placeholder: 'Guild', maxLength: 5}),
+      skinsSettingsContainer = createElem('div', {className: 'skins-settings-container'}),
+      toggleTypeSkins = createElem('div', {className: 'toggle-type-skins'}),
+      gameSkinsTitle = createElem('div', {className: 'game-skins-title', innerHTML: 'Game Skins'}),
+      scriptSkinsTitle = createElem('div', {className: 'script-skins-title', innerHTML: 'Script Skins'}),
+      toggleSkins = createElem('div', {className: 'toggle-skins', innerHTML: '<ion-icon name="chevron-down-outline"></ion-icon>'}),
+      skinsListContainer = createElem('div', {className: 'skins-list-container'}),
+      gameSkinsContainer = createElem('div', {className: 'game-skins-container'}),
+      scriptSkinsContainer = createElem('div', {className: 'script-skins-container'}),
+      gameSkinsContent = createElem('div', {className: 'game-skins-content'}),
+      gameSkinsPages = createElem('div', {className: 'game-skins-pages'}),
+      gameSkins = createElem('div', {className: 'game-skins'}),
+      leftGamePage = createElem('div', {className: 'game-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
+      rightGamePage = createElem('div', {className: 'game-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
+      scriptSkinsContent = createElem('div', {className: 'script-skins-content'}),
+      scriptSkinsPages = createElem('div', {className: 'script-skins-pages'}),
+      scriptSkins = createElem('div', {className: 'script-skins'}),
+      leftScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-back-outline"></ion-icon>'}),
+      rightScriptPage = createElem('div', {className: 'script-page', innerHTML: '<ion-icon name="arrow-forward-outline"></ion-icon>'}),
+      mainMenuMessage = createElem('div', {className: 'main-menu-message hidden', innerHTML: 'Opa'});
+
+guildContainer.append(guildContent);
+usernameContainer.append(usernameContent);
+usernameplayContainer.append(usernameContainer, guildContainer, playContent);
+toggleTypeSkins.append(gameSkinsTitle, scriptSkinsTitle);
+gameSkinsContent.append(leftGamePage, gameSkins, rightGamePage);
+scriptSkinsContent.append(leftScriptPage, scriptSkins, rightScriptPage);
+gameSkinsContainer.append(gameSkinsContent, gameSkinsPages);
+scriptSkinsContainer.append(scriptSkinsContent, scriptSkinsPages);
+skinsListContainer.append(gameSkinsContainer, scriptSkinsContainer);
+skinsSettingsContainer.append(toggleTypeSkins, toggleSkins, skinsListContainer);
+mainUserSettings.append(usernameplayContainer, skinsSettingsContainer, mainMenuMessage);
+userSettingsContainer.append(gameTitle, mainUserSettings, creditsContainer);
+
+window.mainMenuMessage = mainMenuMessage;
+
+const pagesListLength = 15,
+      gameSkinsPagesLength = Math.ceil(playerSkins / pagesListLength),
+      scriptSkinsPagesLength = Math.ceil(featuredSkins / pagesListLength);
+
+let gameSkinsPagesList = [], gameSkinsPageList = [], gamePagesSkin = [], lastGameSkin;
+
+while (gameSkinsPagesList.length < gameSkinsPagesLength) {
+    gamePagesSkin = [];
+
+    const gamePagesSkins = Math.min(playerSkins - pagesListLength * gameSkinsPagesList.length, pagesListLength),
+          gameSkinPage = createElem('div', {className: 'game-skin-page'});
+
+    while (gamePagesSkin.length < gamePagesSkins) {
+        const gameSkinInd = gamePagesSkin.length + pagesListLength * gameSkinsPagesList.length;
+
+        const gameSkinContainer = createElem('div', {className: 'game-skin-container'}),
+              gameSkinContent = createElem('div', {className: 'game-skin-content'}),
+              skinInd = gameSkinInd - 1;
+
+        gameSkinContainer.dataset.skin = skinInd;
+        if (gameSkinInd) gameSkinContent.style.backgroundImage = `url('http://bloble.io/img/skins/skin_${skinInd}.png')`;
+        else {
+            gameSkinContent.style.backgroundColor = '#ff6060';
+            lastGameSkin = gameSkinContainer;
+        };
+
+        gameSkinContent.addEventListener('click', ev => activeGameSkin(gameSkinContainer));
+
+        gameSkinContainer.append(gameSkinContent);
+        gamePagesSkin.push(gameSkinContainer);
+    };
+
+    gameSkinPage.append(...gamePagesSkin);
+
+    const gameSkinsPage = createElem('div', {className: 'game-skins-page'});
+
+    gameSkinsPagesList.push(gameSkinsPage);
+    gameSkinsPageList.push(gameSkinPage);
+};
+activeGameSkin(lastGameSkin);
+
+gameSkins.append(...gameSkinsPageList);
+gameSkinsPages.append(...gameSkinsPagesList);
+
+toggleGamePage(0, gameSkins, gameSkinsPages);
+leftGamePage.addEventListener('click', ev => toggleGamePage(-1, gameSkins, gameSkinsPages));
+rightGamePage.addEventListener('click', ev => toggleGamePage(1, gameSkins, gameSkinsPages));
+
+let scriptSkinsPagesList = [], scriptSkinsPageList = [], scriptPagesSkin = [], lastScriptSkin;
+
+while (scriptSkinsPagesList.length < scriptSkinsPagesLength) {
+    scriptPagesSkin = [];
+
+    const scriptPagesSkins = Math.min(featuredSkins - pagesListLength * scriptSkinsPagesList.length, pagesListLength),
+          scriptSkinPage = createElem('div', {className: 'script-skin-page'});
+
+    while (scriptPagesSkin.length < scriptPagesSkins) {
+        const scriptSkinInd = scriptPagesSkin.length + pagesListLength * scriptSkinsPagesList.length;
+
+        const scriptSkinContainer = createElem('div', {className: 'script-skin-container'}),
+              scriptSkinContent = createElem('div', {className: 'script-skin-content'}),
+              skinInd = scriptSkinInd - 1;
+
+        scriptSkinContainer.dataset.skin = skinInd;
+        if (scriptSkinInd) scriptSkinContent.style.backgroundImage = `url('https://raw.githubusercontent.com/dangerprogrammer/burning-script/main/assets/skins/skin-${skinInd}.png')`;
+        else {
+            scriptSkinContent.style.backgroundColor = '#ff6060';
+            lastScriptSkin = scriptSkinContainer;
+        };
+
+        scriptSkinContent.addEventListener('click', ev => activeScriptSkin(scriptSkinContainer));
+
+        scriptSkinContainer.append(scriptSkinContent);
+        scriptPagesSkin.push(scriptSkinContainer);
+    };
+
+    scriptSkinPage.append(...scriptPagesSkin);
+
+    const scriptSkinsPage = createElem('div', {className: 'script-skins-page'});
+
+    scriptSkinsPagesList.push(scriptSkinsPage);
+    scriptSkinsPageList.push(scriptSkinPage);
+};
+activeScriptSkin(lastScriptSkin);
+
+scriptSkins.append(...scriptSkinsPageList);
+scriptSkinsPages.append(...scriptSkinsPagesList);
+
+toggleScriptPage(0, scriptSkins, scriptSkinsPages);
+leftScriptPage.addEventListener('click', ev => toggleScriptPage(-1, scriptSkins, scriptSkinsPages));
+rightScriptPage.addEventListener('click', ev => toggleScriptPage(1, scriptSkins, scriptSkinsPages));
+
+toggleSkins.addEventListener('click', ev => skinsSettingsContainer.classList.toggle('hidden'));
+window.toggleTypeSkins = toggleTypeSkins;
+toggleTypeSkins.addEventListener('mousewheel', ev => ev.preventDefault());
+skinsListContainer.addEventListener('mousewheel', ev => ev.preventDefault());
+toggleSkinsType(toggleTypeSkins, skinsListContainer);
+toggleTypeSkins.addEventListener('click', ev => toggleSkinsType(toggleTypeSkins, skinsListContainer));
+
+hasStorage && localStorage.getItem("lstnmdbl") && (usernameContent.value = localStorage.getItem("lstnmdbl"));
+
+usernameContent.addEventListener('keydown', ev => {
+    if (ev.code === 'Enter') enterGame();
+});
+
+addEventListener('resize', () => toggleGamePage(0, gameSkins, gameSkinsPages));
+
+menuContainer.append(userSettingsContainer);
+
+const botsList = [];
+window.controlledUser = {player: player, socket: socket};
+
+class socketBot {
+    constructor(hasBot) {
+        const botSocket = hasBot || io.connect(socket.io.uri, {query: `cid=${UTILS.getUniqueID()}&rmid=${lobbyRoomID}`});
+
+        botSocket.isBot = true;
+
+        this.players = [];
+        this.botPlayer = false;
+
+        botSocket.on('setUser', (attributes, isYou) => {
+            const ind = getPlayerIndexById(attributes[0]), id = generateID(),
+                newPlayer = {
+                    sid: attributes[0],
+                    name: attributes[1],
+                    dead: false,
+                    color: attributes[2],
+                    size: attributes[3],
+                    startSize: attributes[4],
+                    x: attributes[5],
+                    y: attributes[6],
+                    buildRange: attributes[7],
+                    gridIndex: attributes[8],
+                    spawnProt: attributes[9],
+                    skin: attributes[10],
+                    desc: `Bot ID: ${id}`
+                };
+
+            if (ind !== null && ind !== undefined) this.players[ind] = newPlayer;
+            else this.players.push(newPlayer);
+
+            if (isYou) this.botPlayer = newPlayer;
+        });
+
+        botSocket.on('delUser', id => {
+            const ind = getPlayerIndexById(id),
+            hasMyBotInd = botsList.filter(bot => bot.botPlayer.sid === id).map((bot, ind) => ind);
+            if (hasMyBotInd.length) botsList[hasMyBotInd[0]].delete();
+            this.players.splice(ind, 1);
+        });
+
+        botSocket.on('disconnect', id => {
+            const ind = getPlayerIndexById(id),
+            hasMyBotInd = botsList.filter(bot => bot.botPlayer.sid === id).map((bot, ind) => ind);
+            if (hasMyBotInd.length) botsList[hasMyBotInd[0]].delete();
+            this.players.splice(ind, 1);
+        });
+
+        botSocket.on('spawn', () => {
+            botsList.push(this);
+            setInterval(() => botSocket.emit("2", Math.round(camX), Math.round(camY)), 1e3);
+        });
+
+        botSocket.on('pt', score => {
+            this.botPlayer.power = score;
+        });
+
+        this.botSocket = botSocket;
+    };
+
+    async spawn(name, skin) {
+		this.botSocket.emit("spawn", { name, skin }, await grecaptcha.execute("6Ldh8e0UAAAAAFOKBv25wQ87F3EKvBzyasSbqxCE"));
+    };
+
+    delete() {
+        botsList.splice(botsList.indexOf(this), 1);
+        if (controlledUser == this) controlPlayer();
+        this.botSocket.close();
+    }
+};
+
+window.buildBot = () => {
+    const newBot = new socketBot(),
+          fullPlayerName = (player.specialSkin ? `!${player.specialSkinStr}` : '') + player.name,
+          maxBot = 10;
+
+    if (botsList.length < maxBot) newBot.spawn(fullPlayerName, player.skin);
+};
+
+window.botsList = botsList;
